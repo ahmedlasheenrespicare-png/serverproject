@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://ahmedlasheenrespicare-png.github.io/mbclive/sitemap.xml

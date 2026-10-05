@@ -1,0 +1,5604 @@
+{
+  "updated": "2026-10-05",
+  "count": 933,
+  "channels": [
+    {
+      "name": "Real Madrid TV English (ريال مدريد بالإنجليزية)",
+      "logo": "⚪",
+      "url": "https://rmtv.akamaized.net/hls/live/2043154/rmtv-en-web/master.m3u8",
+      "cat": "رياضية"
+    },
+    {
+      "name": "beIN SPORTS XTRA HD (قناة beIN المجانية الرسمية)",
+      "logo": "🔴",
+      "url": "https://bein-xtra-bein.amagi.tv/playlist.m3u8",
+      "cat": "رياضية"
+    },
+    {
+      "name": "MBC 1 HD (العامة والمسلسلات)",
+      "logo": "🟣",
+      "url": "https://shd-gcp-live.edgenextcdn.net/live/bitmovin-mbc-1/15cf99af5de54063fdabfefe66adc075/index.m3u8",
+      "cat": "قنوات MBC"
+    },
+    {
+      "name": "MBC Masr 1 HD (إم بي سي مصر)",
+      "logo": "🇪🇬",
+      "url": "https://shd-gcp-live.edgenextcdn.net/live/bitmovin-mbc-masr/956eac069c78a35d47245db6cdbb1575/index.m3u8",
+      "cat": "قنوات MBC"
+    },
+    {
+      "name": "MBC Masr 2 HD (مصر 2 والرياضة)",
+      "logo": "🇪🇬",
+      "url": "https://shd-gcp-live.edgenextcdn.net/live/bitmovin-mbc-masr-2/754931856515075b0aabf0e583495c68/index.m3u8",
+      "cat": "قنوات MBC"
+    },
+    {
+      "name": "MBC Masr Drama HD (دراما مصر)",
+      "logo": "🎭",
+      "url": "https://shd-gcp-live.edgenextcdn.net/live/bitmovin-mbc-masr-drama/567b703c19ede6598222de81b0e4508b/index.m3u8",
+      "cat": "قنوات MBC"
+    },
+    {
+      "name": "MBC Drama HD (المسلسلات والدراما)",
+      "logo": "🎭",
+      "url": "https://shd-gcp-live.edgenextcdn.net/live/bitmovin-mbc-drama/2c28a458e2f3253e678b07ac7d13fe71/index.m3u8",
+      "cat": "قنوات MBC"
+    },
+    {
+      "name": "MBC 4 HD (منوعات وترفيه)",
+      "logo": "📺",
+      "url": "https://shd-gcp-live.edgenextcdn.net/live/bitmovin-mbc-4/24f134f1cd63db9346439e96b86ca6ed/index.m3u8",
+      "cat": "قنوات MBC"
+    },
+    {
+      "name": "MBC 5 HD (إم بي سي 5 المغرب)",
+      "logo": "🇲🇦",
+      "url": "https://shd-gcp-live.edgenextcdn.net/live/bitmovin-mbc-5/ee6b000cee0629411b666ab26cb13e9b/index.m3u8",
+      "cat": "قنوات MBC"
+    },
+    {
+      "name": "MBC Bollywood HD (هندي مدبلج)",
+      "logo": "💃",
+      "url": "https://shd-gcp-live.edgenextcdn.net/live/bitmovin-mbc-bollywood/546eb40d7dcf9a209255dd2496903764/index.m3u8",
+      "cat": "قنوات MBC"
+    },
+    {
+      "name": "MBC Persia HD (إم بي سي أفلام)",
+      "logo": "🎬",
+      "url": "https://shd-gcp-live.edgenextcdn.net/live/bitmovin-mbc-persia/818ee8e4b592dc497608f066d825bfb4/index.m3u8",
+      "cat": "قنوات MBC"
+    },
+    {
+      "name": "العربية الحدث HD (أخبار MBC)",
+      "logo": "⚫",
+      "url": "https://live.alarabiya.net/alarabiapublish/alhadath.smil/playlist.m3u8",
+      "cat": "قنوات MBC"
+    },
+    {
+      "name": "العربية الإخبارية HD",
+      "logo": "🔴",
+      "url": "https://live.alarabiya.net/alarabiapublish/alarabiya.smil/playlist.m3u8",
+      "cat": "قنوات MBC"
+    },
+    {
+      "name": "العربية أسواق 💹",
+      "logo": "💹",
+      "url": "https://live.alarabiya.net/alarabiapublish/aswaaq.smil/playlist.m3u8",
+      "cat": "قنوات MBC"
+    },
+    {
+      "name": "MBC Loud FM",
+      "logo": "📻",
+      "url": "https://radio-loud-fm.mbc.net/radio-loud-fm_1.m3u8",
+      "cat": "قنوات MBC"
+    },
+    {
+      "name": "الجزيرة",
+      "logo": "🟡",
+      "url": "https://live-hls-web-aja.getaj.net/AJA/index.m3u8",
+      "cat": "إخبارية"
+    },
+    {
+      "name": "الجزيرة مباشر",
+      "logo": "🔴",
+      "url": "https://live-hls-web-ajm.getaj.net/AJM/index.m3u8",
+      "cat": "إخبارية"
+    },
+    {
+      "name": "الجزيرة مباشر 24",
+      "logo": "🔴",
+      "url": "https://live-hls-web-ajm24-fa.getaj.net/AJM24/index.m3u8",
+      "cat": "إخبارية"
+    },
+    {
+      "name": "الجزيرة (بديل)",
+      "logo": "🟡",
+      "url": "https://live-hls-web-aja-fa.getaj.net/AJA/index.m3u8",
+      "cat": "إخبارية"
+    },
+    {
+      "name": "العربية الحدث",
+      "logo": "⚫",
+      "url": "https://live.alarabiya.net/alarabiapublish/alhadath.smil/playlist.m3u8",
+      "cat": "إخبارية"
+    },
+    {
+      "name": "France 24 عربي",
+      "logo": "🔵",
+      "url": "https://static.france24.com/live/F24_AR_HI_HLS/live_web.m3u8",
+      "cat": "إخبارية"
+    },
+    {
+      "name": "DW عربي",
+      "logo": "🔷",
+      "url": "https://dwamdstream102.akamaized.net/hls/live/2015525/dwstream102/index.m3u8",
+      "cat": "إخبارية"
+    },
+    {
+      "name": "DW عربي 2",
+      "logo": "🔷",
+      "url": "https://dwamdstream104.akamaized.net/hls/live/2015530/dwstream104/index.m3u8",
+      "cat": "إخبارية"
+    },
+    {
+      "name": "العربي TV",
+      "logo": "🟠",
+      "url": "https://live.kwikmotion.com/alaraby1live/alaraby_abr/playlist.m3u8",
+      "cat": "إخبارية"
+    },
+    {
+      "name": "العراقية العامة",
+      "logo": "🇮🇶",
+      "url": "https://imn-live.esite-lab.com/hls/iraqia-general.m3u8",
+      "cat": "منوعات"
+    },
+    {
+      "name": "العراقية سبورت HD (Iraqia Sport)",
+      "logo": "⚽",
+      "url": "https://imn-live.esite-lab.com/hls/iraqia-sports-1.m3u8",
+      "cat": "رياضية"
+    },
+    {
+      "name": "Aghapy TV",
+      "logo": "✝️",
+      "url": "https://5b622f07944df.streamlock.net/aghapy.tv/aghapy.smil/playlist.m3u8",
+      "cat": "دينية"
+    },
+    {
+      "name": "Afghanistan International",
+      "logo": "🌍",
+      "url": "https://hls.afintl.com/hls/stream.m3u8",
+      "cat": "إخبارية"
+    },
+    {
+      "name": "العربية أسواق",
+      "logo": "💹",
+      "url": "https://live.alarabiya.net/alarabiapublish/aswaaq.smil/playlist.m3u8",
+      "cat": "إخبارية"
+    },
+    {
+      "name": "Big Buck Bunny 4K Demo",
+      "logo": "🐰",
+      "url": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8",
+      "cat": "منوعات"
+    },
+    {
+      "name": "Tears of Steel Demo",
+      "logo": "🎬",
+      "url": "https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8",
+      "cat": "منوعات"
+    },
+    {
+      "name": "NASA TV",
+      "logo": "🚀",
+      "url": "https://ntv1.akamaized.net/hls/live/2014075/NASA-NTV1-HLS/master.m3u8",
+      "cat": "منوعات"
+    },
+    {
+      "name": "هدى TV (قناة إسلامية من القاهرة)",
+      "logo": "🕌",
+      "url": "https://cdn.bestream.io:19360/elfaro1/elfaro1.m3u8",
+      "cat": "مصرية"
+    },
+    {
+      "name": "Coptic TV (القناة القبطية)",
+      "logo": "✝️",
+      "url": "https://ctv.icopts.app/CTV/index.fmp4.m3u8",
+      "cat": "مصرية"
+    },
+    {
+      "name": "الغد TV (قناة مصرية عامة)",
+      "logo": "🇪🇬",
+      "url": "https://eazyvwqssi.erbvr.com/alghadtv/alghadtv.m3u8",
+      "cat": "مصرية"
+    },
+    {
+      "name": "Koogi TV أطفال",
+      "logo": "🧒",
+      "url": "https://5d658d7e9f562.streamlock.net/koogi.tv/koogi.smil/playlist.m3u8",
+      "cat": "مصرية"
+    },
+    {
+      "name": "Watan TV وطن",
+      "logo": "🇪🇬",
+      "url": "https://rp.tactivemedia.com/watantv_source/live/playlist.m3u8",
+      "cat": "مصرية"
+    },
+    {
+      "name": "Mekameleen مكملين",
+      "logo": "📺",
+      "url": "https://mn-nl.mncdn.com/mekameleen/smil:mekameleentv.smil/playlist.m3u8",
+      "cat": "مصرية"
+    },
+    {
+      "name": "9090 FM TV",
+      "logo": "📻",
+      "url": "https://9090video.mobtada.com/hls/stream.m3u8",
+      "cat": "مصرية"
+    },
+    {
+      "name": "Mosaique FM Studio",
+      "logo": "📺",
+      "url": "https://webcam.mosaiquefm.net/mosatv/_definst_/studio/playlist.m3u8",
+      "cat": "منوعات"
+    },
+    {
+      "name": "Al Arabiya English",
+      "logo": "📺",
+      "url": "https://live.alarabiya.net/alarabiapublish/english/playlist_dvr.m3u8",
+      "cat": "منوعات"
+    },
+    {
+      "name": "Loud FM",
+      "logo": "📺",
+      "url": "https://radio-loud-fm.mbc.net/radio-loud-fm_1.m3u8",
+      "cat": "منوعات"
+    },
+    {
+      "name": "KTV 2 Kuwait",
+      "logo": "📺",
+      "url": "https://kwtktv2ta.cdn.mangomolo.com/ktv2/smil:ktv2.stream.smil/chunklist.m3u8",
+      "cat": "منوعات"
+    },
+    {
+      "name": "Noursat English",
+      "logo": "📺",
+      "url": "https://svs.itworkscdn.net/noursatenglive/noursateng.smil/playlist.m3u8",
+      "cat": "منوعات"
+    },
+    {
+      "name": "Afarin TV 1",
+      "logo": "📺",
+      "url": "https://5dcabf026b188.streamlock.net/afarinTV/livestream/playlist.m3u8",
+      "cat": "منوعات"
+    },
+    {
+      "name": "Afarin TV 2",
+      "logo": "📺",
+      "url": "https://65f16f0fdfc51.streamlock.net/afarinTV/livestream/playlist.m3u8",
+      "cat": "منوعات"
+    },
+    {
+      "name": "Al Mahriah",
+      "logo": "📺",
+      "url": "https://starmenajo.com/hls/almahriah/index.m3u8",
+      "cat": "منوعات"
+    },
+    {
+      "name": "Al Masar",
+      "logo": "📺",
+      "url": "https://starmenajo.com/hls/almasar/index.m3u8",
+      "cat": "منوعات"
+    },
+    {
+      "name": "Al Wesam",
+      "logo": "📺",
+      "url": "https://stream.addresses-sat.com/Alwesam/index.m3u8",
+      "cat": "منوعات"
+    },
+    {
+      "name": "Al Abbassia",
+      "logo": "📺",
+      "url": "https://stream.alabbassia.com/live/alabbassia/index.m3u8",
+      "cat": "منوعات"
+    },
+    {
+      "name": "Ishtar TV",
+      "logo": "📺",
+      "url": "https://stream.ishtartv.com/live/iShtarHD/playlist.m3u8",
+      "cat": "منوعات"
+    },
+    {
+      "name": "Hala TV",
+      "logo": "📺",
+      "url": "https://stream.panet.com/edge/halaTV/playlist.m3u8",
+      "cat": "منوعات"
+    },
+    {
+      "name": "Shams TV",
+      "logo": "📺",
+      "url": "https://stream.shams.tv/hls/stream.m3u8",
+      "cat": "منوعات"
+    },
+    {
+      "name": "Sky News OTT",
+      "logo": "📺",
+      "url": "https://stream.skynewsarabia.com/ott/ott.m3u8",
+      "cat": "منوعات"
+    },
+    {
+      "name": "Sky Vertical",
+      "logo": "📺",
+      "url": "https://stream.skynewsarabia.com/vertical/vertical.m3u8",
+      "cat": "منوعات"
+    },
+    {
+      "name": "Star Mena FHD",
+      "logo": "📺",
+      "url": "https://stream.starmenajo.com/hls/app/live/ts:fhd.m3u8",
+      "cat": "منوعات"
+    },
+    {
+      "name": "Al Najah",
+      "logo": "📺",
+      "url": "https://streaming.najah.edu:8443/hls/AlNajah.m3u8",
+      "cat": "منوعات"
+    },
+    {
+      "name": "Tchad TV",
+      "logo": "📺",
+      "url": "https://strhlslb01.streamakaci.tv/str_tchad_tchad/str_tchad_multi/playlist.m3u8",
+      "cat": "منوعات"
+    },
+    {
+      "name": "Al Iman",
+      "logo": "📺",
+      "url": "https://svs.itworkscdn.net/alimanlive/imantv.smil/playlist.m3u8",
+      "cat": "منوعات"
+    },
+    {
+      "name": "Al Wousta",
+      "logo": "📺",
+      "url": "https://svs.itworkscdn.net/alwoustalive/alwoustatv.smil/playlist.m3u8",
+      "cat": "منوعات"
+    },
+    {
+      "name": "Asharq Discovery",
+      "logo": "📺",
+      "url": "https://svs.itworkscdn.net/asharqdiscoverylive/asharqd.smil/playlist_dvr.m3u8",
+      "cat": "منوعات"
+    },
+    {
+      "name": "Asharq Documentary",
+      "logo": "📺",
+      "url": "https://svs.itworkscdn.net/asharqdocumentarylive/asharqdocumentary.smil/playlist_dvr.m3u8",
+      "cat": "منوعات"
+    },
+    {
+      "name": "Asharq Radio Vision",
+      "logo": "📺",
+      "url": "https://svs.itworkscdn.net/asharqradiovlive/asharqradiov/playlist.m3u8",
+      "cat": "منوعات"
+    },
+    {
+      "name": "Kabla TV",
+      "logo": "📺",
+      "url": "https://svs.itworkscdn.net/kablatvlive/kabtv1.smil/playlist.m3u8",
+      "cat": "منوعات"
+    },
+    {
+      "name": "Nour 1",
+      "logo": "📺",
+      "url": "https://svs.itworkscdn.net/nour1satlive/livestream/playlist.m3u8",
+      "cat": "منوعات"
+    },
+    {
+      "name": "Nour 4",
+      "logo": "📺",
+      "url": "https://svs.itworkscdn.net/nour4satlive/livestream/playlist.m3u8",
+      "cat": "منوعات"
+    },
+    {
+      "name": "Nour 8",
+      "logo": "📺",
+      "url": "https://svs.itworkscdn.net/nour8satlive/livestream/playlist.m3u8",
+      "cat": "منوعات"
+    },
+    {
+      "name": "Pulse 95",
+      "logo": "📺",
+      "url": "https://svs.itworkscdn.net/pulse95live/pulse96/playlist.m3u8",
+      "cat": "منوعات"
+    },
+    {
+      "name": "SAT7 Arabic",
+      "logo": "📺",
+      "url": "https://svs.itworkscdn.net/sat7arabiclive/sat7arabic.smil/playlist_dvr.m3u8",
+      "cat": "منوعات"
+    },
+    {
+      "name": "SAT7 Kids",
+      "logo": "📺",
+      "url": "https://svs.itworkscdn.net/sat7kidslive/sat7kids.smil/playlist_dvr.m3u8",
+      "cat": "منوعات"
+    },
+    {
+      "name": "SMC 2",
+      "logo": "📺",
+      "url": "https://svs.itworkscdn.net/smc2live/smc2tv.smil/playlist.m3u8",
+      "cat": "منوعات"
+    },
+    {
+      "name": "SMC Radio",
+      "logo": "📺",
+      "url": "https://svs.itworkscdn.net/smcradiolive/smcradiolive/playlist.m3u8",
+      "cat": "منوعات"
+    },
+    {
+      "name": "SMC Watar",
+      "logo": "📺",
+      "url": "https://svs.itworkscdn.net/smcwatarlive/smcwatar/playlist.m3u8",
+      "cat": "منوعات"
+    },
+    {
+      "name": "VDL TV",
+      "logo": "📺",
+      "url": "https://svs.itworkscdn.net/vdltvlive/vdltv.smil/playlist.m3u8",
+      "cat": "منوعات"
+    },
+    {
+      "name": "Watania 1",
+      "logo": "📺",
+      "url": "https://sw1.tanitweb.net/TunisiaTV/_definst_/watania1/chunklist.m3u8",
+      "cat": "منوعات"
+    },
+    {
+      "name": "Watania 2",
+      "logo": "📺",
+      "url": "https://sw1.tanitweb.net/TunisiaTV/_definst_/watania2/playlist.m3u8",
+      "cat": "منوعات"
+    },
+    {
+      "name": "TRT Arabi",
+      "logo": "📺",
+      "url": "https://tv-trtarabi.medya.trt.com.tr/master.m3u8",
+      "cat": "منوعات"
+    },
+    {
+      "name": "Oman Sport",
+      "logo": "⚽",
+      "url": "https://partneta.cdn.mgmlcdn.com/omsport/smil:omsport.stream.smil/chunklist.m3u8",
+      "cat": "منوعات"
+    },
+    {
+      "name": "Oman Cultural",
+      "logo": "📺",
+      "url": "https://partwota.cdn.mgmlcdn.com/omcultural/smil:omcultural.stream.smil/chunklist.m3u8",
+      "cat": "منوعات"
+    },
+    {
+      "name": "Oman Live",
+      "logo": "📺",
+      "url": "https://partwota.cdn.mgmlcdn.com/omlive/smil:omlive.stream.smil/chunklist.m3u8",
+      "cat": "منوعات"
+    },
+    {
+      "name": "FastTV Archive",
+      "logo": "📺",
+      "url": "https://playlist.fasttvcdn.com/pl/cc0blorawy1ibohhrupraa/Archive/playlist.m3u8",
+      "cat": "منوعات"
+    },
+    {
+      "name": "FastTV Comedy",
+      "logo": "😂",
+      "url": "https://playlist.fasttvcdn.com/pl/cc0blorawy1ibohhrupraa/Comedy/playlist.m3u8",
+      "cat": "منوعات"
+    },
+    {
+      "name": "FastTV Drama",
+      "logo": "📺",
+      "url": "https://playlist.fasttvcdn.com/pl/cc0blorawy1ibohhrupraa/Drama/playlist.m3u8",
+      "cat": "منوعات"
+    },
+    {
+      "name": "FastTV Song",
+      "logo": "🎵",
+      "url": "https://playlist.fasttvcdn.com/pl/cc0blorawy1ibohhrupraa/Song/playlist.m3u8",
+      "cat": "منوعات"
+    },
+    {
+      "name": "FastTV Tourism",
+      "logo": "📺",
+      "url": "https://playlist.fasttvcdn.com/pl/cc0blorawy1ibohhrupraa/Tourism/playlist.m3u8",
+      "cat": "منوعات"
+    },
+    {
+      "name": "FastTV Cooking",
+      "logo": "🍳",
+      "url": "https://playlist.fasttvcdn.com/pl/cc0blorawy1ibohhrupraa/cooking/playlist.m3u8",
+      "cat": "منوعات"
+    },
+    {
+      "name": "Iqraa Fast 1",
+      "logo": "📺",
+      "url": "https://playlist.fasttvcdn.com/pl/dlkqw1ftuvuuzkcb4pxdcg/Iqraafasttv1/playlist.m3u8",
+      "cat": "منوعات"
+    },
+    {
+      "name": "Iqraa Fast 2",
+      "logo": "📺",
+      "url": "https://playlist.fasttvcdn.com/pl/dlkqw1ftuvuuzkcb4pxdcg/Iqraafasttv2/playlist.m3u8",
+      "cat": "منوعات"
+    },
+    {
+      "name": "Iqraa Fast 3",
+      "logo": "📺",
+      "url": "https://playlist.fasttvcdn.com/pl/dlkqw1ftuvuuzkcb4pxdcg/Iqraafasttv3/playlist.m3u8",
+      "cat": "منوعات"
+    },
+    {
+      "name": "Qatar Quran",
+      "logo": "🕌",
+      "url": "https://qatartv.akamaized.net/hls/live/20000612/qtvquran/master.m3u8",
+      "cat": "دينية"
+    },
+    {
+      "name": "Palestinian TV",
+      "logo": "📺",
+      "url": "https://rp.tactivemedia.com/palestiniantv_source/live/playlist.m3u8",
+      "cat": "منوعات"
+    },
+    {
+      "name": "RT Arabic",
+      "logo": "📺",
+      "url": "https://rt-arb.rttv.com/dvr/rtarab/playlist.m3u8",
+      "cat": "منوعات"
+    },
+    {
+      "name": "Oman TV",
+      "logo": "🇴🇲",
+      "url": "https://partneta.cdn.mgmlcdn.com/omantv/smil:omantv.stream.smil/chunklist.m3u8",
+      "cat": "منوعات"
+    },
+    {
+      "name": "Bradosti TV",
+      "logo": "📺",
+      "url": "https://live.bradosti.net/live/samaraweb_playlist.m3u8",
+      "cat": "منوعات"
+    },
+    {
+      "name": "Channel 8 Kurdish",
+      "logo": "📺",
+      "url": "https://live.channel8.com/Channel8-Kurdish/index.fmp4.m3u8",
+      "cat": "منوعات"
+    },
+    {
+      "name": "France 24",
+      "logo": "📺",
+      "url": "https://live.france24.com/hls/live/2037222-b/F24_AR_HI_HLS/master_5000.m3u8",
+      "cat": "إخبارية"
+    },
+    {
+      "name": "I News",
+      "logo": "📰",
+      "url": "https://live.i-news.tv/hls/stream.m3u8",
+      "cat": "إخبارية"
+    },
+    {
+      "name": "Future TV",
+      "logo": "📺",
+      "url": "https://live.kwikmotion.com/futurelive/ftv.smil/playlist.m3u8",
+      "cat": "منوعات"
+    },
+    {
+      "name": "Qatar TV 1",
+      "logo": "📺",
+      "url": "https://live.kwikmotion.com/qtv1live/qtv1.smil/playlist.m3u8",
+      "cat": "منوعات"
+    },
+    {
+      "name": "Qatar TV 2",
+      "logo": "📺",
+      "url": "https://live.kwikmotion.com/qtv2live/qtv2.smil/playlist.m3u8",
+      "cat": "منوعات"
+    },
+    {
+      "name": "Red TV",
+      "logo": "📺",
+      "url": "https://live.kwikmotion.com/redtvlive/redtv.smil/playlist.m3u8",
+      "cat": "منوعات"
+    },
+    {
+      "name": "Roya TV",
+      "logo": "📺",
+      "url": "https://live.kwikmotion.com/royatvpublic/royatv.smil/playlist.m3u8",
+      "cat": "منوعات"
+    },
+    {
+      "name": "Sajedda Radio",
+      "logo": "📺",
+      "url": "https://live.kwikmotion.com/sbrksajeddahradiolive/srpksajeddahradio/chunks.m3u8",
+      "cat": "منوعات"
+    },
+    {
+      "name": "Khuzama Radio",
+      "logo": "📺",
+      "url": "https://live.kwikmotion.com/sbrksakhuzamaradiolive/srpkhuzama/playlist.m3u8",
+      "cat": "منوعات"
+    },
+    {
+      "name": "Saneda Radio",
+      "logo": "📺",
+      "url": "https://live.kwikmotion.com/sbrksanedaradiolive/srpksanedaradio/playlist.m3u8",
+      "cat": "منوعات"
+    },
+    {
+      "name": "Quran Radio",
+      "logo": "🕌",
+      "url": "https://live.kwikmotion.com/sbrksaquranradiolive/srpksaquranradio/playlist.m3u8",
+      "cat": "دينية"
+    },
+    {
+      "name": "Ariyadh Radio",
+      "logo": "📺",
+      "url": "https://live.kwikmotion.com/sbrksariyadhradiolive/srpksariyadhradio/playlist.m3u8",
+      "cat": "منوعات"
+    },
+    {
+      "name": "Saudia Radio",
+      "logo": "📺",
+      "url": "https://live.kwikmotion.com/sbrksasaudiaradiolive/srpksasaudiaradio/playlist.m3u8",
+      "cat": "منوعات"
+    },
+    {
+      "name": "SMC 1",
+      "logo": "📺",
+      "url": "https://live.kwikmotion.com/smc1live/smc1tv.smil/playlist.m3u8",
+      "cat": "منوعات"
+    },
+    {
+      "name": "Syria TV 2",
+      "logo": "📺",
+      "url": "https://live.kwikmotion.com/syriatv02live/syriatv02.smil/playlist.m3u8",
+      "cat": "منوعات"
+    },
+    {
+      "name": "Syria TV",
+      "logo": "📺",
+      "url": "https://live.kwikmotion.com/syriatvlive/syriatv.smil/playlist_dvr.m3u8",
+      "cat": "منوعات"
+    },
+    {
+      "name": "Miracle TV",
+      "logo": "📺",
+      "url": "https://live.miracleonline.org/hls/miracle1.m3u8",
+      "cat": "دينية"
+    },
+    {
+      "name": "Now Arabic",
+      "logo": "📺",
+      "url": "https://live.nowtelly.com/now_arabic/live/playlist.m3u8",
+      "cat": "منوعات"
+    },
+    {
+      "name": "Pal Today",
+      "logo": "📺",
+      "url": "https://live.paltodaytv.com/paltv/live/playlist.m3u8",
+      "cat": "منوعات"
+    },
+    {
+      "name": "Al Masirah Mubasher",
+      "logo": "📺",
+      "url": "https://live2.cdnbridge.tv/AlmasirahMubasher/Mubasher_All/playlist.m3u8",
+      "cat": "منوعات"
+    },
+    {
+      "name": "Mission Asia",
+      "logo": "📺",
+      "url": "https://livecdn.live247stream.com/missionasia/tv/playlist.m3u8",
+      "cat": "منوعات"
+    },
+    {
+      "name": "Marjaeya TV",
+      "logo": "📺",
+      "url": "https://livefa.marjaeyattv.com/mtv_ar/playlist.m3u8",
+      "cat": "منوعات"
+    },
+    {
+      "name": "MTA 6 Asia",
+      "logo": "🕌",
+      "url": "https://livemtaasia.akamaized.net/hls/live/2039224/mta6asia/playlist.m3u8",
+      "cat": "دينية"
+    },
+    {
+      "name": "MTA Asia 2",
+      "logo": "🕌",
+      "url": "https://livemtaasia.akamaized.net/hls/live/2039224/mtaasia2/playlist.m3u8",
+      "cat": "دينية"
+    },
+    {
+      "name": "قناة",
+      "logo": "📺",
+      "url": "https://media1.livaat.com/static/AL-RASHEED-HD/playlist.m3u8",
+      "cat": "منوعات"
+    },
+    {
+      "name": "El Sharq",
+      "logo": "📺",
+      "url": "https://mn-nl.mncdn.com/elsharq_live/live/playlist.m3u8",
+      "cat": "منوعات"
+    },
+    {
+      "name": "Mekameleen 2",
+      "logo": "📺",
+      "url": "https://mn-nl.mncdn.com/mekameleen/smil:mekameleentv.smil/chunklist_b928000.m3u8",
+      "cat": "منوعات"
+    },
+    {
+      "name": "Pal Abroad",
+      "logo": "📺",
+      "url": "https://mn-nl.mncdn.com/palabroad/live/playlist.m3u8",
+      "cat": "منوعات"
+    },
+    {
+      "name": "ATVSat",
+      "logo": "📺",
+      "url": "https://stream.atvsat.com/atvsatlive/smil:atvsatlive.smil/playlist.m3u8",
+      "cat": "مصرية"
+    },
+    {
+      "name": "Asil TV",
+      "logo": "📺",
+      "url": "https://live.asil.tv/asiltv/index.m3u8",
+      "cat": "منوعات"
+    },
+    {
+      "name": "Beit Abbas TV",
+      "logo": "🕌",
+      "url": "https://live.beitolabbas.tv/live/beitolabbastv.m3u8",
+      "cat": "دينية"
+    },
+    {
+      "name": "Chada TV",
+      "logo": "📺",
+      "url": "https://edge13.vedge.infomaniak.com/livecast/ik:chadatv/manifest.m3u8",
+      "cat": "منوعات"
+    },
+    {
+      "name": "Halab Today",
+      "logo": "📺",
+      "url": "https://halabtoday-live.lg.mncdn.com/halabtoday/livestream/playlist.m3u8",
+      "cat": "منوعات"
+    },
+    {
+      "name": "قناة 109",
+      "logo": "📺",
+      "url": "https://halalondon-live.ercdn.net/halalondon/halalondon.m3u8",
+      "cat": "منوعات"
+    },
+    {
+      "name": "قناة 110",
+      "logo": "📺",
+      "url": "https://hls.dabangasudan.org/hls/stream.m3u8",
+      "cat": "منوعات"
+    },
+    {
+      "name": "Al Yaum",
+      "logo": "📺",
+      "url": "https://hlspackager.akamaized.net/live/DB/ALYAUM_TV/HLS/ALYAUM_TV.m3u8",
+      "cat": "منوعات"
+    },
+    {
+      "name": "Kurdsat",
+      "logo": "📺",
+      "url": "https://hlspackager.akamaized.net/live/DB/KURDSAT_HD/HLS/KURDSAT_HD.m3u8",
+      "cat": "منوعات"
+    },
+    {
+      "name": "Rojava",
+      "logo": "📺",
+      "url": "https://hlspackager.akamaized.net/live/DB/ROJAVA_HD/HLS/ROJAVA_HD.m3u8",
+      "cat": "منوعات"
+    },
+    {
+      "name": "قناة 115",
+      "logo": "📺",
+      "url": "https://hlspackager.akamaized.net/live/DB/RONAHI_TV/HLS/RONAHI_TV.m3u8",
+      "cat": "منوعات"
+    },
+    {
+      "name": "Zagros",
+      "logo": "📺",
+      "url": "https://hlspackager.akamaized.net/live/DB/ZAGROS_TV/HLS/ZAGROS_TV.m3u8",
+      "cat": "منوعات"
+    },
+    {
+      "name": "قناة 117",
+      "logo": "📺",
+      "url": "https://hms.pfs.gdn/hms/v1/broadcast/hlmvmp2hfriode891/playlist.m3u8",
+      "cat": "منوعات"
+    },
+    {
+      "name": "قناة 118",
+      "logo": "📺",
+      "url": "https://hms.pfs.gdn/v1/broadcast/one/playlist.m3u8",
+      "cat": "منوعات"
+    },
+    {
+      "name": "قناة 119",
+      "logo": "📺",
+      "url": "https://hms.pfs.gdn/v1/broadcast/onefm/playlist.m3u8",
+      "cat": "منوعات"
+    },
+    {
+      "name": "قناة 122",
+      "logo": "📺",
+      "url": "https://i24newsarabic-cdn.encoders.immergo.tv/master.m3u8",
+      "cat": "إخبارية"
+    },
+    {
+      "name": "قناة 123",
+      "logo": "📺",
+      "url": "https://jmc-live.ercdn.net/alistiqama/alistiqama.m3u8",
+      "cat": "منوعات"
+    },
+    {
+      "name": "قناة 124",
+      "logo": "📺",
+      "url": "https://jmc-live.ercdn.net/altaghier/altaghier.m3u8",
+      "cat": "منوعات"
+    },
+    {
+      "name": "قناة 125",
+      "logo": "📺",
+      "url": "https://jmc-live.ercdn.net/eritreatv/eritreatv.m3u8",
+      "cat": "منوعات"
+    },
+    {
+      "name": "Jordan TV",
+      "logo": "📺",
+      "url": "https://jrtv-live.ercdn.net/jordanhd/jordanhd.m3u8",
+      "cat": "منوعات"
+    },
+    {
+      "name": "Kuwait 30",
+      "logo": "📺",
+      "url": "https://kwtethta.cdn.mangomolo.com/eth/smil:eth.stream.smil/chunklist.m3u8",
+      "cat": "منوعات"
+    },
+    {
+      "name": "Kuwait 31",
+      "logo": "📺",
+      "url": "https://kwtkbta.cdn.mangomolo.com/kb/smil:kb.stream.smil/chunklist.m3u8",
+      "cat": "منوعات"
+    },
+    {
+      "name": "Kuwait 32",
+      "logo": "📺",
+      "url": "https://kwtktv1ta.cdn.mangomolo.com/ktv1/smil:ktv1.stream.smil/chunklist.m3u8",
+      "cat": "منوعات"
+    },
+    {
+      "name": "Kuwait 33",
+      "logo": "📺",
+      "url": "https://kwtktvaqta.cdn.mangomolo.com/ktvaq/smil:tktvaq.stream.smil/chunklist.m3u8",
+      "cat": "منوعات"
+    },
+    {
+      "name": "Kuwait 34",
+      "logo": "📺",
+      "url": "https://kwtktvata.cdn.mangomolo.com/ktva/smil:tktva.stream.smil/chunklist.m3u8",
+      "cat": "منوعات"
+    },
+    {
+      "name": "Kuwait 35",
+      "logo": "📺",
+      "url": "https://kwtsplta.cdn.mangomolo.com/spl/smil:spl.stream.smil/chunklist.m3u8",
+      "cat": "منوعات"
+    },
+    {
+      "name": "Kuwait 36",
+      "logo": "📺",
+      "url": "https://kwtspta.cdn.mangomolo.com/sp/smil:sp.stream.smil/chunklist.m3u8",
+      "cat": "منوعات"
+    },
+    {
+      "name": "قناة 138",
+      "logo": "📺",
+      "url": "https://live-hls-apps-aja-fa.getaj.net/AJA/01.m3u8",
+      "cat": "منوعات"
+    },
+    {
+      "name": "قناة 139",
+      "logo": "📺",
+      "url": "https://live-hls-apps-ajm-fa.getaj.net/AJM/index.m3u8",
+      "cat": "منوعات"
+    },
+    {
+      "name": "قناة 140",
+      "logo": "📺",
+      "url": "https://live-hls-apps-ajm2-fa.getaj.net/AJM2/index.m3u8",
+      "cat": "منوعات"
+    },
+    {
+      "name": "قناة 141",
+      "logo": "📺",
+      "url": "https://live-hls-apps-ajm24-fa.getaj.net/AJM24/index.m3u8",
+      "cat": "منوعات"
+    },
+    {
+      "name": "قناة 142",
+      "logo": "📺",
+      "url": "https://live-hls-web-aja2-gcp.thehlive.com/AJA2/index.m3u8",
+      "cat": "منوعات"
+    },
+    {
+      "name": "Asharq",
+      "logo": "📺",
+      "url": "https://live-news.asharq.com/asharq.m3u8",
+      "cat": "إخبارية"
+    },
+    {
+      "name": "Sky News",
+      "logo": "📺",
+      "url": "https://live-stream.skynewsarabia.com/c-horizontal-channel/horizontal-stream/index.m3u8",
+      "cat": "إخبارية"
+    },
+    {
+      "name": "Alawla",
+      "logo": "📺",
+      "url": "https://live.alawla.tv/hls/stream.m3u8",
+      "cat": "منوعات"
+    },
+    {
+      "name": "DW عربي Master",
+      "logo": "🔷",
+      "url": "https://dwamdstream103.akamaized.net/hls/live/2015526/dwstream103/master.m3u8",
+      "cat": "إخبارية"
+    },
+    {
+      "name": "Cloudfront 1",
+      "logo": "☁️",
+      "url": "https://d2ow8h651gs7dx.cloudfront.net/out/v1/371fb663da604e659a2fb99bf89d92d4/index.m3u8",
+      "cat": "منوعات"
+    },
+    {
+      "name": "Cloudfront 2",
+      "logo": "☁️",
+      "url": "https://d6izdil55uftn.cloudfront.net/out/v1/0a06d1d6377c47edbd48721ed724bd08/index.m3u8",
+      "cat": "منوعات"
+    },
+    {
+      "name": "CGTN Arabic Test",
+      "logo": "🇨🇳",
+      "url": "https://dash3.antik.sk/live/test_cgtn_arb_tizen/playlist.m3u8",
+      "cat": "إخبارية"
+    },
+    {
+      "name": "Cloudfront 3",
+      "logo": "☁️",
+      "url": "https://dphwv2ufgnfsq.cloudfront.net/out/v1/59cd80dfe93a479eb8b4d79bc6f225ca/index.m3u8",
+      "cat": "منوعات"
+    },
+    {
+      "name": "JWP Channel",
+      "logo": "📺",
+      "url": "https://cdn.fast.jwp.services/v1/channel/1_jB6940Ei_TvhvIHDL/manifest.m3u8",
+      "cat": "منوعات"
+    },
+    {
+      "name": "AL24 News",
+      "logo": "🇩🇿",
+      "url": "https://cdn.live.easybroadcast.io/abr_corp/66_al24_u4yga6h/corp/66_al24_u4yga6h_240p/chunks.m3u8",
+      "cat": "إخبارية"
+    },
+    {
+      "name": "Medi1 TV Arabic",
+      "logo": "🇲🇦",
+      "url": "https://cdn.live.easybroadcast.io/abr_corp/83_medi1tv-arabic_g90v4ec/playlist.m3u8",
+      "cat": "منوعات"
+    },
+    {
+      "name": "Medi1 Maghreb",
+      "logo": "🇲🇦",
+      "url": "https://cdn.live.easybroadcast.io/abr_corp/83_medi1tv-maghreb_jnbspmg/playlist.m3u8",
+      "cat": "منوعات"
+    },
+    {
+      "name": "Wowza Live 1",
+      "logo": "📺",
+      "url": "https://cdn3.wowza.com/1/YStGZlJRdktzZkdK/VXROZWNW/hls/live/playlist.m3u8",
+      "cat": "منوعات"
+    },
+    {
+      "name": "Al Hayat Live",
+      "logo": "✝️",
+      "url": "https://cdn3.wowza.com/5/OE5HREpIcEkySlNT/alhayat-live/ngrp:livestream_all/playlist.m3u8",
+      "cat": "دينية"
+    },
+    {
+      "name": "Ch4 TeenDoc",
+      "logo": "📺",
+      "url": "https://ch14.tv/live/ch4teendoc/playlist.m3u8",
+      "cat": "منوعات"
+    },
+    {
+      "name": "MTA 1",
+      "logo": "🕌",
+      "url": "https://chlivemta1.akamaized.net/hls/live/2008145/mta1/playlist.m3u8",
+      "cat": "دينية"
+    },
+    {
+      "name": "MTA 2",
+      "logo": "🕌",
+      "url": "https://chlivemta1.akamaized.net/hls/live/2008145/mta2/playlist.m3u8",
+      "cat": "دينية"
+    },
+    {
+      "name": "MTA 3 Arabia",
+      "logo": "🕌",
+      "url": "https://chlivemta1.akamaized.net/hls/live/2010556/mta3alarabia/playlist.m3u8",
+      "cat": "دينية"
+    },
+    {
+      "name": "Rasd TV 2",
+      "logo": "📺",
+      "url": "https://cloud.streamingconnect.tv/hls/rasdtv2/rasdtv.m3u8",
+      "cat": "إخبارية"
+    },
+    {
+      "name": "CNBC",
+      "logo": "💹",
+      "url": "https://cnbc-live.akamaized.net/cnbc/master.m3u8",
+      "cat": "إخبارية"
+    },
+    {
+      "name": "Alpha TV",
+      "logo": "📺",
+      "url": "https://alpha.tv.online.tm/hls/ch007.m3u8",
+      "cat": "منوعات"
+    },
+    {
+      "name": "Al Rayyan 1",
+      "logo": "🇶🇦",
+      "url": "https://alrayyancdn.vidgyor.com/pub-noalrayy3pwz0l/liveabr/playlist_dvr.m3u8",
+      "cat": "منوعات"
+    },
+    {
+      "name": "Al Rayyan 2",
+      "logo": "🇶🇦",
+      "url": "https://alrayyancdn.vidgyor.com/pub-nooldraybinbdh/liveabr/playlist_dvr.m3u8",
+      "cat": "منوعات"
+    },
+    {
+      "name": "Al Shallal",
+      "logo": "📺",
+      "url": "https://amg01480-alshallalfze-alshallal-ono-q0hfg.amagi.tv/playlist.m3u8",
+      "cat": "منوعات"
+    },
+    {
+      "name": "Amman TV",
+      "logo": "🇯🇴",
+      "url": "https://ammantv-live.ercdn.net/ammantvhd/ammantvhd.m3u8",
+      "cat": "منوعات"
+    },
+    {
+      "name": "Brightstar Arabic",
+      "logo": "⭐",
+      "url": "https://brightstar-arabic-pull-secure.akamaized.net/brightstararabic/stream.m3u8",
+      "cat": "منوعات"
+    },
+    {
+      "name": "Libya Al Watanya",
+      "logo": "🇱🇾",
+      "url": "https://cdn-globecast.akamaized.net/live/eds/libya_al_watanya/hls_roku/index.m3u8",
+      "cat": "منوعات"
+    },
+    {
+      "name": "Sudan TV",
+      "logo": "🇸🇩",
+      "url": "https://cdn-globecast.akamaized.net/live/eds/sudan_tv/hls_roku/index.m3u8",
+      "cat": "منوعات"
+    },
+    {
+      "name": "Al Karma ME2",
+      "logo": "✝️",
+      "url": "https://58cc65c534c67.streamlock.net/alkarmatv.com/alkarmame2.smil/playlist.m3u8",
+      "cat": "دينية"
+    },
+    {
+      "name": "Al Karma PA",
+      "logo": "✝️",
+      "url": "https://58cc65c534c67.streamlock.net/alkarmatv.com/alkarmapa.smil/playlist.m3u8",
+      "cat": "دينية"
+    },
+    {
+      "name": "My Stream",
+      "logo": "📺",
+      "url": "https://5a3ed7a72ed4b.streamlock.net/live/SMIL:myStream.smil/playlist.m3u8",
+      "cat": "منوعات"
+    },
+    {
+      "name": "Al Karma AU",
+      "logo": "✝️",
+      "url": "https://5a8308add0b31.streamlock.net/alkarmatv.com/alkarmaau.smil/playlist.m3u8",
+      "cat": "دينية"
+    },
+    {
+      "name": "Al Karma NA1",
+      "logo": "✝️",
+      "url": "https://5aafcc5de91f1.streamlock.net/alkarmatv.com/alkarmana1.smil/playlist.m3u8",
+      "cat": "دينية"
+    },
+    {
+      "name": "Al Karma US",
+      "logo": "✝️",
+      "url": "https://5aafcc5de91f1.streamlock.net/alkarmatv.com/alkarmaus.smil/playlist.m3u8",
+      "cat": "دينية"
+    },
+    {
+      "name": "Al Magd 2",
+      "logo": "📺",
+      "url": "https://5aafcc5de91f1.streamlock.net/almagd.tv/almagd.smil/playlist.m3u8",
+      "cat": "دينية"
+    },
+    {
+      "name": "Atfal TV",
+      "logo": "🧒",
+      "url": "https://5aafcc5de91f1.streamlock.net/atfal1.com/atfal2/playlist.m3u8",
+      "cat": "منوعات"
+    },
+    {
+      "name": "البحرين الرياضية 2 HD (Bahrain Sports 2)",
+      "logo": "🇧🇭",
+      "url": "https://5c7b683162943.streamlock.net/live/ngrp:bahrainsportstwo_all/playlist.m3u8",
+      "cat": "رياضية"
+    },
+    {
+      "name": "Bahrain TV",
+      "logo": "🇧🇭",
+      "url": "https://5c7b683162943.streamlock.net/live/ngrp:bahraintvmain_all/playlist.m3u8",
+      "cat": "منوعات"
+    },
+    {
+      "name": "البحرين الرياضية 1 HD (Bahrain Sports 1)",
+      "logo": "⚽",
+      "url": "https://5c7b683162943.streamlock.net/live/ngrp:sportsone_all/playlist.m3u8",
+      "cat": "رياضية"
+    },
+    {
+      "name": "Live Stream",
+      "logo": "📺",
+      "url": "https://652930de05533.streamlock.net/live/ngrp:livestream_all/playlist.m3u8",
+      "cat": "منوعات"
+    },
+    {
+      "name": "Muslim Network",
+      "logo": "🕌",
+      "url": "https://afghantv.app/hls2/muslimnetwork/index.m3u8",
+      "cat": "دينية"
+    },
+    {
+      "name": "Al Aimma TV",
+      "logo": "🕌",
+      "url": "https://alaimma.tv/live/index.m3u8",
+      "cat": "دينية"
+    },
+    {
+      "name": "Live 8443",
+      "logo": "📺",
+      "url": "https://659605a54e9a6.streamlock.net:8443/live/livestream/playlist.m3u8",
+      "cat": "منوعات"
+    },
+    {
+      "name": "Story Channel",
+      "logo": "📖",
+      "url": "https://136044159.r.cdnsun.net/storychannel.m3u8",
+      "cat": "منوعات"
+    },
+    {
+      "name": "Al Karma NA2",
+      "logo": "✝️",
+      "url": "https://58cc65c534c67.streamlock.net/alkarmatv.com/alkarmaNA2.smil/playlist.m3u8",
+      "cat": "دينية"
+    },
+    {
+      "name": "Al Karma ME1",
+      "logo": "✝️",
+      "url": "https://58cc65c534c67.streamlock.net/alkarmatv.com/alkarmame1.smil/playlist.m3u8",
+      "cat": "دينية"
+    },
+    {
+      "name": "Al Magd TV",
+      "logo": "📺",
+      "url": "https://597f64b67707a.streamlock.net/almagd.tv/almagd.smil/playlist.m3u8",
+      "cat": "دينية"
+    },
+    {
+      "name": "Bahrain International",
+      "logo": "🇧🇭",
+      "url": "https://5c7b683162943.streamlock.net/live/ngrp:bahraininternational_all/playlist.m3u8",
+      "cat": "منوعات"
+    },
+    {
+      "name": "Bahrain Quran",
+      "logo": "🕌",
+      "url": "https://5c7b683162943.streamlock.net/live/ngrp:bahrainquran_all/playlist.m3u8",
+      "cat": "دينية"
+    },
+    {
+      "name": "Al Fady TV",
+      "logo": "📺",
+      "url": "https://5d658d7e9f562.streamlock.net/alfadytv.tv/alfadytv.smil/playlist.m3u8",
+      "cat": "منوعات"
+    },
+    {
+      "name": "Logos TV",
+      "logo": "✝️",
+      "url": "https://5a8308add0b31.streamlock.net/logoschannel.com/logostv.smil/playlist.m3u8",
+      "cat": "دينية"
+    },
+    {
+      "name": "Sky News عربية",
+      "logo": "☁️",
+      "url": "https://stream.skynewsarabia.com/hls/sna.m3u8",
+      "cat": "إخبارية"
+    },
+    {
+      "name": "الجزيرة مباشر 2",
+      "logo": "🔴",
+      "url": "https://live-hls-web-ajm2-fa.getaj.net/AJM2/index.m3u8",
+      "cat": "إخبارية"
+    },
+    {
+      "name": "العربية برامج",
+      "logo": "🔴",
+      "url": "https://live.alarabiya.net/alarabiapublish/aaprograms.smil/playlist.m3u8",
+      "cat": "إخبارية"
+    },
+    {
+      "name": "الجزيرة صوت",
+      "logo": "🎙️",
+      "url": "https://live-hls-audio-web-aja.getaj.net/VOICE-AJA/index.m3u8",
+      "cat": "إخبارية"
+    },
+    {
+      "name": "DW عربي 3",
+      "logo": "🔷",
+      "url": "https://dwamdstream103.akamaized.net/hls/live/2015526/dwstream103/index.m3u8",
+      "cat": "إخبارية"
+    },
+    {
+      "name": "2M Monde +1",
+      "logo": "🇲🇦",
+      "url": "https://d2qh3gh0k5vp3v.cloudfront.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-n6pess5lwbghr/2M_ES.m3u8",
+      "cat": "منوعات"
+    },
+    {
+      "name": "Abdulmajeed Abdullah",
+      "logo": "🎵",
+      "url": "https://d2hng5r56zpsbw.cloudfront.net/out/v1/9c4c990f44bb4767bb46271f326dd574/index.m3u8",
+      "cat": "منوعات"
+    },
+    {
+      "name": "ABNsat",
+      "logo": "✝️",
+      "url": "https://mediaserver.abnvideos.com/streams/abnsat.m3u8",
+      "cat": "دينية"
+    },
+    {
+      "name": "Al Araby 2",
+      "logo": "🟠",
+      "url": "https://live.kwikmotion.com/alaraby2live/alaraby2.smil/playlist.m3u8",
+      "cat": "إخبارية"
+    },
+    {
+      "name": "Al Arabiya",
+      "logo": "🔴",
+      "url": "https://live.alarabiya.net/alarabiapublish/alarabiya.smil/playlist.m3u8",
+      "cat": "إخبارية"
+    },
+    {
+      "name": "Al Mayadeen",
+      "logo": "🟡",
+      "url": "https://mdnlv.cdn.octivid.com/almdn/smil:mpegts.stream.smil/playlist.m3u8",
+      "cat": "إخبارية"
+    },
+    {
+      "name": "Al Masirah",
+      "logo": "🔴",
+      "url": "https://live.cdnbridge.tv/Almasirah/Almasirah_all/playlist.m3u8",
+      "cat": "إخبارية"
+    },
+    {
+      "name": "Al Hiwar",
+      "logo": "💬",
+      "url": "https://mn-nl.mncdn.com/alhiwar_live/smil:alhiwar.smil/playlist.m3u8",
+      "cat": "إخبارية"
+    },
+    {
+      "name": "فرانس 24 عربي",
+      "logo": "🇫🇷",
+      "url": "https://static.france24.com/live/F24_AR_LO_HLS/live_ios.m3u8",
+      "cat": "إخبارية"
+    },
+    {
+      "name": "فرانس 24 إنجليزي",
+      "logo": "🇫🇷",
+      "url": "https://static.france24.com/live/F24_EN_LO_HLS/live_ios.m3u8",
+      "cat": "إخبارية"
+    },
+    {
+      "name": "فرانس 24 فرنسي",
+      "logo": "🇫🇷",
+      "url": "https://static.france24.com/live/F24_FR_LO_HLS/live_ios.m3u8",
+      "cat": "إخبارية"
+    },
+    {
+      "name": "DW عربية",
+      "logo": "🇩🇪",
+      "url": "https://dwamdstream106.akamaized.net/hls/live/2017965/dwstream106/index.m3u8",
+      "cat": "إخبارية"
+    },
+    {
+      "name": "TRT World",
+      "logo": "🇹🇷",
+      "url": "https://tv-trtworld.medya.trt.com.tr/master.m3u8",
+      "cat": "إخبارية"
+    },
+    {
+      "name": "إذاعة الشارقة للقرآن",
+      "logo": "🕌",
+      "url": "https://live.kwikmotion.com/smcquranlive/quranradiolive/playlist.m3u8",
+      "cat": "دينية"
+    },
+    {
+      "name": "كردستان 24",
+      "logo": "🟡",
+      "url": "https://hlspackager.akamaized.net/live/DB/K24/HLS/K24.m3u8",
+      "cat": "إخبارية"
+    },
+    {
+      "name": "كردسات نيوز",
+      "logo": "📰",
+      "url": "https://hlspackager.akamaized.net/live/DB/KURDSAT_NEWS/HLS/KURDSAT_NEWS.m3u8",
+      "cat": "إخبارية"
+    },
+    {
+      "name": "بيام TV",
+      "logo": "📺",
+      "url": "https://hlspackager.akamaized.net/live/DB/PAYAM_TV/HLS/PAYAM_TV.m3u8",
+      "cat": "إخبارية"
+    },
+    {
+      "name": "رووداو",
+      "logo": "📰",
+      "url": "https://hlspackager.akamaized.net/live/DB/RUDAW/HLS/RUDAW.m3u8",
+      "cat": "إخبارية"
+    },
+    {
+      "name": "وار TV",
+      "logo": "📺",
+      "url": "https://hlspackager.akamaized.net/live/DB/WAAR_HD/HLS/WAAR_HD.m3u8",
+      "cat": "منوعات"
+    },
+    {
+      "name": "الأردن الرياضية HD (Jordan Sport)",
+      "logo": "⚽",
+      "url": "https://jrtv-live.ercdn.net/jordansporthd/jordansporthd.m3u8",
+      "cat": "رياضية"
+    },
+    {
+      "name": "ميدي 1 إفريقيا",
+      "logo": "🌍",
+      "url": "https://cdn.live.easybroadcast.io/abr_corp/83_medi1tv-afrique_tm7tu45/playlist.m3u8",
+      "cat": "إخبارية"
+    },
+    {
+      "name": "موزاييك FM",
+      "logo": "🎙️",
+      "url": "https://webcam.mosaiquefm.net/mosatv/_definst_/studio/playlist.m3u8?DVR",
+      "cat": "منوعات"
+    },
+    {
+      "name": "العراقية الإخبارية",
+      "logo": "🇮🇶",
+      "url": "https://imn-live.esite-lab.com/hls/iraqia-news.m3u8",
+      "cat": "إخبارية"
+    },
+    {
+      "name": "الوطنية 2 التونسية",
+      "logo": "🇹🇳",
+      "url": "https://sw1.tanitweb.net/TunisiaTV/_definst_/watania2/playlist.m3u8?DVR",
+      "cat": "منوعات"
+    },
+    {
+      "name": "فلسطين اليوم",
+      "logo": "🇵🇸",
+      "url": "https://live.paltodaytv.com/paltv/live/playlist_sfm4s.m3u8",
+      "cat": "إخبارية"
+    },
+    {
+      "name": "ABC News الأمريكية",
+      "logo": "🇺🇸",
+      "url": "https://abcnews-streams.akamaized.net/hls/live/2023560/abcnewshudson1/master.m3u8",
+      "cat": "إخبارية"
+    },
+    {
+      "name": "أفريكانيوز إنجليزي",
+      "logo": "🌍",
+      "url": "https://cdn-euronews.akamaized.net/live/eds/africanews-en/25049/index.m3u8",
+      "cat": "إخبارية"
+    },
+    {
+      "name": "أفريكانيوز فرنسي",
+      "logo": "🌍",
+      "url": "https://cdn-euronews.akamaized.net/live/eds/africanews-fr/25050/index.m3u8",
+      "cat": "إخبارية"
+    },
+    {
+      "name": "الجزيرة الإنجليزية",
+      "logo": "🔵",
+      "url": "https://live-hls-apps-aje-fa.getaj.net/AJE/index.m3u8",
+      "cat": "إخبارية"
+    },
+    {
+      "name": "أريرانغ",
+      "logo": "🇰🇷",
+      "url": "https://amdlive-ch02-ctnd-com.akamaized.net/arirang_2ch/smil:arirang_2ch.smil/playlist.m3u8",
+      "cat": "إخبارية"
+    },
+    {
+      "name": "CBC الإخبارية",
+      "logo": "🇨🇦",
+      "url": "https://d2ny9lo79ujali.cloudfront.net/CBC_News_International.m3u8",
+      "cat": "إخبارية"
+    },
+    {
+      "name": "DW إسباني",
+      "logo": "🇩🇪",
+      "url": "https://dwamdstream104.akamaized.net/hls/live/2015530/dwstream104/master.m3u8",
+      "cat": "إخبارية"
+    },
+    {
+      "name": "يورونيوز",
+      "logo": "🇪🇺",
+      "url": "https://cdn-euronews.akamaized.net/live/eds/euronews-pl/26382/index.m3u8",
+      "cat": "إخبارية"
+    },
+    {
+      "name": "فرانس 24 (بث بديل)",
+      "logo": "🇫🇷",
+      "url": "https://live.france24.com/hls/live/2037179-b/F24_FR_HI_HLS/master_5000.m3u8",
+      "cat": "إخبارية"
+    },
+    {
+      "name": "Black News Channel",
+      "logo": "📰",
+      "url": "https://blacknewschannel-xumo-us.amagi.tv/playlist.m3u8",
+      "cat": "إخبارية"
+    },
+    {
+      "name": "Cine Western",
+      "logo": "🎬",
+      "url": "https://amg00711-zylo-amg00711c8-rakuten-uk-2686.playouts.now.amagi.tv/playlist/amg00711-zylofast-cinewestern-rakutenuk/playlist.m3u8",
+      "cat": "أفلام"
+    },
+    {
+      "name": "Circle",
+      "logo": "🌍",
+      "url": "https://circle-roku.amagi.tv/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "CNA Originals",
+      "logo": "🌍",
+      "url": "https://amg01082-cna-amg01082c1-rlaxx-us-11304.playouts.now.amagi.tv/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "CNBC UK",
+      "logo": "📰",
+      "url": "https://amg01079-nbcuuk-amg01079c2-samsung-gb-1258.playouts.now.amagi.tv/playlist.m3u8",
+      "cat": "إخبارية"
+    },
+    {
+      "name": "Court TV",
+      "logo": "🌍",
+      "url": "https://cdn-uw2-prod.tsv2.amagi.tv/linear/amg01438-ewscrippscompan-courttv-tablo/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Curiosity NOW EN",
+      "logo": "🎞️",
+      "url": "https://amg00170-amg00170c4-samsung-gb-4232.playouts.now.amagi.tv/playlist.m3u8",
+      "cat": "وثائقية"
+    },
+    {
+      "name": "Deal or No Deal",
+      "logo": "🌍",
+      "url": "https://amg00627-banijaygroup-dealornodeal-samsungau-si7xg.amagi.tv/playlist/amg00627-banijaygroup-dealornodeal-samsungau/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "DeFiance Media",
+      "logo": "🌍",
+      "url": "https://amg01529-defiancetv-defiancemedia-glewed-tre8x.amagi.tv/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Dog the Bounty Hunter UK",
+      "logo": "🌍",
+      "url": "https://amg00276-amg00276c11-rakuten-uk-3446.playouts.now.amagi.tv/playlist/amg00276-aetelevisionnetworksfast-dogthebountyhunterall-rakutenuk/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Don't Tell The Bride",
+      "logo": "🌍",
+      "url": "https://amg00426-lds-amg00426c15-samsung-au-3684.playouts.now.amagi.tv/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Duck Dynasty",
+      "logo": "🌍",
+      "url": "https://amg00276-amg00276c2-rakuten-uk-3449.playouts.now.amagi.tv/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "DW English",
+      "logo": "📰",
+      "url": "https://amg01644-amg01644c1-amgplt0343.playout.now3.amagi.tv/ts-eu-w1-n2/playlist/amg01644-amg01644c1-amgplt0343/playlist.m3u8",
+      "cat": "إخبارية"
+    },
+    {
+      "name": "Electric Now",
+      "logo": "🌍",
+      "url": "https://amg01705-amg01705c1-amgplt0095.playout.now3.amagi.tv/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Emotion L",
+      "logo": "🌍",
+      "url": "https://rakutenaa-zylo-emotional-rakuten-r1zkm.amagi.tv/playlist/rakutenAA-zylo-emotional-rakuten/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Enterr 10 Bangla",
+      "logo": "🌍",
+      "url": "https://amg01448-samsungin-enterr10bangla-samsungin-ad-gg.amagi.tv/playlist/amg01448-samsungin-enterr10bangla-samsungin/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Estrella Games",
+      "logo": "🌍",
+      "url": "https://estrella-games-oando.amagi.tv/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Estrella News",
+      "logo": "📰",
+      "url": "https://estrella-news-oando.amagi.tv/playlist.m3u8",
+      "cat": "إخبارية"
+    },
+    {
+      "name": "Estrella TV",
+      "logo": "🌍",
+      "url": "https://estrellatv-oando.amagi.tv/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Fear Factor",
+      "logo": "🌍",
+      "url": "https://amg00627-banijaygroup-fearfactor-samsungau-9vdod.amagi.tv/playlist/amg00627-banijaygroup-fearfactor-samsungau/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "FloHockey",
+      "logo": "⚽",
+      "url": "https://amg02278-amg02278c2-flosports-worldwide-9916.playouts.now.amagi.tv/playlist.m3u8",
+      "cat": "رياضية"
+    },
+    {
+      "name": "FloRacing",
+      "logo": "⚽",
+      "url": "https://amg02278-amg02278c1-flosports-worldwide-7592.playouts.now.amagi.tv/playlist.m3u8",
+      "cat": "رياضية"
+    },
+    {
+      "name": "Fox Soul",
+      "logo": "🌍",
+      "url": "https://foxsoul-vizio.amagi.tv/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "FUEL TV",
+      "logo": "⚽",
+      "url": "https://amg01074-fueltv-fueltvemeaen-rakuten-b6j62.amagi.tv/hls/amagi_hls_data_rakutenAA-fueltvemeaen/CDN/master.m3u8",
+      "cat": "رياضية"
+    },
+    {
+      "name": "FUEL TV AU",
+      "logo": "⚽",
+      "url": "https://amg01074-fueltv-fueltvau-samsungau-g09kq.amagi.tv/playlist/amg01074-fueltv-fueltvau-samsungau/playlist.m3u8",
+      "cat": "رياضية"
+    },
+    {
+      "name": "GB News",
+      "logo": "📰",
+      "url": "https://amg01076-lightningintern-gbnewsau-samsungau-et7fz.amagi.tv/playlist/amg01076-lightningintern-gbnewsau-samsungau/playlist.m3u8",
+      "cat": "إخبارية"
+    },
+    {
+      "name": "ge Fast",
+      "logo": "⚽",
+      "url": "https://amg00716-globo-amg00716c1-tcl-br-9495.playouts.now.amagi.tv/playlist.m3u8",
+      "cat": "رياضية"
+    },
+    {
+      "name": "Ghost Hunters",
+      "logo": "🌍",
+      "url": "https://amg00353-amg00353c30-samsung-au-3440.playouts.now.amagi.tv/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Gong",
+      "logo": "🧸",
+      "url": "https://amg01596-gongnetworks-gong-ono-vh5f2.amagi.tv/1080p-vtt/index.m3u8",
+      "cat": "أطفال"
+    },
+    {
+      "name": "GREAT! movies",
+      "logo": "🎬",
+      "url": "https://amg01753-narrativeuk-amg01753c3-lg-gb-1833.playouts.now.amagi.tv/playlist/amg01753-narrativeuk-greatmovies-lggb/playlist.m3u8",
+      "cat": "أفلام"
+    },
+    {
+      "name": "GREAT! romance",
+      "logo": "🎬",
+      "url": "https://amg01753-narrativeuk-amg01753c2-lg-gb-1832.playouts.now.amagi.tv/playlist/amg01753-narrativeuk-greatchristmas-lggb/playlist.m3u8",
+      "cat": "أفلام"
+    },
+    {
+      "name": "Grit Xtra",
+      "logo": "🎬",
+      "url": "https://cdn-uw2-prod.tsv2.amagi.tv/linear/amg01438-ewscrippscompan-gritxtra-tablo/playlist.m3u8",
+      "cat": "أفلام"
+    },
+    {
+      "name": "HauntTV",
+      "logo": "🌍",
+      "url": "https://amg01446-blueantmediacan-haunttvaussam-samsungau-vcnai.amagi.tv/playlist/amg01446-blueantmediacan-haunttvaussam-samsungau/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Hell's Kitchen",
+      "logo": "🌍",
+      "url": "https://amg00654-itv-amg00654c1-samsung-au-1072.playouts.now.amagi.tv/itv-hellskitchen-samsung/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "History Hit",
+      "logo": "🎞️",
+      "url": "https://lds-timeline-rakuten.amagi.tv/playlist.m3u8",
+      "cat": "وثائقية"
+    },
+    {
+      "name": "Homeful US",
+      "logo": "🌍",
+      "url": "https://amg00090-blueantcanada-amg00090c4-samsung-au-819.playouts.now.amagi.tv/playlist/amg00090-blueantfast-homefulworldwide-samsungau/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Horse & Country TV",
+      "logo": "🌍",
+      "url": "https://hnc-free-viewlift.amagi.tv/HNC_AUSTRALIA.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "INFAST",
+      "logo": "🌍",
+      "url": "https://amg00861-terninternation-lifestyle-samsungau-kdlyy.amagi.tv/playlist/amg00861-terninternation-lifestyle-samsungau/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Inside Crime",
+      "logo": "🌍",
+      "url": "https://aenetworks-insidecrime-rakuten.amagi.tv/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Into Crime",
+      "logo": "🌍",
+      "url": "https://amg00711-zylo-amg00711c10-rakuten-fr-6731.playouts.now.amagi.tv/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "INTRAVEL",
+      "logo": "🎞️",
+      "url": "https://amg00861-amg00861c10-rakuten-uk-3152.playouts.now.amagi.tv/playlist.m3u8",
+      "cat": "وثائقية"
+    },
+    {
+      "name": "InTrouble",
+      "logo": "🌍",
+      "url": "https://amg00861-amg00861c6-stirr-us-8229.playouts.now.amagi.tv/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "INWILD",
+      "logo": "🎞️",
+      "url": "https://amg00861-terninternation-inwild-samsunguk-w5wic.amagi.tv/playlist/amg00861-terninternation-inwild-samsunguk/playlist.m3u8",
+      "cat": "وثائقية"
+    },
+    {
+      "name": "InWonder",
+      "logo": "🌍",
+      "url": "https://amg00861-terninternation-inwonder-samsungau-1k63k.amagi.tv/playlist/amg00861-terninternation-inwonder-samsungau/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "ION Plus",
+      "logo": "🌍",
+      "url": "https://cdn-uw2-prod.tsv2.amagi.tv/linear/amg01438-ewscrippscompan-ionplus-tablo/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Judge Nosey",
+      "logo": "🌍",
+      "url": "https://amg00514-noseybaxterllc-realnosey-cineverse-tqbpv.amagi.tv/playlist/amg00514-noseybaxterllc-realnosey-cineverse/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Kartoon Channel!",
+      "logo": "🧸",
+      "url": "https://lightning-fnf-samsungaus.amagi.tv/playlist.m3u8",
+      "cat": "أطفال"
+    },
+    {
+      "name": "LiveNOW from FOX",
+      "logo": "🌍",
+      "url": "https://fox-foxnewsnow-vizio.amagi.tv/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Lone Star",
+      "logo": "🌍",
+      "url": "https://lonestar-rakuten.amagi.tv/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Love Pets",
+      "logo": "🌍",
+      "url": "https://amg01576-blueskyeenterta-lovepetsemea-samsungse-ctamh.amagi.tv/playlist/amg01576-blueskyeenterta-lovepetsemea-samsungse/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Love The Planet",
+      "logo": "🌍",
+      "url": "https://amg01821-lovetvchannels-lovetheplanetuksamsung-samsunguk-apopw.amagi.tv/playlist/amg01821-lovetvchannels-lovetheplanetuksamsung-samsunguk/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "MagellanTV Now",
+      "logo": "🌍",
+      "url": "https://amg00376-magellan-amg00376c5-samsung-au-1708.playouts.now.amagi.tv/playlist/amg00376-magellantv-magellantvnowww-samsungau/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Mango Mobile TV",
+      "logo": "🌍",
+      "url": "https://amg01911-mangotv-amg01911c1-xiaomi-in-1270.playouts.now.amagi.tv/playlist/amg01911-mangomassmedia-mangotv-xiaomiin/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "McLeod's Daughters",
+      "logo": "🌍",
+      "url": "https://amg00627-amg00627c5-samsung-nz-2807.playouts.now.amagi.tv/playlist/amg00627-banijayfast-mcleodsdaughters-samsungnz/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "MNT WFLD",
+      "logo": "🌍",
+      "url": "https://cdn-uw2-prod.tsv2.amagi.tv/linear/amg00488-foxdigital-wfld-lgus/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Moonbug Kids",
+      "logo": "🧸",
+      "url": "https://moonbug-rokuus.amagi.tv/playlist.m3u8",
+      "cat": "أطفال"
+    },
+    {
+      "name": "Most Haunted",
+      "logo": "🌍",
+      "url": "https://amg00426-lds-amg00426c17-samsung-gb-10157.playouts.now.amagi.tv/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "MovieSphere",
+      "logo": "🎬",
+      "url": "https://amg00353-lionsgatestudio-moviesphere-xumo-zh5u0.amagi.tv/playlist.m3u8",
+      "cat": "أفلام"
+    },
+    {
+      "name": "MovieSphere AU",
+      "logo": "🎬",
+      "url": "https://amg00353-lionsgatefilmsi-moviesphereaus-samsungau-7qzhf.amagi.tv/playlist/amg00353-lionsgatefilmsi-moviesphereaus-samsungau/playlist.m3u8",
+      "cat": "أفلام"
+    },
+    {
+      "name": "MovieSphere UK",
+      "logo": "🎬",
+      "url": "https://moviesphereuk-samsunguk.amagi.tv/playlist.m3u8",
+      "cat": "أفلام"
+    },
+    {
+      "name": "MovieSphere Gold WFXT",
+      "logo": "🎬",
+      "url": "https://cdn-uw2-prod.tsv2.amagi.tv/linear/amg01438-ewscrippscompan-ionmystery-tablo/playlist.m3u8",
+      "cat": "أفلام"
+    },
+    {
+      "name": "Mr Bean Animated",
+      "logo": "🌍",
+      "url": "https://amg00627-amg00627c23-samsung-au-4110.playouts.now.amagi.tv/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Mr Bean Animated ES",
+      "logo": "🌍",
+      "url": "https://amg00627-amg00627c30-rakuten-es-3990.playouts.now.amagi.tv/playlist/amg00627-banijayfast-mrbeanescc-rakutenes/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Mr Bean Animated FR",
+      "logo": "🌍",
+      "url": "https://amg00627-amg00627c31-rakuten-fr-3991.playouts.now.amagi.tv/playlist/amg00627-banijayfast-mrbeanfrcc-rakutenfr/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Mr Bean Animated IT",
+      "logo": "🌍",
+      "url": "https://amg00627-amg00627c29-rakuten-it-3989.playouts.now.amagi.tv/playlist/amg00627-banijayfast-mrbeanitcc-rakutenit/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Mr Bean Live Action",
+      "logo": "🌍",
+      "url": "https://amg00627-amg00627c39-samsung-gb-5569.playouts.now.amagi.tv/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "MST3K",
+      "logo": "🌍",
+      "url": "https://mst3k-roku.amagi.tv/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Mystery TV",
+      "logo": "🌍",
+      "url": "https://aenetworks-mysterytv-rakuten.amagi.tv/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "MyTime Movie Network",
+      "logo": "🎬",
+      "url": "https://appletree-mytimeuk-rakuten.amagi.tv/playlist.m3u8",
+      "cat": "أفلام"
+    },
+    {
+      "name": "MyTime Movie Network East",
+      "logo": "🎬",
+      "url": "https://appletree-mytimeau-samsung.amagi.tv/playlist.m3u8",
+      "cat": "أفلام"
+    },
+    {
+      "name": "MyZen TV",
+      "logo": "🌍",
+      "url": "https://cdn-ue1-prod.tsv2.amagi.tv/linear/amg01255-secomcofites-my-myzen-en-plex/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "NatureTime",
+      "logo": "🎞️",
+      "url": "https://bamusa-naturetime-emea-eng-rakuten.amagi.tv/playlist.m3u8",
+      "cat": "وثائقية"
+    },
+    {
+      "name": "NatureTime AU",
+      "logo": "🎞️",
+      "url": "https://amg00090-blueantllc-lovenature-au-samsungau-wggcn.amagi.tv/playlist/amg00090-blueantllc-lovenature-au-samsungau/playlist.m3u8",
+      "cat": "وثائقية"
+    },
+    {
+      "name": "NatureTime France",
+      "logo": "🎞️",
+      "url": "https://bamusa-naturetime-emea-fra-rakuten.amagi.tv/playlist.m3u8",
+      "cat": "وثائقية"
+    },
+    {
+      "name": "NatureTime UK",
+      "logo": "🎞️",
+      "url": "https://amg01515-amg01515c43-samsung-gb-9038.playouts.now.amagi.tv/playlist.m3u8",
+      "cat": "وثائقية"
+    },
+    {
+      "name": "NBC WHEC-TV",
+      "logo": "🌍",
+      "url": "https://amg01942-amg01942c4-stirr-us-10190.playouts.now.amagi.tv/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "NBC WNYT",
+      "logo": "🌍",
+      "url": "https://amg01942-amg01942c5-stirr-us-10184.playouts.now.amagi.tv/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "NBC WPXI",
+      "logo": "🌍",
+      "url": "https://cdn-ue1-prod.tsv2.amagi.tv/linear/amg00327-coxmediagroup-wpxibreaking-ono/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "NDTV Good Times",
+      "logo": "🌍",
+      "url": "https://amg01448-samsungin-ndtvgoodtimes-samsungin-ad-gp.amagi.tv/playlist/amg01448-samsungin-ndtvgoodtimes-samsungin/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "News9Live",
+      "logo": "📰",
+      "url": "https://amg01106-amg01106c3-amgplt0844.playout.now3.amagi.tv/ts-ap-s1-n1/playlist/amg01106-amg01106c3-amgplt0844/playlist.m3u8",
+      "cat": "إخبارية"
+    },
+    {
+      "name": "Newsmax 2",
+      "logo": "📰",
+      "url": "https://amg00217-newsmax-newsmax-zeasn-022k9.amagi.tv/playlist.m3u8",
+      "cat": "إخبارية"
+    },
+    {
+      "name": "NewsWorld",
+      "logo": "📰",
+      "url": "https://amg01076-lightning-amg01076c5-rakuten-us-1788.playouts.now.amagi.tv/playlist/amg01076-lightning-newsworld-rakutenus/playlist.m3u8",
+      "cat": "إخبارية"
+    },
+    {
+      "name": "NHL Network",
+      "logo": "🌍",
+      "url": "https://nhl-firetv.amagi.tv/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Nolly Africa",
+      "logo": "🌍",
+      "url": "https://amg02784-amg02784c2-amgplt0002.playout.now3.amagi.tv/ts-eu-w1-n2/playlist/amg02784-amg02784c2-amgplt0002/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Nosey",
+      "logo": "🌍",
+      "url": "https://nosey-intl-1-samsungau.amagi.tv/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Now 70s",
+      "logo": "🌍",
+      "url": "https://lightningnow70-samsungau.amagi.tv/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Now 80s",
+      "logo": "🌍",
+      "url": "https://lightningnow80-samsungau.amagi.tv/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Now 90s00s",
+      "logo": "🌍",
+      "url": "https://amg01076-amg01076c19-rakuten-gb-8653.playouts.now.amagi.tv/playlist/amg01076-lightning-now90s00s-rakutengb/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "NOW Rock",
+      "logo": "🎵",
+      "url": "https://lightning-now90s-samsungnz.amagi.tv/playlist.m3u8",
+      "cat": "موسيقى"
+    },
+    {
+      "name": "NTD TV English",
+      "logo": "🌍",
+      "url": "https://amg17596-ntdtv-amg17596c1-rakuten-gb-6741.playouts.now.amagi.tv/playlist/amg17596-newtangdynastytelevision-ntdtv-rakutengb/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "OAN Plus",
+      "logo": "🌍",
+      "url": "https://oan-plus-tcl.amagi.tv/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Outdoor Channel",
+      "logo": "🌍",
+      "url": "https://amg00718-outdoorchannela-outdoortv-samsungau-uc7mp.amagi.tv/playlist/amg00718-outdoorchannela-outdoortv-samsungau/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Outside TV",
+      "logo": "🌍",
+      "url": "https://outsidetv-firetv.amagi.tv/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Pac-12 Insider",
+      "logo": "🌍",
+      "url": "https://pac12-firetv.amagi.tv/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "PBS Antiques Roadshow",
+      "logo": "🌍",
+      "url": "https://amg00953-pbsusa-antiroadshow-xumo-x6ud5.amagi.tv/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Pet Club TV",
+      "logo": "🌍",
+      "url": "https://petclub-samsungaus.amagi.tv/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Pop",
+      "logo": "🌍",
+      "url": "https://amg01753-narrativeentert-popkids-lggb-xyy5k.amagi.tv/ts-eu-w1-n2/playlist/amg01753-narrativeentert-popkids-lggb/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "PowerNation TV",
+      "logo": "🌍",
+      "url": "https://amg01258-raycomsports-powernationau-samsungau-18bwc.amagi.tv/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Premier Sports",
+      "logo": "⚽",
+      "url": "https://amg19223-amg19223c3-amgplt0351.playout.now3.amagi.tv/playlist/amg19223-amg19223c3-amgplt0351/playlist.m3u8",
+      "cat": "رياضية"
+    },
+    {
+      "name": "Qwest TV",
+      "logo": "🌍",
+      "url": "https://qwestjazz-rakuten.amagi.tv/hls/amagi_hls_data_rakutenAA-qwestjazz-rakuten/CDN/master.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Qwest TV Jazz & Beyond",
+      "logo": "🎵",
+      "url": "https://samsungau-qwestjazz-samsungtv-zw2jc.amagi.tv/playlist/samsungau-qwestjazz-samsungtv/playlist.m3u8",
+      "cat": "موسيقى"
+    },
+    {
+      "name": "RACER International",
+      "logo": "🌍",
+      "url": "https://amg00378-mavtv-amg00378c2-rakuten-us-1048.playouts.now.amagi.tv/playlist/amg00378-mavtvfast-motorsportsnetwork-rakutenus/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Racer Network",
+      "logo": "🌍",
+      "url": "https://amg00378-mavtv-amg00378c2-samsung-au-1790.playouts.now.amagi.tv/playlist/amg00378-mavtvfast-motorsportsnetwork-samsungau/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Racer Select",
+      "logo": "🌍",
+      "url": "https://amg00378-amg00378c4-freelivesports-emea-5637.playouts.now.amagi.tv/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Real Wild",
+      "logo": "🎞️",
+      "url": "https://lds-realwild-samsungau.amagi.tv/playlist.m3u8",
+      "cat": "وثائقية"
+    },
+    {
+      "name": "Reuters TV",
+      "logo": "📰",
+      "url": "https://amg00453-reuters-amg00453c1-rakuten-uk-2110.playouts.now.amagi.tv/playlist/amg00453-reuters-reuters-rakutenuk/playlist.m3u8",
+      "cat": "إخبارية"
+    },
+    {
+      "name": "Roar KOKI-TV",
+      "logo": "🌍",
+      "url": "https://cdn-uw2-prod.tsv2.amagi.tv/linear/amg02104-imagicommcommun-kokibreaking-ono/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "RTVi US",
+      "logo": "🌍",
+      "url": "https://amg17233-amg17233c1-wisptv-us-6409.playouts.now.amagi.tv/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Ryan and Friends",
+      "logo": "🧸",
+      "url": "https://ryanandfriends-samsungau.amagi.tv/playlist.m3u8",
+      "cat": "أطفال"
+    },
+    {
+      "name": "Salem News Channel",
+      "logo": "📰",
+      "url": "https://amg00732-salemmediagroup-snc-ono-ekp8j.amagi.tv/playlist/amg00732-salemmediagroup-snc-ono/playlist.m3u8",
+      "cat": "إخبارية"
+    },
+    {
+      "name": "ScreamIN",
+      "logo": "🌍",
+      "url": "https://rakutenaa-zylo-screamin-rakuten-p11ej.amagi.tv/playlist/rakutenAA-zylo-screamin-rakuten/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Shemaroo Bollywood",
+      "logo": "🌍",
+      "url": "https://cdn-uw2-prod.tsv2.amagi.tv/linear/amg00864-shemarooenterta-shemabollywood-ono/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "SportsGrid",
+      "logo": "⚽",
+      "url": "https://sportsgrid-tribal.amagi.tv/playlist.m3u8",
+      "cat": "رياضية"
+    },
+    {
+      "name": "Survivor",
+      "logo": "🌍",
+      "url": "https://amg00627-amg00627c16-samsung-nz-2811.playouts.now.amagi.tv/playlist/amg00627-banijayfast-survivor-samsungnz/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Tastemade",
+      "logo": "🌍",
+      "url": "https://rakutenaa-tm-intl-aus-rakuten-eu-n1gtg.amagi.tv/playlist/rakutenAA-tm-intl-aus-rakuten-eu/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Tastemade UK",
+      "logo": "🌍",
+      "url": "https://tastemade-tdint-rakuten.amagi.tv/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Tennis Channel",
+      "logo": "🌍",
+      "url": "https://cdn-ue1-prod.tsv2.amagi.tv/linear/amg01444-tennischannelth-tennischannelnl-samsungnl/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Terra Mater WILD English",
+      "logo": "🎞️",
+      "url": "https://amg01775-amg01775c1-amgplt0343.playout.now3.amagi.tv/playlist/amg01775-amg01775c1-amgplt0343/playlist.m3u8",
+      "cat": "وثائقية"
+    },
+    {
+      "name": "The Carol Burnett Show",
+      "logo": "🌍",
+      "url": "https://carolburnett-vizio.amagi.tv/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "The Chat Show Channel",
+      "logo": "🌍",
+      "url": "https://amg00426-littledotstudio-thechatshow-samsungnz-uqmtt.amagi.tv/playlist/amg00426-littledotstudio-thechatshow-samsungnz/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "The Country Network",
+      "logo": "🌍",
+      "url": "https://amg00600-amg00600c1-thecountrynetwork-us-5497.playouts.now.amagi.tv/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "The Cowboy Channel Canada",
+      "logo": "🌍",
+      "url": "https://amg17292-amg17292c1-distrotv-us-4170.playouts.now.amagi.tv/playlist/amg17292-tetonridgellc-tetonridgefast-distrotvus/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "The Design Network",
+      "logo": "🌍",
+      "url": "https://amg00441-amg00441c1-rakuten-us-6050.playouts.now.amagi.tv/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "The First TV",
+      "logo": "🌍",
+      "url": "https://thefirst-oando.amagi.tv/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "The Graham Norton Show",
+      "logo": "🌍",
+      "url": "https://amg00654-itv-amg00654c35-rakuten-gb-7598.playouts.now.amagi.tv/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "The Young Turks",
+      "logo": "🌍",
+      "url": "https://tyt-samsungus.amagi.tv/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Tiny Pop",
+      "logo": "🌍",
+      "url": "https://amg01753-narrativeuk-amg01753c1-lg-gb-1830.playouts.now.amagi.tv/playlist/amg01753-narrativeuk-tinypop-lggb/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "ToonGoggles",
+      "logo": "🧸",
+      "url": "https://amg01329-otterainc-toongoggles-samsungau-ad-4c.amagi.tv/playlist/amg01329-otterainc-toongoggles-samsungau/playlist.m3u8",
+      "cat": "أطفال"
+    },
+    {
+      "name": "TOP Barca",
+      "logo": "🌍",
+      "url": "https://amg17560-fcb-amg17560c1-rakuten-uk-4891.playouts.now.amagi.tv/playlist/amg17560-fcbarcelona-topbarcaenglish-rakutenuk/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "1AlmereTV",
+      "logo": "🌍",
+      "url": "https://d3472rjicrodic.cloudfront.net/nlpo/clr-nlpo/709d5260/index.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "2GB",
+      "logo": "🌍",
+      "url": "https://2gblive.akamaized.net/hls/live/2033805/2GB/index.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "3AW",
+      "logo": "🌍",
+      "url": "https://3awlive.akamaized.net/hls/live/2032295/3AW/index.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "6PR",
+      "logo": "🌍",
+      "url": "https://6prlive.akamaized.net/hls/live/2033806/6PR/index.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "6 TV Telugu",
+      "logo": "🌍",
+      "url": "https://yuppparoriglin.akamaized.net/181224/smil:6tv.smil/playlist.m3u8?hdnts=st=1735898689~exp=1835898688~acl=*~hmac=f5fe24724fe05481e3841f9eb5ab8efdee0a3dd83645ae9dcf45703f525bab7b",
+      "cat": "عالمية"
+    },
+    {
+      "name": "8NTV",
+      "logo": "🌍",
+      "url": "https://60417ddeaf0d9.streamlock.net/ntv/videontv/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "24 Hour Free Movies",
+      "logo": "🎬",
+      "url": "https://d1j2u714xk898n.cloudfront.net/scheduler/scheduleMaster/145.m3u8",
+      "cat": "أفلام"
+    },
+    {
+      "name": "24 TV",
+      "logo": "🌍",
+      "url": "https://turkmedya-live.ercdn.net/tv24/tv24.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "70-80 TV",
+      "logo": "🌍",
+      "url": "https://585b674743bbb.streamlock.net/9050/9050/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "111 TV",
+      "logo": "🌍",
+      "url": "https://5db313b643fd8.streamlock.net/111/111/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "A2TV",
+      "logo": "🌍",
+      "url": "https://rnttwmjcin.turknet.ercdn.net/lcpmvefbyo/a2tv/a2tv.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "A Haber",
+      "logo": "🌍",
+      "url": "https://rnttwmjcin.turknet.ercdn.net/lcpmvefbyo/ahaber/ahaber.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "A Spor SD",
+      "logo": "🌍",
+      "url": "https://rnttwmjcin.turknet.ercdn.net/lcpmvefbyo/aspor/aspor.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Aastha HD",
+      "logo": "🌍",
+      "url": "https://aasthaott.akamaized.net/110923/smil:aasthatv.smil/index.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Aastha Kannada",
+      "logo": "🌍",
+      "url": "https://aasthaott.akamaized.net/110923/smil:aasthakannada.smil/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Aastha Prime 1",
+      "logo": "🌍",
+      "url": "https://aasthaott.akamaized.net/110923/smil:aasthaprime1.smil/master.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Aastha Tamil",
+      "logo": "🌍",
+      "url": "https://aasthaott.akamaized.net/110923/smil:aasthatamil.smil/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "ABC KRGV-TV",
+      "logo": "🌍",
+      "url": "https://d3svnrf3rmq619.cloudfront.net/krgv-live/smil:krgv-live.smil/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "ABC WBRZ-TV",
+      "logo": "🌍",
+      "url": "https://d2a6g6zgxepbwi.cloudfront.net/wbrz-edge/weather.stream_360p/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "ABC News",
+      "logo": "📰",
+      "url": "https://abc-news-dmd-streams-1.akamaized.net/out/v1/701126012d044971b3fa89406a440133/index.m3u8",
+      "cat": "إخبارية"
+    },
+    {
+      "name": "ABC News Live 2",
+      "logo": "📰",
+      "url": "https://abcnews-streams.akamaized.net/hls/live/2023561/abcnewshudson2/master.m3u8",
+      "cat": "إخبارية"
+    },
+    {
+      "name": "ABC News Live 3",
+      "logo": "📰",
+      "url": "https://abcnews-streams.akamaized.net/hls/live/2023562/abcnewshudson3/master.m3u8",
+      "cat": "إخبارية"
+    },
+    {
+      "name": "ABC News Live 4",
+      "logo": "📰",
+      "url": "https://abcnews-streams.akamaized.net/hls/live/2023563/abcnewshudson4/master.m3u8",
+      "cat": "إخبارية"
+    },
+    {
+      "name": "ABC News Live 5",
+      "logo": "📰",
+      "url": "https://abcnews-streams.akamaized.net/hls/live/2023564/abcnewshudson5/master.m3u8",
+      "cat": "إخبارية"
+    },
+    {
+      "name": "ABC News Live 6",
+      "logo": "📰",
+      "url": "https://abcnews-streams.akamaized.net/hls/live/2023565/abcnewshudson6/master.m3u8",
+      "cat": "إخبارية"
+    },
+    {
+      "name": "ABC News Live 7",
+      "logo": "📰",
+      "url": "https://abcnews-streams.akamaized.net/hls/live/2023566/abcnewshudson7/master.m3u8",
+      "cat": "إخبارية"
+    },
+    {
+      "name": "ABC News Live 8",
+      "logo": "📰",
+      "url": "https://abcnews-streams.akamaized.net/hls/live/2023567/abcnewshudson8/master.m3u8",
+      "cat": "إخبارية"
+    },
+    {
+      "name": "ABC News Live 9",
+      "logo": "📰",
+      "url": "https://abcnews-streams.akamaized.net/hls/live/2023568/abcnewshudson9/master.m3u8",
+      "cat": "إخبارية"
+    },
+    {
+      "name": "ABC News Live 10",
+      "logo": "📰",
+      "url": "https://abcnews-streams.akamaized.net/hls/live/2023569/abcnewshudson10/master.m3u8",
+      "cat": "إخبارية"
+    },
+    {
+      "name": "ABP Ananda",
+      "logo": "🌍",
+      "url": "https://d2l4ar6y3mrs4k.cloudfront.net/live-streaming/ananda-livetv/master.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "ABP Asmita",
+      "logo": "🌍",
+      "url": "https://d2l4ar6y3mrs4k.cloudfront.net/live-streaming/asmita-livetv/master.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "ABP Ganga",
+      "logo": "🌍",
+      "url": "https://d2l4ar6y3mrs4k.cloudfront.net/live-streaming/ganga-livetv/master.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "ABP News",
+      "logo": "📰",
+      "url": "https://d1rc86nwwc9fag.cloudfront.net/vglive-sk-472500/abpnews/master.m3u8",
+      "cat": "إخبارية"
+    },
+    {
+      "name": "Access Humboldt",
+      "logo": "🌍",
+      "url": "https://rtmp-live-ingest-ap-northeast-2-universe-dacast-com.akamaized.net/transmuxv1/streams/f08fcd45-1d04-9a8c-39ca-f56091820e5c.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "ACTV",
+      "logo": "🌍",
+      "url": "https://dlgt0tdl2hpq3.cloudfront.net/rtbf/clr-rtbf/4db788c7/index.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Adinkra TV",
+      "logo": "🌍",
+      "url": "https://59d39900ebfb8.streamlock.net/adinkratvny/adinkratvny/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "ADN TV+",
+      "logo": "🌍",
+      "url": "https://d3b73b34o7cvkq.cloudfront.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-gz2sgqzp076kf/adn.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Agape TV",
+      "logo": "🌍",
+      "url": "https://5fc584f3f19c9.streamlock.net/agape/smil:agape.smil/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Agrotendencia TV",
+      "logo": "🌍",
+      "url": "https://5fc584f3f19c9.streamlock.net/agrotendencia/videoagrotendencia_hls1/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Ahsan TV",
+      "logo": "🌍",
+      "url": "https://5bf7b725107e5.streamlock.net/ahsantv/ahsantv/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Alcance TV",
+      "logo": "🌍",
+      "url": "https://5bf8041cb3fed.streamlock.net/AlcanceTV/AlcanceTV/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "ALLBLK Gems",
+      "logo": "🌍",
+      "url": "https://df1zke3zj042m.cloudfront.net/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Allo Cine",
+      "logo": "🎬",
+      "url": "https://d1yl6bf4hrzbr0.cloudfront.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-5km3zs4zs9sp0/allo.m3u8",
+      "cat": "أفلام"
+    },
+    {
+      "name": "Altena TV",
+      "logo": "🌍",
+      "url": "https://dnx1f4sl30ba2.cloudfront.net/nlpo/clr-nlpo/altenatv/index.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "AltoAdige TV",
+      "logo": "🌍",
+      "url": "https://5f204aff97bee.streamlock.net/AltoAdigeTV/livestream/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Always Funny Videos",
+      "logo": "🌍",
+      "url": "https://d24l3uppudokci.cloudfront.net/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Amazing Facts TV",
+      "logo": "🌍",
+      "url": "https://hlspackager.akamaized.net/live/DB/AMAZING_FACTS/HLS/AMAZING_FACTS.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "American Crime Channel",
+      "logo": "🌍",
+      "url": "https://d39g1vxj2ef6in.cloudfront.net/v1/master/3fec3e5cac39a52b2132f9c66c83dae043dc17d4/prod-rakuten-stitched/master.m3u8?ads.xumo_channelId=88883104",
+      "cat": "عالمية"
+    },
+    {
+      "name": "AMP 1",
+      "logo": "🌍",
+      "url": "https://dlttx48mxf9m3.cloudfront.net/vod_clients/amp/live/ch1/video.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "AMP 2",
+      "logo": "🌍",
+      "url": "https://dlttx48mxf9m3.cloudfront.net/vod_clients/amp/live/ch2/video.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Amrita TV",
+      "logo": "🌍",
+      "url": "https://ddash74r36xqp.cloudfront.net/master.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Amu TV",
+      "logo": "🌍",
+      "url": "https://jmc-live.ercdn.net/amutv/amutv.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Angel TV",
+      "logo": "🌍",
+      "url": "https://janya-digimix.akamaized.net/vglive-sk-394914/india/ngrp:angelindia_all/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Angel TV Africa",
+      "logo": "🌍",
+      "url": "https://janya-digimix.akamaized.net/vglive-sk-904559/africa/ngrp:angelafrica_all/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Angel TV America",
+      "logo": "🌍",
+      "url": "https://janya-digimix.akamaized.net/vglive-sk-374850/america/ngrp:angelamerica_all/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Angel TV Arabia",
+      "logo": "🌍",
+      "url": "https://janya-digimix.akamaized.net/vglive-sk-213167/arabia/ngrp:angelarabia_all/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Angel TV Australia",
+      "logo": "🌍",
+      "url": "https://janya-digimix.akamaized.net/vglive-sk-310787/australia/ngrp:angelaustralia_all/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Angel TV Chinese",
+      "logo": "🌍",
+      "url": "https://janya-digimix.akamaized.net/vglive-sk-999451/chinese/ngrp:angelchinese_all/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Angel TV Europe",
+      "logo": "🌍",
+      "url": "https://janya-digimix.akamaized.net/vglive-sk-512011/europe/ngrp:angeleurope_all/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Angel TV FarEast",
+      "logo": "🌍",
+      "url": "https://janya-digimix.akamaized.net/vglive-sk-438760/fareast/ngrp:angelfareast_all/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Angel TV Hebrew",
+      "logo": "🌍",
+      "url": "https://janya-digimix.akamaized.net/vglive-sk-150533/hebrew/ngrp:angelhebrew_all/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Angel TV Indo-China",
+      "logo": "🌍",
+      "url": "https://janya-digimix.akamaized.net/vglive-sk-703035/indochina/ngrp:angelindochina_all/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Angel TV Indonesia",
+      "logo": "🌍",
+      "url": "https://janya-digimix.akamaized.net/vglive-sk-234616/indonesia/ngrp:angelindonesia_all/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Angel TV Nepal",
+      "logo": "🌍",
+      "url": "https://janya-digimix.akamaized.net/vglive-sk-109639/nepali/ngrp:angelnepali_all/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Angel TV Portuguese",
+      "logo": "🌍",
+      "url": "https://janya-digimix.akamaized.net/vglive-sk-382409/portuese/ngrp:angelportuguese_all/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Angel TV Russian",
+      "logo": "🌍",
+      "url": "https://janya-digimix.akamaized.net/vglive-sk-955415/russia/ngrp:angelrussia_all/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Angel TV Spanish",
+      "logo": "🌍",
+      "url": "https://janya-digimix.akamaized.net/vglive-sk-351398/spanish/ngrp:angelspanish_all/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Antena TV",
+      "logo": "🌍",
+      "url": "https://5ca9af4645e15.streamlock.net/grd/videogrd/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Antenna 2 TV",
+      "logo": "🌍",
+      "url": "https://58f12ffd2447a.streamlock.net/Antenna2/livestream/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Antenne Kaernten",
+      "logo": "🌍",
+      "url": "https://60efd7a2b4d02.streamlock.net/a_kaernten/ngrp:livestream_all/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Antenne Steiermark",
+      "logo": "🌍",
+      "url": "https://60efd7a2b4d02.streamlock.net/a_steiermark/ngrp:livestream_all/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Astro Blitar TV",
+      "logo": "🌍",
+      "url": "https://5bf7b725107e5.streamlock.net/abtv/abtv/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "At Home with Family Handyman",
+      "logo": "🌍",
+      "url": "https://d1ik2p49apxqjf.cloudfront.net/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "ATG Live",
+      "logo": "🌍",
+      "url": "https://kanal75xto-llhls.akamaized.net/live/Data/atg-kanal-15-02a-rr/HLS-Legacy-HL/atg-kanal-15-02a-rr.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "ATV",
+      "logo": "🌍",
+      "url": "https://rnttwmjcin.turknet.ercdn.net/lcpmvefbyo/atv/atv_1080p.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Aurora Arte",
+      "logo": "🌍",
+      "url": "https://59d7d6f47d7fc.streamlock.net/auroraarte/auroraarte/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Backstage",
+      "logo": "🌍",
+      "url": "https://d2ah48mnofquik.cloudfront.net/Backstage.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "BBC Food",
+      "logo": "🌍",
+      "url": "https://d1e9r0b71zfwk7.cloudfront.net/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "BBC Home & Garden",
+      "logo": "🌍",
+      "url": "https://d11r33s5i066xh.cloudfront.net/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Beautiful Life TV",
+      "logo": "🌍",
+      "url": "https://5ddce30eb4b55.streamlock.net/bltvhd/bltv1/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "BFM2",
+      "logo": "🌍",
+      "url": "https://d1ib1gsg71oarf.cloudfront.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-scp7wda722jph/BFM2_FR.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Bhojpuri Cinema",
+      "logo": "🎬",
+      "url": "https://live-bhojpuri.akamaized.net/liveabr/playlist.m3u8",
+      "cat": "أفلام"
+    },
+    {
+      "name": "Bom Channel",
+      "logo": "🌍",
+      "url": "https://5f22d76e220e1.streamlock.net/canale6/canale6/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Bonches Latinos TV",
+      "logo": "🌍",
+      "url": "https://5790d294af2dc.streamlock.net/latinostv/latinostv/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Boogle Bollywood",
+      "logo": "🌍",
+      "url": "https://yuppnimrestreammum.akamaized.net/181224/smil:bogglebollywood.smil/playlist.m3u8?hdnts=st=1735898689~exp=1835898688~acl=*~hmac=f5fe24724fe05481e3841f9eb5ab8efdee0a3dd83645ae9dcf45703f525bab7b",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Bouke",
+      "logo": "🌍",
+      "url": "https://dlgt0tdl2hpq3.cloudfront.net/rtbf/clr-rtbf/e1ccc6aa/index.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "BRTV",
+      "logo": "🌍",
+      "url": "https://5bf7b725107e5.streamlock.net/brtv/brtv/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Buena TV",
+      "logo": "🌍",
+      "url": "https://59825a54e4454.streamlock.net:8443/papo351/papo351/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Buzzfeed Unsolved",
+      "logo": "🌍",
+      "url": "https://d39g1vxj2ef6in.cloudfront.net/v1/master/3fec3e5cac39a52b2132f9c66c83dae043dc17d4/prod-rakuten-stitched/master.m3u8?ads.xumo_channelId=88883099",
+      "cat": "عالمية"
+    },
+    {
+      "name": "BX1",
+      "logo": "🌍",
+      "url": "https://dlgt0tdl2hpq3.cloudfront.net/rtbf/clr-rtbf/7ec67c8d/index.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "BYU TV",
+      "logo": "🌍",
+      "url": "https://d13j8jpstr8iqz.cloudfront.net/BYUtv.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "C31 Melbourne",
+      "logo": "🌍",
+      "url": "https://d1k6kax80wecy5.cloudfront.net/RLnAKY/index.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Caillou",
+      "logo": "🌍",
+      "url": "https://do7nccdsswstc.cloudfront.net/v1/manifest/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-1aso0bc668saa/a5233c83-f772-4a81-959a-45ec7877ef61/5.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Calabria TV",
+      "logo": "🌍",
+      "url": "https://64b16f23efbee.streamlock.net/calabriatv/calabriatv/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Canal 4 Jujuy",
+      "logo": "🌍",
+      "url": "https://5cd577a3dd8ec.streamlock.net/CANAL4/smil:CANAL4.smil/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Canal 5 Puerto Montt",
+      "logo": "🌍",
+      "url": "https://5ff3d9babae13.streamlock.net/aufymdjpjf/aufymdjpjf/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Canal 10",
+      "logo": "🌍",
+      "url": "https://5ca3e84a76d30.streamlock.net/tves/videotves/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Canal 10 Durango",
+      "logo": "🌍",
+      "url": "https://5e50264bd6766.streamlock.net/canal10durango/videocanal10durango/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Canal 26",
+      "logo": "🌍",
+      "url": "https://60417ddeaf0d9.streamlock.net/telemetrika3/smil:telemetrika3.smil/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Canal 33 Tijuana",
+      "logo": "🌍",
+      "url": "https://5f2c1b0d880e5.streamlock.net/canal33tijuana/videocanal33tijuana/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Canal Sur Andalucia",
+      "logo": "🌍",
+      "url": "https://dfk2a268yviz9.cloudfront.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-ddiii1m6jt6of/CanalSurAndaluciaES.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Candelita TV",
+      "logo": "🌍",
+      "url": "https://6110f70ea8d0e.streamlock.net/1689/1689/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Car City Adventures",
+      "logo": "🌍",
+      "url": "https://d39g1vxj2ef6in.cloudfront.net/v1/master/3fec3e5cac39a52b2132f9c66c83dae043dc17d4/prod-rakuten-stitched/master.m3u8?ads.xumo_channelId=88883095",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Casa Italia 53",
+      "logo": "🌍",
+      "url": "https://ovp-live.akamaized.net/ac115_live/canale3.smil/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Catholic TV",
+      "logo": "🌍",
+      "url": "https://catholictvhd-lh.akamaized.net/hls/live/2043390/CTVLiveHD/master.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "CB TV Michoacan",
+      "logo": "🌍",
+      "url": "https://5ca3e84a76d30.streamlock.net/cbtv/videoc3b3t3v3/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "El 3 de Conce",
+      "logo": "🌍",
+      "url": "https://5ff3d9babae13.streamlock.net/xedkektnqj/xedkektnqj/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Epic Bharat Digital",
+      "logo": "🌍",
+      "url": "https://cc-p1izg43bk7sj5.akamaized.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-p1izg43bk7sj5/DIYC/PMSL/IN10/Nazara_IN_B/Nazara_IN_B.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Epic Bhojpuri Digital",
+      "logo": "🌍",
+      "url": "https://cc-8hy4a26pz2uos.akamaized.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-8hy4a26pz2uos/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Epic Crimes",
+      "logo": "🌍",
+      "url": "https://cc-wsuyg2uxeak04.akamaized.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-wsuyg2uxeak04/master.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Epic Kids Digital",
+      "logo": "🧸",
+      "url": "https://cc-t8lqe1o99pszu.akamaized.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-t8lqe1o99pszu/playlist.m3u8",
+      "cat": "أطفال"
+    },
+    {
+      "name": "Epic Music Digital",
+      "logo": "🎵",
+      "url": "https://cc-3cyxq80qusspd.akamaized.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-3cyxq80qusspd/playlist.m3u8",
+      "cat": "موسيقى"
+    },
+    {
+      "name": "Epic TV Digital",
+      "logo": "🌍",
+      "url": "https://cc-czbq30x55knit.akamaized.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-czbq30x55knit/DIYC/PMSL/IN10/Epic_TV_IN_B/Epic_TV_IN_B.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Erz-TV Stollberg",
+      "logo": "🌍",
+      "url": "https://5acade5fc0c29.streamlock.net/kabeljournal/live2020.stream/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "ESPN8: The Ocho",
+      "logo": "🌍",
+      "url": "https://d3b6q2ou5kp8ke.cloudfront.net/ESPNTheOcho.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Etna Espresso Channel",
+      "logo": "🌍",
+      "url": "https://5db313b643fd8.streamlock.net/Etnachannelponte/Etnachannelponte/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "ETV Comedy",
+      "logo": "🌍",
+      "url": "https://cc-wie8j8y69d2uy.akamaized.net/WWBI/Amagi/ETV_Comedy_IN/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "ETV Josh",
+      "logo": "🌍",
+      "url": "https://cc-uyh1ow5zouoio.akamaized.net/WWBI/Amagi/ETV_Josh_IN/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "ETV News",
+      "logo": "📰",
+      "url": "https://cc-3448kp65yhc5w.akamaized.net/WWBI/Amagi/ETV_News_IN/playlist.m3u8",
+      "cat": "إخبارية"
+    },
+    {
+      "name": "Euronews Greek",
+      "logo": "📰",
+      "url": "https://cdn-euronews.akamaized.net/live/eds/euronews-el/25068/index.m3u8",
+      "cat": "إخبارية"
+    },
+    {
+      "name": "Euronews Hungarian",
+      "logo": "📰",
+      "url": "https://cdn-euronews.akamaized.net/live/eds/euronews-hu/25075/index.m3u8",
+      "cat": "إخبارية"
+    },
+    {
+      "name": "Expo Channel",
+      "logo": "🌍",
+      "url": "https://tvsnhlslivetest.akamaized.net/hls/live/2034711/EXPO-MSL4/master.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Expresa TV",
+      "logo": "🌍",
+      "url": "https://5ca9af4645e15.streamlock.net/teleradio/smil:teleradio.smil/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Extra TV 42",
+      "logo": "🌍",
+      "url": "https://d2n1wzrr0aogf5.cloudfront.net/ts:abr.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Fala Litoral",
+      "logo": "🌍",
+      "url": "https://5c483b9d1019c.streamlock.net/falalitoraltv/falalitoraltv/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Fashion Finds",
+      "logo": "🌍",
+      "url": "https://qvc-amd-live.akamaized.net/hls/live/2034113/lsqvc5us/master.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "FIFA+ United States",
+      "logo": "🌍",
+      "url": "https://d2w9q46ikgrcwx.cloudfront.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-of5cbk3sav3w5/v1/sysdata_s_p_a_fifa_7/samsungheadend_us/latest/main/hls/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Filinfo TV",
+      "logo": "🌍",
+      "url": "https://d2iqjnqfr8pv3b.cloudfront.net/out/v1/d09d2fc718404cd8bccd3eba2444dd70/index.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "FITE 24/7",
+      "logo": "🌍",
+      "url": "https://d3d85c7qkywguj.cloudfront.net/scheduler/scheduleMaster/263.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Flowers TV USA",
+      "logo": "🌍",
+      "url": "https://yuppmedtaorire.akamaized.net/v1/master/a0d007312bfd99c47f76b77ae26b1ccdaae76cb1/flowers_nim_https/050522/flowers/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Fonte TV",
+      "logo": "🌍",
+      "url": "https://59fb88a1b1108.streamlock.net/fonte/_definst_/fontetv/chunklist_w1224511652.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "France 24 English",
+      "logo": "🌍",
+      "url": "https://live.france24.com/hls/live/2037218-b/F24_EN_HI_HLS/master_5000.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "France 24 Spanish",
+      "logo": "🌍",
+      "url": "https://live.france24.com/hls/live/2037220-b/F24_ES_HI_HLS/master_5000.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Francophonie24",
+      "logo": "🌍",
+      "url": "https://5421175365ea3.streamlock.net/live/smil:switch.smil/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Frequence Novelas",
+      "logo": "🌍",
+      "url": "https://d20oth1416y9a1.cloudfront.net/playlist/amg00711-zylofast-frequencenovelas-rakutenus/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Fubo Sports Network",
+      "logo": "⚽",
+      "url": "https://dnf08l6u6uxnz.cloudfront.net/master.m3u8",
+      "cat": "رياضية"
+    },
+    {
+      "name": "Fuerteventura TV",
+      "logo": "🌍",
+      "url": "https://5c0956165db0b.streamlock.net/ftv/directo/.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Garabito TV",
+      "logo": "🌍",
+      "url": "https://59ef525c24caa.streamlock.net/garabitoTV/garabitotv/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Get.factual",
+      "logo": "🌍",
+      "url": "https://d1nhni5l2n8hjt.cloudfront.net/gf.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Giornale Radio TV",
+      "logo": "🎵",
+      "url": "https://5f204aff97bee.streamlock.net/GR_tv/livestream/playlist.m3u8",
+      "cat": "موسيقى"
+    },
+    {
+      "name": "Gravitas Movies",
+      "logo": "🎬",
+      "url": "https://d6dg3ebeih71x.cloudfront.net/Gravitas_Movies.m3u8",
+      "cat": "أفلام"
+    },
+    {
+      "name": "GTC News",
+      "logo": "📰",
+      "url": "https://vglivessai.akamaized.net/sg/v1/master/611d79b11b77e2f571934fd80ca1413453772ac7/921cca59-daee-4f89-8c38-7ffe8de44f4c/index.m3u8",
+      "cat": "إخبارية"
+    },
+    {
+      "name": "Guatuso TV",
+      "logo": "🌍",
+      "url": "https://5cf4a2c2512a2.streamlock.net/8176/8176/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Haarlem105 TV",
+      "logo": "🌍",
+      "url": "https://d2qm50imcbcfqx.cloudfront.net/nlpo/clr-nlpo/haarlem105/index.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Hallmark Movies & More",
+      "logo": "🎬",
+      "url": "https://dbrb49pjoymg4.cloudfront.net/v1/master/3fec3e5cac39a52b2132f9c66c83dae043dc17d4/prod_default_xumo-ams-aws/master.m3u8?ads.xumo_channelId=99991709",
+      "cat": "أفلام"
+    },
+    {
+      "name": "HappyKids",
+      "logo": "🧸",
+      "url": "https://dil9xdvretp0f.cloudfront.net/index.m3u8",
+      "cat": "أطفال"
+    },
+    {
+      "name": "Hard Knocks Fighting Championship",
+      "logo": "⚽",
+      "url": "https://d39g1vxj2ef6in.cloudfront.net/v1/master/3fec3e5cac39a52b2132f9c66c83dae043dc17d4/prod-rakuten-stitched/master.m3u8?ads.xumo_channelId=88883037",
+      "cat": "رياضية"
+    },
+    {
+      "name": "Historia",
+      "logo": "🌍",
+      "url": "https://d1k3vzh2ivy22k.cloudfront.net/Historia.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Historia HD",
+      "logo": "🌍",
+      "url": "https://d1k3vzh2ivy22k.cloudfront.net/Historia1080.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "hr-fernsehen",
+      "logo": "🌍",
+      "url": "https://hrhls.akamaized.net/hls/live/2024525/hrhls/index.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "HSE",
+      "logo": "🌍",
+      "url": "https://hse24.akamaized.net/hls/live/2006663/hse24/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "HSE Extra",
+      "logo": "🌍",
+      "url": "https://hse24extra.akamaized.net/hls/live/2006596/hse24extra/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "HSE Trend",
+      "logo": "🌍",
+      "url": "https://hse24trend.akamaized.net/hls/live/2006597/hse24trend/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "HSN2",
+      "logo": "🌍",
+      "url": "https://qvc-amd-live.akamaized.net/hls/live/2034113/lshsn2us/master.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "HSN",
+      "logo": "🌍",
+      "url": "https://qvc-amd-live.akamaized.net/hls/live/2034113/lshsn1us/master.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "HSN West",
+      "logo": "🌍",
+      "url": "https://qvc-amd-live.akamaized.net/hls/live/2034113/lshsn1uswest/master.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Hungry",
+      "logo": "🌍",
+      "url": "https://dos35knl8v49a.cloudfront.net/v1/food/samsungheadend_us/latest/main/hls/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Ici Radio-Canada Tele CFHD-DT",
+      "logo": "🎵",
+      "url": "https://amdici.akamaized.net/hls/live/873426/ICI-Live-Stream/master.m3u8",
+      "cat": "موسيقى"
+    },
+    {
+      "name": "Ici RDI",
+      "logo": "🌍",
+      "url": "https://rcavlive.akamaized.net/hls/live/704025/xcanrdi/master.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Icrtv Colima",
+      "logo": "🌍",
+      "url": "https://5fc584f3f19c9.streamlock.net/icrtvcolima/smil:icrtvcolima.smil/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Impact Channel",
+      "logo": "🌍",
+      "url": "https://5fe2654d6127d.streamlock.net/impactchannel/videoimpactchannel/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "In the Kitchen",
+      "logo": "🌍",
+      "url": "https://qvc-amd-live.akamaized.net/hls/live/2034113/lsqvc4us/master.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "India Today",
+      "logo": "🌍",
+      "url": "https://d1rc86nwwc9fag.cloudfront.net/vglive-sk-293160/master.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "India TV",
+      "logo": "🌍",
+      "url": "https://pl-indiatvnews.akamaized.net/out/v1/db79179b608641ceaa5a4d0dd0dca8da/index.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "India TV Speed News",
+      "logo": "📰",
+      "url": "https://cc-lyf4c0hwzg5dd.akamaized.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-lyf4c0hwzg5dd/v1/vglive-sk-479089/main.m3u8",
+      "cat": "إخبارية"
+    },
+    {
+      "name": "India Voice",
+      "logo": "🌍",
+      "url": "https://d1msejlow1t3l4.cloudfront.net/fta/indiavoice/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Inter TV",
+      "logo": "🌍",
+      "url": "https://d3k8wzt41aflvx.cloudfront.net/INTERTV/Live.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Iran International",
+      "logo": "🌍",
+      "url": "https://hlspackager.akamaized.net/live/DB/IRAN_INTERNATIONAL/HLS/IRAN_INTERNATIONAL.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Isibo TV",
+      "logo": "🌍",
+      "url": "https://5c46fa289c89f.streamlock.net/pub2live/myStream/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Isla TV",
+      "logo": "🌍",
+      "url": "https://59d39900ebfb8.streamlock.net/islatv/islatv/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "It Is Written TV",
+      "logo": "🌍",
+      "url": "https://itiswrittentv.akamaized.net/xR8gyATuHMVx69u9G79DXnpNRL/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Iunior TV",
+      "logo": "🌍",
+      "url": "https://5f22d76e220e1.streamlock.net/iuniortv/iuniortv/chunklist_w774879328.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Jai Maharashtra",
+      "logo": "🌍",
+      "url": "https://d1msejlow1t3l4.cloudfront.net/fta/jaimaharashtra/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Jan TV",
+      "logo": "🌍",
+      "url": "https://d1msejlow1t3l4.cloudfront.net/fta/jantv/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Journy",
+      "logo": "🌍",
+      "url": "https://d3s3a5c7f101eb.cloudfront.net/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "K-Content by CJ ENM",
+      "logo": "🌍",
+      "url": "https://d2q0mzb9bm4w5z.cloudfront.net/68fee8e1_605a_437b_b968_244c3c0d5f24/hls/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "K-TV",
+      "logo": "🌍",
+      "url": "https://d1pz8zear993v8.cloudfront.net/hlsme/kathtv.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Kadak",
+      "logo": "🌍",
+      "url": "https://n18syndication.akamaized.net/bpk-tv/Kadak_NW18_MOB/output01/master.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Kalaignar Murasu",
+      "logo": "🌍",
+      "url": "https://yuppmedtaorire.akamaized.net/v1/master/a0d007312bfd99c47f76b77ae26b1ccdaae76cb1/murasu_nim_https/050522/murasu/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Kilisuci TV",
+      "logo": "🌍",
+      "url": "https://5bf7b725107e5.streamlock.net/kstv/kstv/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Kiss Kiss Napoli TV",
+      "logo": "🌍",
+      "url": "https://58f12ffd2447a.streamlock.net/KKTVNapoli/livestream/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Kiss Kiss TV",
+      "logo": "🌍",
+      "url": "https://58f12ffd2447a.streamlock.net/KKMulti/livestream/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "La Nuova TV",
+      "logo": "🌍",
+      "url": "https://5dcabf026b188.streamlock.net/lanuovatvbas/livestream/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "La Top 102.9",
+      "logo": "🌍",
+      "url": "https://59d39900ebfb8.streamlock.net/top102/top102/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "La Top 107.7",
+      "logo": "🌍",
+      "url": "https://59d39900ebfb8.streamlock.net/top107/top107/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Langstraat TV",
+      "logo": "🌍",
+      "url": "https://d1qpgfi3ivud4k.cloudfront.net/nlpo/clr-nlpo/langstraat/index.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Latest TV",
+      "logo": "🌍",
+      "url": "https://5a0e89631aa14.streamlock.net/live/LatestTelevision/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Latina TV Internacional",
+      "logo": "🌍",
+      "url": "https://5790d294af2dc.streamlock.net/latinatv/latinatv/chunklist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Lego Channel",
+      "logo": "🌍",
+      "url": "https://dltiqboxjw21d.cloudfront.net/index.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "LLBN His Light",
+      "logo": "🌍",
+      "url": "https://brightstar-hislight-pull-secure.akamaized.net/brightstarhislight/stream.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "LLBN His Word",
+      "logo": "🌍",
+      "url": "https://brightstar-hisword-pull-secure.akamaized.net/brightstarhisword/stream.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "LLBN TV Chinese",
+      "logo": "🌍",
+      "url": "https://brightstar-chinese-pull-secure.akamaized.net/brightstarchinese/stream.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "LLBN TV Korean",
+      "logo": "🌍",
+      "url": "https://brightstar-korean-pull-secure.akamaized.net/brightstarkorean/stream.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "LLBN TV Latino",
+      "logo": "🌍",
+      "url": "https://brightstar-latino-pull-secure.akamaized.net/brightstarlatino/stream.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "LLBN TV Romanian",
+      "logo": "🌍",
+      "url": "https://brightstar-romanian-pull-secure.akamaized.net/brightstarromanian/stream.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "LLBN TV South Asia",
+      "logo": "🌍",
+      "url": "https://brightstar-southasia-pull-secure.akamaized.net/brightstarsouthasia/stream.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Lobo TV",
+      "logo": "🌍",
+      "url": "https://5ca3e84a76d30.streamlock.net/tvlobo/videotvlobo/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Localish",
+      "logo": "🌍",
+      "url": "https://dnmfq3sh1jipj.cloudfront.net/DisneyLocalish.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Lombardia TV",
+      "logo": "🌍",
+      "url": "https://5db313b643fd8.streamlock.net/lmbiatv/lmbiatv/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Lucky Dog",
+      "logo": "🌍",
+      "url": "https://d3j95sejv6mybj.cloudfront.net/Lucky_Dog.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Magnavision TV",
+      "logo": "🌍",
+      "url": "https://manatv.akamaized.net/120723/smil:magnavision.smil/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Manorama News",
+      "logo": "📰",
+      "url": "https://mmtvnews1.akamaized.net/v1/master/673630b269b766886555eebfddd4f27f3de3ab50/mmtvNewsCampaign1/index.m3u8",
+      "cat": "إخبارية"
+    },
+    {
+      "name": "Mantavya News",
+      "logo": "📰",
+      "url": "https://d1msejlow1t3l4.cloudfront.net/fta/mantavya/playlist.m3u8",
+      "cat": "إخبارية"
+    },
+    {
+      "name": "Mazhavil Manorama HD",
+      "logo": "🌍",
+      "url": "https://mmtv-vglivessai.akamaized.net/v1/master/673630b269b766886555eebfddd4f27f3de3ab50/f8a0827f-030f-4a0d-b7e5-338996c09a5b/index.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "MCPSS TV",
+      "logo": "🌍",
+      "url": "https://5b200f5268ceb.streamlock.net/MCPSS/MCPSS247.smil/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "like Gecko) Chrome/149.0.0.0 Safari/537.36\" group-title=\"General\",Mediaset Italia",
+      "logo": "🌍",
+      "url": "https://d3k8wzt41aflvx.cloudfront.net/MediasetEU/Live.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "like Gecko) Chrome/149.0.0.0 Safari/537.36\" group-title=\"General\",Mediaset Italia Australia",
+      "logo": "🌍",
+      "url": "https://d3k8wzt41aflvx.cloudfront.net/Mediaset_AU/Live.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "like Gecko) Chrome/149.0.0.0 Safari/537.36\" group-title=\"General\",Mediaset Italia USA",
+      "logo": "🌍",
+      "url": "https://d3k8wzt41aflvx.cloudfront.net/MediasetUSA/Live.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Medjugorje Italia TV",
+      "logo": "🌍",
+      "url": "https://5f22d76e220e1.streamlock.net/medjugorjeitaliatv/medjugorjeitaliatv/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Mercy TV",
+      "logo": "🌍",
+      "url": "https://5dd3981940faa.streamlock.net/mercytv/mercytv/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Merit Street",
+      "logo": "🌍",
+      "url": "https://d9069ugodwkju.cloudfront.net/Merit_Street.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "MerweTV",
+      "logo": "🌍",
+      "url": "https://d2ycaxub5x98iw.cloudfront.net/nlpo/clr-nlpo/merwetv/index.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Mexiquense TV",
+      "logo": "🌍",
+      "url": "https://5e50264bd6766.streamlock.net/mexiquense/videomexiquense/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Midpen Media Center Channel 26",
+      "logo": "🌍",
+      "url": "https://5c2974786200d.streamlock.net/live-chan26/ngrp:ch26_all/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Midpen Media Center Channel 28",
+      "logo": "🌍",
+      "url": "https://5c2974786200d.streamlock.net/live-chan28/ngrp:ch28_all/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Midpen Media Center Channel 29",
+      "logo": "🌍",
+      "url": "https://5c2974786200d.streamlock.net/live-chan29/ngrp:ch29_all/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Midpen Media Center Channel 30",
+      "logo": "🌍",
+      "url": "https://5c2974786200d.streamlock.net/live-chan30/ngrp:ch30_all/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Midpen Media Center Channel 75",
+      "logo": "🌍",
+      "url": "https://5c2974786200d.streamlock.net/live-chan75/ngrp:ch75_all/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Minformo TV",
+      "logo": "🌍",
+      "url": "https://5db313b643fd8.streamlock.net/MinformoTV/MinformoTV/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Minika Cocuk",
+      "logo": "🌍",
+      "url": "https://rnttwmjcin.turknet.ercdn.net/lcpmvefbyo/minikago_cocuk/minikago_cocuk.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Minika Go",
+      "logo": "🌍",
+      "url": "https://rnttwmjcin.turknet.ercdn.net/lcpmvefbyo/minikago/minikago.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Mnau TV",
+      "logo": "🌍",
+      "url": "https://5ca49f2417d90.streamlock.net/mnau/livestream/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Monte Maria",
+      "logo": "🌍",
+      "url": "https://5ca9af4645e15.streamlock.net/montemaria/videomontemaria/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Moon TV",
+      "logo": "🌍",
+      "url": "https://d1msejlow1t3l4.cloudfront.net/fta/moontv/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "MTA4 Africa",
+      "logo": "🌍",
+      "url": "https://chlivemta.akamaized.net/hls/live/2010555/mtaafrica1/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "MTA5 Africa",
+      "logo": "🌍",
+      "url": "https://chlivemta.akamaized.net/hls/live/2010555/mtaafrica2/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "MTA8 America",
+      "logo": "🌍",
+      "url": "https://chlivemta.akamaized.net/hls/live/2016718/mta8/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "like Gecko) Chrome/130.0.0.0 Safari/537.36\" group-title=\"Entertainment\",MTV",
+      "logo": "🌍",
+      "url": "https://da86m1sqpm3o0.cloudfront.net/28072023/smil:mtvindia.smil/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Muzangala TV",
+      "logo": "🌍",
+      "url": "https://5cf4a2c2512a2.streamlock.net/tvmuzangala/tvmuzangala/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Mystery Science Theater 3000",
+      "logo": "🎞️",
+      "url": "https://d1c73nj8qxp55a.cloudfront.net/Mystery_Science_Theater_3000.m3u8",
+      "cat": "وثائقية"
+    },
+    {
+      "name": "Mythbusters",
+      "logo": "🌍",
+      "url": "https://d2bog959vw5xq.cloudfront.net/playlist/amg00627-banijayfast-mythbusters-samsungau/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Naruto",
+      "logo": "🌍",
+      "url": "https://d21vn5eki5qsdi.cloudfront.net/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "NatureTime ES",
+      "logo": "🎞️",
+      "url": "https://shls-live-ak.akamaized.net/out/v1/b06a89a463764d3688cda337d40dc5bf/index.m3u8",
+      "cat": "وثائقية"
+    },
+    {
+      "name": "NBC KNTV",
+      "logo": "🌍",
+      "url": "https://d368vp0qqzvkid.cloudfront.net/11603/88889711/hls/master.m3u8?ads.xumo_channelId=88889711a&ads.xumo_ifaType=&ads.xumo_providerId=3822&ads.xumo_providerName=NBCNBA",
+      "cat": "عالمية"
+    },
+    {
+      "name": "NBC KXAS-TV",
+      "logo": "🌍",
+      "url": "https://d368vp0qqzvkid.cloudfront.net/11603/88889706/hls/master.m3u8?ads.xumo_channelId=88889706a&ads.xumo_ifaType=&ads.xumo_providerId=3831&ads.xumo_providerName=NBCNDAL",
+      "cat": "عالمية"
+    },
+    {
+      "name": "NOW TV",
+      "logo": "🌍",
+      "url": "https://uycyyuuzyh.turknet.ercdn.net/nphindgytw/nowtv/nowtv.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Nueve TV",
+      "logo": "🌍",
+      "url": "https://5ca9af4645e15.streamlock.net/nuevetv/videonuevetv/.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "O Dia TV",
+      "logo": "🌍",
+      "url": "https://6836041ea1117.streamlock.net/tvodia/tvodia/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Odeon 24",
+      "logo": "🌍",
+      "url": "https://5f11919dca3bd.streamlock.net/odeonjump/_definst_/odeonjump/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Omroep Brabant",
+      "logo": "🌍",
+      "url": "https://d3slqp9xhts6qb.cloudfront.net/live/omroepbrabant/tv/index.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Omroep Brabant Radio",
+      "logo": "🎵",
+      "url": "https://d3slqp9xhts6qb.cloudfront.net/live/omroepbrabant/visualradio/index.m3u8",
+      "cat": "موسيقى"
+    },
+    {
+      "name": "Omroep Dommelland",
+      "logo": "🌍",
+      "url": "https://de68fck4398ez.cloudfront.net/nlpo/clr-nlpo/omroepdommelland/index.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Omroep Gelderland HD",
+      "logo": "🌍",
+      "url": "https://d2od87akyl46nm.cloudfront.net/live/omroepgelderland/tvgelderland-hls/index.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Omroep Land van Cuijk",
+      "logo": "🌍",
+      "url": "https://d3go236bg358u.cloudfront.net/nlpo/clr-nlpo/omroeplandvancuijk/index.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Omroep Sudwest",
+      "logo": "🌍",
+      "url": "https://d2ecwd3cgy6wo0.cloudfront.net/nlpo/clr-nlpo/omroepsudwest/index.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Omroep Venlo",
+      "logo": "🌍",
+      "url": "https://d2pqcu7r58rgg1.cloudfront.net/nlpo/clr-nlpo/omroepvenlo/index.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Omroep Venray",
+      "logo": "🌍",
+      "url": "https://d3j015sg8r68y.cloudfront.net/nlpo/clr-nlpo/omroepvenray/index.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Omroep Zeeland",
+      "logo": "🌍",
+      "url": "https://d3isaxd2t6q8zm.cloudfront.net/live/omroepzeeland/tv/index.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "ON FM",
+      "logo": "🌍",
+      "url": "https://5ce9406b73c33.streamlock.net/ONFM/livestream/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Onda TV",
+      "logo": "🌍",
+      "url": "https://5926fc9c7c5b2.streamlock.net/9040/9040/chunklist_w1373908906.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "OOG TV",
+      "logo": "🌍",
+      "url": "https://d1xcc1603wntzx.cloudfront.net/nlpo/clr-nlpo/oogtv/index.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Otto Channel",
+      "logo": "🌍",
+      "url": "https://ottop-live-meride.akamaized.net/hls/live/2039996/ch1/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "OTV",
+      "logo": "🌍",
+      "url": "https://5dcabf026b188.streamlock.net/OceansTV/livestream/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Outdoor America",
+      "logo": "🌍",
+      "url": "https://d1e354daam8g5r.cloudfront.net/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "OuterSphere",
+      "logo": "🌍",
+      "url": "https://d3o593mz1glx8d.cloudfront.net/OuterSphere_US.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Overtime",
+      "logo": "🌍",
+      "url": "https://d1a8aq6t30gkqj.cloudfront.net/v1/amc_overtime_1/samsungheadend_us/latest/main/hls/playlist_hd.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Paci Contemporary Channel",
+      "logo": "🌍",
+      "url": "https://5f22d76e220e1.streamlock.net/pacicontemporarychannel/pacicontemporarychannel/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Padre Pio TV",
+      "logo": "🌍",
+      "url": "https://600f07e114306.streamlock.net/PadrePioTV/livestream/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Panjab TV",
+      "logo": "🌍",
+      "url": "https://panjabtv.akamaized.net/panjabtv/panjabtvhlsout/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Pasand TV",
+      "logo": "🌍",
+      "url": "https://d1msejlow1t3l4.cloudfront.net/fta/pasand/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "PBS Nature",
+      "logo": "🎞️",
+      "url": "https://d3mr43kyql7wgk.cloudfront.net/PBS_Nature.m3u8",
+      "cat": "وثائقية"
+    },
+    {
+      "name": "PBS Travel",
+      "logo": "🌍",
+      "url": "https://d3hqevbyoxtkoi.cloudfront.net/PBS_Travel.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Peace of Mind TV",
+      "logo": "🌍",
+      "url": "https://yuppnimrestreammum.akamaized.net/181224/smil:peaceofmind.smil/playlist.m3u8?hdnts=st=1735898689~exp=1835898688~acl=*~hmac=f5fe24724fe05481e3841f9eb5ab8efdee0a3dd83645ae9dcf45703f525bab7b",
+      "cat": "عالمية"
+    },
+    {
+      "name": "PGA Tour",
+      "logo": "🌍",
+      "url": "https://d11k1mnrgfposz.cloudfront.net/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Pichilemu TV",
+      "logo": "🌍",
+      "url": "https://5ff3d9babae13.streamlock.net/8028/8028/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Pitaara",
+      "logo": "🌍",
+      "url": "https://vg-pitaaratvlive.akamaized.net/v1/master/611d79b11b77e2f571934fd80ca1413453772ac7/vglive-sk-583798/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "PixL TV",
+      "logo": "🌍",
+      "url": "https://frndlymsl.akamaized.net/hls/live/2006426/pixlmsl/pixlmsl/playlist.m3u8?hdnts=st=1606053234~exp=3216054041~acl=*~hmac=208d261d9f98d76a5ac30aa2ce51751f88ee50cfc24812b7cbea8b0397489a07",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Pocket Films",
+      "logo": "🎬",
+      "url": "https://vglivessai.akamaized.net/sg/v1/manifest/611d79b11b77e2f571934fd80ca1413453772ac7/b8ada260-bb81-472b-b7c1-3a79213a84b8/e02a0ce5-6c42-4cca-bb53-e5cfecff74a9/0.m3u8",
+      "cat": "أفلام"
+    },
+    {
+      "name": "pocket.watch",
+      "logo": "🌍",
+      "url": "https://dl74gpgmnb7i8.cloudfront.net/pocketwatch_GameOn.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Pocono Television Network",
+      "logo": "🌍",
+      "url": "https://dfoiz3dv1euv7.cloudfront.net/ptnlive-s3/live1.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Portlandia",
+      "logo": "🌍",
+      "url": "https://d1uvnirn6lhs2f.cloudfront.net/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Presumiendo Mexico",
+      "logo": "🌍",
+      "url": "https://60417ddeaf0d9.streamlock.net/telemetrika/smil:telemetrika.smil/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Prima Free",
+      "logo": "🌍",
+      "url": "https://5f22d76e220e1.streamlock.net/primafree/primafree/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Prima TV",
+      "logo": "🌍",
+      "url": "https://5db313b643fd8.streamlock.net/PrimaTV/PrimaTV/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "PTC Music",
+      "logo": "🎵",
+      "url": "https://d2lk5u59tns74c.cloudfront.net/out/v1/f913cf893c594f73b114216e74a2efbc/index.m3u8",
+      "cat": "موسيقى"
+    },
+    {
+      "name": "PTC Punjabi HD",
+      "logo": "🌍",
+      "url": "https://d3qs3d2rkhfqrt.cloudfront.net/out/v1/3e22a9c278db4e3eb779afd42e41b0a6/index.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "PTC Punjabi Gold",
+      "logo": "🌍",
+      "url": "https://d3qs3d2rkhfqrt.cloudfront.net/out/v1/6e14bac6d0384e129521a4d005188bfb/index.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Punjabi Shorts",
+      "logo": "🌍",
+      "url": "https://vglivessai.akamaized.net/ptnr-yupptv/title-Punjabi_Shorts/in/v1/master/611d79b11b77e2f571934fd80ca1413453772ac7/27c3fd7a-b01f-4b00-ac03-557ac77acd47/index.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "PursuitUP",
+      "logo": "🌍",
+      "url": "https://d1p1siomv3cm7b.cloudfront.net/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "QVC2",
+      "logo": "🌍",
+      "url": "https://qvc-amd-live.akamaized.net/hls/live/2034113/lsqvc2us/master.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "QVC3",
+      "logo": "🌍",
+      "url": "https://qvc-amd-live.akamaized.net/hls/live/2034113/lsqvc3us/master.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "QVC",
+      "logo": "🌍",
+      "url": "https://qvc-amd-live.akamaized.net/hls/live/2034113/lsqvc1us/master.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "QVC Beauty",
+      "logo": "🌍",
+      "url": "https://qvcuk-live.akamaized.net/hls/live/2097112/qby/master.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "QVC Extra",
+      "logo": "🌍",
+      "url": "https://qvcuk-live.akamaized.net/hls/live/2097112/qex/master.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "QVC Style",
+      "logo": "🌍",
+      "url": "https://qvcuk-live.akamaized.net/hls/live/2097112/qst/master.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "QVC Zwei",
+      "logo": "🌍",
+      "url": "https://qvcde-live.akamaized.net/hls/live/2097104/qps/master.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "RADIO DISCOunt TV",
+      "logo": "🎵",
+      "url": "https://585b674743bbb.streamlock.net/9030/9030/playlist.m3u8",
+      "cat": "موسيقى"
+    },
+    {
+      "name": "Radio La Serena TV",
+      "logo": "🎵",
+      "url": "https://5ff3d9babae13.streamlock.net/chrgkqgkyb/chrgkqgkyb/playlist.m3u8",
+      "cat": "موسيقى"
+    },
+    {
+      "name": "Radio Sublime Gracia TV",
+      "logo": "🎵",
+      "url": "https://5f700d5b2c46f.streamlock.net/sublime/sublime/playlist.m3u8",
+      "cat": "موسيقى"
+    },
+    {
+      "name": "Radio Tele Evangile Sans Limite",
+      "logo": "🎵",
+      "url": "https://5790d294af2dc.streamlock.net/8124/8124/chunklist.m3u8",
+      "cat": "موسيقى"
+    },
+    {
+      "name": "Radio Tele Sentinel",
+      "logo": "🎵",
+      "url": "https://59d39900ebfb8.streamlock.net/radiotelesentinel/radiotelesentinel/playlist.m3u8",
+      "cat": "موسيقى"
+    },
+    {
+      "name": "Radio Weser TV Bremen",
+      "logo": "🎵",
+      "url": "https://5857499ee635b.streamlock.net/radiowesertv-live/_definst_/mp4:livestreamTV/playlist.m3u8",
+      "cat": "موسيقى"
+    },
+    {
+      "name": "Radio y Television Marti",
+      "logo": "🎵",
+      "url": "https://ocb-ingest.akamaized.net/hls/live/2037032/tvmc01/playlist.m3u8",
+      "cat": "موسيقى"
+    },
+    {
+      "name": "like Gecko) Chrome/149.0.0.0 Safari/537.36\" group-title=\"Undefined\",Rai 2",
+      "logo": "🌍",
+      "url": "https://d3k8wzt41aflvx.cloudfront.net/RAI2/Live.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "like Gecko) Chrome/149.0.0.0 Safari/537.36\" group-title=\"Undefined\",Rai Italia",
+      "logo": "🌍",
+      "url": "https://d3k8wzt41aflvx.cloudfront.net/RAIEU/Live.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "like Gecko) Chrome/149.0.0.0 Safari/537.36\" group-title=\"Undefined\",Rai Italia Australia",
+      "logo": "🌍",
+      "url": "https://d3k8wzt41aflvx.cloudfront.net/RAIHD/Live.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "like Gecko) Chrome/149.0.0.0 Safari/537.36\" group-title=\"Undefined\",Rai Italia North Americas",
+      "logo": "🌍",
+      "url": "https://d3k8wzt41aflvx.cloudfront.net/RAIUSA/Live.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "like Gecko) Chrome/149.0.0.0 Safari/537.36\" group-title=\"Undefined\",Rai Italia South Americas",
+      "logo": "🌍",
+      "url": "https://d3k8wzt41aflvx.cloudfront.net/RAISA/Live.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Rai News 24 HD",
+      "logo": "📰",
+      "url": "https://d3k8wzt41aflvx.cloudfront.net/RAINEWS24/Live.m3u8",
+      "cat": "إخبارية"
+    },
+    {
+      "name": "like Gecko) Chrome/149.0.0.0 Safari/537.36\" group-title=\"Education\",Rai Scuola",
+      "logo": "🌍",
+      "url": "https://d3k8wzt41aflvx.cloudfront.net/RAIScuola/Live.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "like Gecko) Chrome/149.0.0.0 Safari/537.36\" group-title=\"Undefined\",Rai Storia",
+      "logo": "🌍",
+      "url": "https://d3k8wzt41aflvx.cloudfront.net/RAIStoria/Live.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "like Gecko) Chrome/149.0.0.0 Safari/537.36\" group-title=\"Undefined\",Rai World Premium",
+      "logo": "🌍",
+      "url": "https://d3k8wzt41aflvx.cloudfront.net/RAIP/Live.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Rainbow Ruby",
+      "logo": "🌍",
+      "url": "https://dt9mwqwe98q7o.cloudfront.net/master.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Rally TV",
+      "logo": "🌍",
+      "url": "https://rally-tv-live.akamaized.net/hls/live/2117704/RallyTV-Pri/master.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "RCV TV",
+      "logo": "🌍",
+      "url": "https://59d39900ebfb8.streamlock.net/rcv/rcv/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Real Madrid TV",
+      "logo": "🌍",
+      "url": "https://rmtv.akamaized.net/hls/live/2043153/rmtv-es-web/master.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Reality Channel",
+      "logo": "🌍",
+      "url": "https://d2dffl3588mvfk.cloudfront.net/out/v1/d8e15050ca4148aab0ee387a5e2eb46b/index_1.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Red Bull TV SD",
+      "logo": "🌍",
+      "url": "https://rbmn-live.akamaized.net/hls/live/590964/BoRB-AT/master.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Red Rubi",
+      "logo": "🌍",
+      "url": "https://59d39900ebfb8.streamlock.net/asiesmipueblo/asiesmipueblo/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Reforma TV",
+      "logo": "🌍",
+      "url": "https://5bf8041cb3fed.streamlock.net/ReformaTV/ReformaTV/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Republic Bangla",
+      "logo": "🌍",
+      "url": "https://vg-republictvlive.akamaized.net/v1/master/611d79b11b77e2f571934fd80ca1413453772ac7/vglive-sk-456368/main.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Rete 8",
+      "logo": "🌍",
+      "url": "https://64b16f23efbee.streamlock.net/rete8/rete8/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Rete TV Italia",
+      "logo": "🌍",
+      "url": "https://57068da1deb21.streamlock.net/retetvitalia/retetvitalia/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Reteveneta",
+      "logo": "🌍",
+      "url": "https://59d7d6f47d7fc.streamlock.net/reteveneta/reteveneta/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Rev and Roll",
+      "logo": "🌍",
+      "url": "https://d39nqr4d4h6cv6.cloudfront.net/master.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Rhema TV",
+      "logo": "🌍",
+      "url": "https://5e85d90130e77.streamlock.net/6006/6006/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "RMC Story",
+      "logo": "🌍",
+      "url": "https://d15aro46bnpfm8.cloudfront.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-fqkqiax1078up/RMC_Story_FR.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "RPL Woerden",
+      "logo": "🌍",
+      "url": "https://d1893oi5c6e5u0.cloudfront.net/nlpo/clr-nlpo/rpltvwoerden/index.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "RT Balkan",
+      "logo": "🌍",
+      "url": "https://rt-srb.rttv.com/dvr/rtbalkan/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "RT Documentary Russian",
+      "logo": "🎞️",
+      "url": "https://rt-doc.rttv.com/dvr/rtdru/playlist.m3u8",
+      "cat": "وثائقية"
+    },
+    {
+      "name": "RT India",
+      "logo": "🌍",
+      "url": "https://rt-india.rttv.com/dvr/rtindia/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "RTA",
+      "logo": "🌍",
+      "url": "https://rta-tv.akamaized.net/live/SD/RTA-1/RTA/RTA-1.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "RTM TV",
+      "logo": "🌍",
+      "url": "https://5f22d76e220e1.streamlock.net/rtm/rtm/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "RTQ Queretaro",
+      "logo": "🌍",
+      "url": "https://59d39900ebfb8.streamlock.net/rytqrolive/rytqrolive/chunklist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "RTTR Trento",
+      "logo": "🌍",
+      "url": "https://5f204aff97bee.streamlock.net/RTTRlive/livestream/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "RTV 1",
+      "logo": "🌍",
+      "url": "https://dy7fxpkq4ggk8.cloudfront.net/nlpo/clr-nlpo/rtv1/index.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "RTV LOVE",
+      "logo": "🌍",
+      "url": "https://d2o8iss0ldenh4.cloudfront.net/nlpo/clr-nlpo/rtvlove/index.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "RTV Meppel",
+      "logo": "🌍",
+      "url": "https://d2eanln3bsfb0d.cloudfront.net/nlpo/clr-nlpo/rtvmeppel/index.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "RTV Oost",
+      "logo": "🌍",
+      "url": "https://d34cg2bnc08ruf.cloudfront.net/live/rtvoost/tv/index.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "RTV Rijnmond",
+      "logo": "🌍",
+      "url": "https://dcur8bjarl5c2.cloudfront.net/live/rijnmond/tv/index.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "RTV SLOS",
+      "logo": "🌍",
+      "url": "https://d3b6teev8t7bb2.cloudfront.net/nlpo/clr-nlpo/rtvslos/index.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "RTV Utrecht",
+      "logo": "🌍",
+      "url": "https://d18rwjdhpr8dcw.cloudfront.net/live/rtvutrecht/rtvutrecht/index.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "RTV Veluwezoom TV",
+      "logo": "🌍",
+      "url": "https://dt4pogjgi3q8s.cloudfront.net/nlpo/clr-nlpo/rtvveluwezoom/index.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "RUV 2",
+      "logo": "🌍",
+      "url": "https://ruvlive.akamaized.net/out/v1/2ff7673de40f419fa5164498fae89089/index.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "RUV",
+      "logo": "🌍",
+      "url": "https://ruv-web-live.akamaized.net/streymi/ruverl/ruverl.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Sakshi TV",
+      "logo": "🌍",
+      "url": "https://yuppmedtaorire.akamaized.net/v1/master/a0d007312bfd99c47f76b77ae26b1ccdaae76cb1/sakshi_nim_https/240122/sakshi/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Salaam TV",
+      "logo": "🌍",
+      "url": "https://d2o3r1shda7xvv.cloudfront.net/index_5.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Salto 1",
+      "logo": "🌍",
+      "url": "https://d11lnfpmek70tc.cloudfront.net/nlpo/clr-nlpo/2103d417/index.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Salto 2",
+      "logo": "🌍",
+      "url": "https://d11lnfpmek70tc.cloudfront.net/nlpo/clr-nlpo/bad78523/index.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "San Marino RTV",
+      "logo": "🌍",
+      "url": "https://d2hrvno5bw6tg2.cloudfront.net/smrtv-ch01/smil:ch-01.smil/chunklist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Sana TV",
+      "logo": "🌍",
+      "url": "https://vglivessai.akamaized.net/us/v1/master/611d79b11b77e2f571934fd80ca1413453772ac7/b6d9e864-ec16-410a-804d-ccf8f720bfaa/index.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Sankhya TV",
+      "logo": "🌍",
+      "url": "https://5c59fd5680a05.streamlock.net/live/_definst_/ngrp:SANKHYATV.stream_all/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Sansad TV 1 HD",
+      "logo": "🌍",
+      "url": "https://d2lk5u59tns74c.cloudfront.net/out/v1/fff8f20221d5456e8922e689d71dedc3/index.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Sansad TV 2 HD",
+      "logo": "🌍",
+      "url": "https://d2lk5u59tns74c.cloudfront.net/out/v1/e4182054dce340da9e0ff38b6b3658a4/index.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Sanskar TV",
+      "logo": "🌍",
+      "url": "https://d26idhjf0y1p2g.cloudfront.net/out/v1/cd66dd25b9774cb29943bab54bbf3e2f/index.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Sanskar UK",
+      "logo": "🌍",
+      "url": "https://d34z4embz0hjf6.cloudfront.net/out/v1/7ac2789ff9a544a49337d1ffc54ce61c/index.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Sanskar USA",
+      "logo": "🌍",
+      "url": "https://d2netiedy8cz3x.cloudfront.net/out/v1/9bf6fa4ac8d6432cb98da13b121ba3c2/index.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Sanskar Web TV",
+      "logo": "🌍",
+      "url": "https://deatfcv3xdvi3.cloudfront.net/out/v1/7a43dd2f64e34ec28da1b4bd6923251a/index.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Satsang TV",
+      "logo": "🌍",
+      "url": "https://d2vfwvjxwtwq1t.cloudfront.net/out/v1/6b24239d5517495b986e7705490c6e65/index.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Satsang Web TV",
+      "logo": "🌍",
+      "url": "https://d1ji7e9jbzm5g8.cloudfront.net/out/v1/769f22f64d80442889306b9c4abea63c/index.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Schie TV",
+      "logo": "🌍",
+      "url": "https://d2n2i1jp4j20kw.cloudfront.net/nlpo/clr-nlpo/schietv/index.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Sextavision",
+      "logo": "🌍",
+      "url": "https://5ff3d9babae13.streamlock.net/fzkqsdfray/fzkqsdfray/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Shalom",
+      "logo": "🌍",
+      "url": "https://d2c4zqo2rb5uf1.cloudfront.net/master.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Shalom Global",
+      "logo": "🌍",
+      "url": "https://d28xtgmk9tfk6b.cloudfront.net/master.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Shout! Factory TV",
+      "logo": "🌍",
+      "url": "https://d1s1wrpgemt9re.cloudfront.net/Shout_TV.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Shubh Cinema TV",
+      "logo": "🎬",
+      "url": "https://d393sxaxig6bax.cloudfront.net/out/v1/589cf2cf44bf42bb941e817a2240d62e/index.m3u8",
+      "cat": "أفلام"
+    },
+    {
+      "name": "Shubh TV",
+      "logo": "🌍",
+      "url": "https://d2g1vdc6ozl2o8.cloudfront.net/out/v1/0a0dc7d7911b4fddbb4dfc963fdd4b9e/index.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Silk Way",
+      "logo": "🌍",
+      "url": "https://hlspackager.akamaized.net/live/DB/SILKWAY/SILKWAY/SILKWAY.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Sky News Arabia Vertical",
+      "logo": "📰",
+      "url": "https://live-stream.skynewsarabia.com/c-vertical-channel/vertical-stream/index.m3u8",
+      "cat": "إخبارية"
+    },
+    {
+      "name": "Sky News Extra 1",
+      "logo": "📰",
+      "url": "https://skynewsau-live.akamaized.net/hls/live/2002689/skynewsau-extra1/master.m3u8",
+      "cat": "إخبارية"
+    },
+    {
+      "name": "Sky News Extra 3",
+      "logo": "📰",
+      "url": "https://skynewsau-live.akamaized.net/hls/live/2002691/skynewsau-extra3/master.m3u8",
+      "cat": "إخبارية"
+    },
+    {
+      "name": "TVO San Vicente",
+      "logo": "🌍",
+      "url": "https://5ff3d9babae13.streamlock.net/8014/8014/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "TVR 1",
+      "logo": "🌍",
+      "url": "https://tvr-1.lg.mncdn.com/tvr1/smil:tvr1.smil/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "TVR 2",
+      "logo": "🌍",
+      "url": "https://tvr-2.lg.mncdn.com/tvr2/smil:tvr2.smil/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "TVR 3",
+      "logo": "🌍",
+      "url": "https://tvr-3.lg.mncdn.com/tvr3/smil:tvr3.smil/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "TVR Cluj",
+      "logo": "🌍",
+      "url": "https://tvr-cluj.lg.mncdn.com/tvrcluj/smil:tvrcluj.smil/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "TVR Craiova",
+      "logo": "🌍",
+      "url": "https://tvr-craiova.lg.mncdn.com/tvrcraiova/smil:tvrcraiova.smil/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "TVR Cultural",
+      "logo": "🌍",
+      "url": "https://tvr-cultural.lg.mncdn.com/tvrcultural/smil:tvrcultural.smil/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "TVR Folclor",
+      "logo": "🌍",
+      "url": "https://tvr-folclor.lg.mncdn.com/tvrfolclor/smil:tvrfolclor.smil/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "TVR Iasi",
+      "logo": "🌍",
+      "url": "https://tvr-iasi.lg.mncdn.com/tvriasi/smil:tvriasi.smil/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "TVR Info",
+      "logo": "🌍",
+      "url": "https://tvr-info.lg.mncdn.com/tvrinfo/smil:tvrinfo.smil/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "TVR International",
+      "logo": "🌍",
+      "url": "https://tvr-international.lg.mncdn.com/tvrinternational/smil:tvrinternational.smil/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "TVR Moldova HD",
+      "logo": "🌍",
+      "url": "https://tvr-moldova.lg.mncdn.com/tvrmoldova/smil:tvrmoldova.smil/chunklist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "TVR Sport",
+      "logo": "⚽",
+      "url": "https://tvr-sport.lg.mncdn.com/tvrsport/smil:tvrsport.smil/playlist.m3u8",
+      "cat": "رياضية"
+    },
+    {
+      "name": "TVR Targu-Mures",
+      "logo": "🌍",
+      "url": "https://tvr-tgmures.lg.mncdn.com/tvrtgmures/smil:tvrtgmures.smil/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "TVR Timisoara",
+      "logo": "🌍",
+      "url": "https://tvr-timisoara.lg.mncdn.com/tvrtimisoara/smil:tvrtimisoara.smil/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "TVSN",
+      "logo": "🌍",
+      "url": "https://tvsnhlslivetest.akamaized.net/hls/live/2034711/TVSN-MSL4/master.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "TVT",
+      "logo": "🌍",
+      "url": "https://5ca49f2417d90.streamlock.net/live/turzovka/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "UAA TV",
+      "logo": "🌍",
+      "url": "https://5fe2654d6127d.streamlock.net:443/uaa2/videouaa2/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Unbeaten",
+      "logo": "🌍",
+      "url": "https://d1t5afz6qed3xk.cloudfront.net/Unbeaten.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Unidentified",
+      "logo": "🌍",
+      "url": "https://d3ify425qsio2d.cloudfront.net/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "UniNettuno University TV",
+      "logo": "🌍",
+      "url": "https://stream6-rai-it.akamaized.net/live/uninettuno/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Uniregion TV",
+      "logo": "🌍",
+      "url": "https://5ff3d9babae13.streamlock.net/ubyecbxnfd/ubyecbxnfd/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Unsolved Mysteries",
+      "logo": "🌍",
+      "url": "https://d31z96rdrmwfsp.cloudfront.net/master.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Urbano TV",
+      "logo": "🌍",
+      "url": "https://59ef525c24caa.streamlock.net/tvurbano/tvurbano/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Urola Telebista",
+      "logo": "🌍",
+      "url": "https://5940924978228.streamlock.net/j_Directo2/mp4:j_Directo2/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Utsav Bharat",
+      "logo": "🌍",
+      "url": "https://d1taaads3ztvmu.cloudfront.net/120723/smil:lifeokuk.smil/playlist.m3u8?hdnts=st=1735898689~exp=1835898688~acl=*~hmac=f5fe24724fe05481e3841f9eb5ab8efdee0a3dd83645ae9dcf45703f525bab7b",
+      "cat": "عالمية"
+    },
+    {
+      "name": "UTV",
+      "logo": "🌍",
+      "url": "https://utviraqi-live.lg.mncdn.com/utviraqi-live/64c80359/index.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "V6 News",
+      "logo": "📰",
+      "url": "https://yuppmedtaorire.akamaized.net/v1/master/a0d007312bfd99c47f76b77ae26b1ccdaae76cb1/v6news_nim_https/140622/v6news/playlist.m3u8",
+      "cat": "إخبارية"
+    },
+    {
+      "name": "Vacation Channel",
+      "logo": "🌍",
+      "url": "https://d1yd8hohnldm33.cloudfront.net/out/v1/19dee23c2cc24f689bd4e1288661ee0c/index_2.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Value 24 TV",
+      "logo": "🌍",
+      "url": "https://5f22d76e220e1.streamlock.net/canale1/canale1/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Vevo Hip Hop",
+      "logo": "🎵",
+      "url": "https://d3vgs3ro3x6v8a.cloudfront.net/Vevo_Hip_Hop.m3u8",
+      "cat": "موسيقى"
+    },
+    {
+      "name": "Vevo R&B",
+      "logo": "🎵",
+      "url": "https://d1hf773q57zx9s.cloudfront.net/Vevo_R_B.m3u8",
+      "cat": "موسيقى"
+    },
+    {
+      "name": "ViaMatele",
+      "logo": "🌍",
+      "url": "https://5dd226f8f01e8.streamlock.net/via-matele-live/matelelive_1080/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Video Tour Channel",
+      "logo": "🌍",
+      "url": "https://59ef525c24caa.streamlock.net/videotour/videotour/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Vintage Music",
+      "logo": "🎵",
+      "url": "https://59ef525c24caa.streamlock.net/vmtv/tvvintage/playlist.m3u8",
+      "cat": "موسيقى"
+    },
+    {
+      "name": "Vision Plus TV",
+      "logo": "🌍",
+      "url": "https://5ff3d9babae13.streamlock.net/jwagpqxehu/jwagpqxehu/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Vizion Plus",
+      "logo": "🌍",
+      "url": "https://tringliveviz.akamaized.net/delta/105/out/u/qwaszxerdfcvrtryuy.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "VoA TV",
+      "logo": "🌍",
+      "url": "https://voa-ingest.akamaized.net/hls/live/2033874/tvmc06/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "VoA TV China",
+      "logo": "🌍",
+      "url": "https://voa-ingest.akamaized.net/hls/live/2033878/tvmc08/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "VoA TV Persian",
+      "logo": "🌍",
+      "url": "https://voa-ingest.akamaized.net/hls/live/2033876/tvmc07/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "WBTV 64.1",
+      "logo": "🌍",
+      "url": "https://d2ugl2g2gz1giy.cloudfront.net/index.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "WDR 1 Live",
+      "logo": "🌍",
+      "url": "https://wdrfs247.akamaized.net/hls/live/681509/wdr_msl4_fs247/index.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "WeatherNation",
+      "logo": "🌍",
+      "url": "https://d2ferbiwcx1539.cloudfront.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-8zd06wicndthf-ssai-prd/WNNationalSamsung/WNNationalSamsung.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Weathernews",
+      "logo": "📰",
+      "url": "https://rch01e-alive-hls.akamaized.net/38fb45b25cdb05a1/out/v1/4e907bfabc684a1dae10df8431a84d21/index.m3u8",
+      "cat": "إخبارية"
+    },
+    {
+      "name": "WeatherSpy",
+      "logo": "🌍",
+      "url": "https://d12gab6t5iutxf.cloudfront.net/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "WECN",
+      "logo": "🌍",
+      "url": "https://59825a54e4454.streamlock.net:8443/pastorairisn394/pastorairisn394/chunklist_w239411719.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Wild TV",
+      "logo": "🎞️",
+      "url": "https://dfhsahpa45kk2.cloudfront.net/scheduler/scheduleMaster/476.m3u8",
+      "cat": "وثائقية"
+    },
+    {
+      "name": "WildEarth",
+      "logo": "🎞️",
+      "url": "https://dqga3jatxofgx.cloudfront.net/WildEarth.m3u8",
+      "cat": "وثائقية"
+    },
+    {
+      "name": "Willow Sports",
+      "logo": "⚽",
+      "url": "https://d36r8jifhgsk5j.cloudfront.net/Willow_TV.m3u8",
+      "cat": "رياضية"
+    },
+    {
+      "name": "WKAQ-TV 2.2",
+      "logo": "🌍",
+      "url": "https://nbculocallive.akamaized.net/hls/live/2037499/puertorico/stream2/master_720.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Women's Sports Network",
+      "logo": "⚽",
+      "url": "https://d39accvx65hq9o.cloudfront.net/Womens_Sports_Network.m3u8",
+      "cat": "رياضية"
+    },
+    {
+      "name": "World Harvest TV",
+      "logo": "🌍",
+      "url": "https://597865f6e4114.streamlock.net/live/leseaorigin.stream/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "World Poker Tour",
+      "logo": "🌍",
+      "url": "https://d2e00kr7m9coe4.cloudfront.net/scheduler/scheduleMaster/406.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "World Poker Tour Poland",
+      "logo": "🌍",
+      "url": "https://d39g1vxj2ef6in.cloudfront.net/v1/master/3fec3e5cac39a52b2132f9c66c83dae043dc17d4/prod-rakuten-stitched/playlist.m3u8?ads.xumo_channelId=88883102",
+      "cat": "عالمية"
+    },
+    {
+      "name": "WOW Kidz",
+      "logo": "🌍",
+      "url": "https://yuppparoriglin.akamaized.net/181224/smil:wowkidzhindi.smil/playlist.m3u8?hdnts=st=1735898689~exp=1835898688~acl=*~hmac=f5fe24724fe05481e3841f9eb5ab8efdee0a3dd83645ae9dcf45703f525bab7b",
+      "cat": "عالمية"
+    },
+    {
+      "name": "WOW Kidz Tamil",
+      "logo": "🌍",
+      "url": "https://yuppparoriglin.akamaized.net/181224/smil:wowkidztam.smil/playlist.m3u8?hdnts=st=1735898689~exp=1835898688~acl=*~hmac=f5fe24724fe05481e3841f9eb5ab8efdee0a3dd83645ae9dcf45703f525bab7b",
+      "cat": "عالمية"
+    },
+    {
+      "name": "WOW Kidz Telugu",
+      "logo": "🌍",
+      "url": "https://yuppparoriglin.akamaized.net/181224/smil:wowkidztelgu.smil/playlist.m3u8?hdnts=st=1735898689~exp=1835898688~acl=*~hmac=f5fe24724fe05481e3841f9eb5ab8efdee0a3dd83645ae9dcf45703f525bab7b",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Wu Tang Collection",
+      "logo": "🌍",
+      "url": "https://dbrb49pjoymg4.cloudfront.net/10001/99991745/hls/master.m3u8?ads.xumo_channelId=99991745",
+      "cat": "عالمية"
+    },
+    {
+      "name": "WXWZ-LD 23.1",
+      "logo": "🌍",
+      "url": "https://5bf8041cb3fed.streamlock.net/mastvpr/mastvpr/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "XHTTG-TDT",
+      "logo": "🌍",
+      "url": "https://5ca9af4645e15.streamlock.net/chiapas/videochiapas/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "XHZHZ-TDT",
+      "logo": "🌍",
+      "url": "https://5f2c1b0d880e5.streamlock.net/zacatecas/videozacatecas/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "XITE 90's Throwback",
+      "logo": "🌍",
+      "url": "https://d284aawtm5vi48.cloudfront.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-fjdfi2br1jtq7/XITE_90s_Throwback.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "XITE Hits",
+      "logo": "🎵",
+      "url": "https://d726x48n2pd5h.cloudfront.net/XITE_Hits.m3u8",
+      "cat": "موسيقى"
+    },
+    {
+      "name": "XITE Hits Germany",
+      "logo": "🎵",
+      "url": "https://d726x48n2pd5h.cloudfront.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-skxr1pazhltvp/XITE_Hits.m3u8",
+      "cat": "موسيقى"
+    },
+    {
+      "name": "XITE Just Chill",
+      "logo": "🌍",
+      "url": "https://dvnftgdlbnemm.cloudfront.net/XITE_Just_Chill.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "XITE Nuevo Latino",
+      "logo": "🌍",
+      "url": "https://d3bsgqzbpkrvbb.cloudfront.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-w288eaw03izg1/XITE_Nuevo_Latino.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "XITE Reggae Vibes",
+      "logo": "🌍",
+      "url": "https://dw2m7yrngfg8c.cloudfront.net/XITE_Reggae_Vibes.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "XITE Rock x Metal",
+      "logo": "🌍",
+      "url": "https://d198ro05q94rc4.cloudfront.net/XITE_Rock_On.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "XITE Siempre Latino",
+      "logo": "🌍",
+      "url": "https://d1xc25jm9e0l4b.cloudfront.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-xplkt8i7m24dc/XITE_Siempre_Latino.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Yahoo! Finance",
+      "logo": "🌍",
+      "url": "https://d1ewctnvcwvvvu.cloudfront.net/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Zee 24 Kalak",
+      "logo": "🌍",
+      "url": "https://vg-zeefta.akamaized.net/ptnr-yupptv/title-zee24kalak/v1/manifest/611d79b11b77e2f571934fd80ca1413453772ac7/497f7199-758d-495d-9d2f-a5489231c428/14b7c8ec-16da-47f2-8d7e-5bbaec67b3e2/3.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Zee 24 Taas",
+      "logo": "🌍",
+      "url": "https://dgrvlduwztkd4.cloudfront.net/index_5.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Zee Bangla Sonar",
+      "logo": "🌍",
+      "url": "https://d1g8wgjurz8via.cloudfront.net/bpk-tv/ColorsHD/default/ColorsHD.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Zee Bharat",
+      "logo": "🌍",
+      "url": "https://vg-zeefta.akamaized.net/ptnr-yupptv/title-zeehindustan/v1/master/611d79b11b77e2f571934fd80ca1413453772ac7/96bbab12-582e-4540-af70-510ab6824581/main.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Zee Business",
+      "logo": "🌍",
+      "url": "https://dwby15d04agvq.cloudfront.net/index_5.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Zee Cinema",
+      "logo": "🎬",
+      "url": "https://d1g8wgjurz8via.cloudfront.net/bpk-tv/NGCHD/default/NGCHD.m3u8",
+      "cat": "أفلام"
+    },
+    {
+      "name": "Zee Delhi NCR Haryana",
+      "logo": "🌍",
+      "url": "https://vg-zeefta.akamaized.net/ptnr-yupptv/title-zeedelhincr/v1/master/611d79b11b77e2f571934fd80ca1413453772ac7/cc483a15-1b39-4642-872d-5d08d362ed01/main.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Zee Kannada HD",
+      "logo": "🌍",
+      "url": "https://yuppnimresmum.akamaized.net/28072023/smil:zeekannadahd.smil/playlist.m3u8?hdnts=st=1735898689~exp=1835898688~acl=*~hmac=f5fe24724fe05481e3841f9eb5ab8efdee0a3dd83645ae9dcf45703f525bab7b",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Zee Kannada News",
+      "logo": "📰",
+      "url": "https://d3vzwoqcbpfm8p.cloudfront.net/index_4.m3u8",
+      "cat": "إخبارية"
+    },
+    {
+      "name": "Zee Madhya Pradesh Chhattisgarh",
+      "logo": "🌍",
+      "url": "https://vg-zeefta.akamaized.net/ptnr-yupptv/title-zeemadhyachhattisgarh/v1/master/611d79b11b77e2f571934fd80ca1413453772ac7/2ab17056-6187-4f0e-a34d-f436ac479d6c/main.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Zee News",
+      "logo": "📰",
+      "url": "https://dknttpxmr0dwf.cloudfront.net/index_57.m3u8",
+      "cat": "إخبارية"
+    },
+    {
+      "name": "Zee Punjab Haryana Himachal",
+      "logo": "🌍",
+      "url": "https://vg-zeefta.akamaized.net/ptnr-yupptv/title-zeepunjabharyanahima/v1/master/611d79b11b77e2f571934fd80ca1413453772ac7/65eed269-2f3a-4dd0-ac89-d18959af28e3/main.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Zee Rajasthan",
+      "logo": "🌍",
+      "url": "https://vg-zeefta.akamaized.net/ptnr-yupptv/title-zeerajashthannews/v1/master/611d79b11b77e2f571934fd80ca1413453772ac7/8e864b9a-1681-41a0-99a6-387490bc5b24/main.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Zee Tamil HD",
+      "logo": "🌍",
+      "url": "https://da86m1sqpm3o0.cloudfront.net/28072023/smil:zeetamil1.smil/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Zee Telugu News",
+      "logo": "📰",
+      "url": "https://d116gfrn8orazi.cloudfront.net/index.m3u8?akes=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE3NjcxOTc5NzJ9.O4qmdMPbHwKrCg6hFXvD70vjSPWKQd0a7NrjmFdeMB8",
+      "cat": "إخبارية"
+    },
+    {
+      "name": "Zee Uttar Pradesh/Uttarakhand",
+      "logo": "🌍",
+      "url": "https://duw35ict5q7th.cloudfront.net/index_3.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Servus TV Ⓖ",
+      "logo": "🌍",
+      "url": "https://rbmn-live.akamaized.net/hls/live/2002825/geoSTVATweb/master.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "ICI Télé HD Ⓖ",
+      "logo": "🌍",
+      "url": "https://rcavlive.akamaized.net/hls/live/696615/xcancbft/master.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "KiKa Ⓖ",
+      "logo": "🌍",
+      "url": "https://kikageohls.akamaized.net/hls/live/2022693/livetvkika_de/master.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "HR Ⓖ",
+      "logo": "🌍",
+      "url": "https://hrhls.akamaized.net/hls/live/2024525/hrhls/master.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "SR Ⓖ",
+      "logo": "🌍",
+      "url": "https://srfs.akamaized.net/hls/live/689649/srfsgeo/index.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "NDR International",
+      "logo": "🌍",
+      "url": "https://ndrint.akamaized.net/hls/live/2020766/ndr_int/index.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "RTHK TV 31",
+      "logo": "🌍",
+      "url": "https://rthktv31-live.akamaized.net/hls/live/2036818/RTHKTV31/master.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "NDTV India",
+      "logo": "🌍",
+      "url": "https://ndtvindiaelemarchana.akamaized.net/hls/live/2003679/ndtvindia/master.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "TV9 Kannada",
+      "logo": "🌍",
+      "url": "https://dyjmyiv3bp2ez.cloudfront.net/pub-iotv9kanmo6oiq/liveabr/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "TV9 Telugu",
+      "logo": "🌍",
+      "url": "https://dyjmyiv3bp2ez.cloudfront.net/pub-iotv9telcmjhcs/liveabr/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "TV9 Marathi",
+      "logo": "🌍",
+      "url": "https://dyjmyiv3bp2ez.cloudfront.net/pub-iotv9marlygv8h/liveabr/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "NDTV Profit",
+      "logo": "🌍",
+      "url": "https://ndtvprofit.akamaized.net/hls/live/2107404/ndtvprofit/master_1.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Zagros TV",
+      "logo": "🌍",
+      "url": "https://5a3ed7a72ed4b.streamlock.net/zagrostv/SMIL:myStream.smil/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "ערוץ 13",
+      "logo": "🌍",
+      "url": "https://d2xg1g9o5vns8m.cloudfront.net/out/v1/0855d703f7d5436fae6a9c7ce8ca5075/index.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Rai 1",
+      "logo": "🌍",
+      "url": "https://d3k8wzt41aflvx.cloudfront.net/RAI1/Live.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Rai 3",
+      "logo": "🌍",
+      "url": "https://d3k8wzt41aflvx.cloudfront.net/RAI3/Live.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "La7",
+      "logo": "🌍",
+      "url": "https://d1chghleocc9sm.cloudfront.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-evfku205gqrtf/Live.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Rai Premium",
+      "logo": "🌍",
+      "url": "https://d3k8wzt41aflvx.cloudfront.net/RaiPremium/Live.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "TGCOM 24",
+      "logo": "🌍",
+      "url": "https://d3k8wzt41aflvx.cloudfront.net/TGCOM24/Live.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Travel TV",
+      "logo": "🌍",
+      "url": "https://5a1178b42cc03.streamlock.net/travel/travel/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Donna TV Ⓢ",
+      "logo": "🌍",
+      "url": "https://5f11919dca3bd.streamlock.net/donnatv/donnatv/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Alma TV",
+      "logo": "🌍",
+      "url": "https://5f11919dca3bd.streamlock.net/almatv/almatv/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "RadioItaliaTV",
+      "logo": "🎵",
+      "url": "https://radioitaliatv.akamaized.net/hls/live/2093117/RadioitaliaTV/master.m3u8",
+      "cat": "موسيقى"
+    },
+    {
+      "name": "Radio24-IlSole24OreTV",
+      "logo": "🎵",
+      "url": "https://ilsole24ore-radiovisual.akamaized.net/hls/live/2035302/persidera/master.m3u8",
+      "cat": "موسيقى"
+    },
+    {
+      "name": "12 Tv Parma",
+      "logo": "🌍",
+      "url": "https://5929b138b139d.streamlock.net/12TVParma/livestream/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Alpauno",
+      "logo": "🌍",
+      "url": "https://5f22d76e220e1.streamlock.net/alpaunotv/alpaunotv/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Antenna 3 Veneto Nord Est",
+      "logo": "🌍",
+      "url": "https://59d7d6f47d7fc.streamlock.net/antennatreveneto/antennatreveneto.stream/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Bella e Monella TV",
+      "logo": "🌍",
+      "url": "https://58d921499d3d3.streamlock.net/RadioBelllaemonellaTV/livestream/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Calabria Uno Tv",
+      "logo": "🌍",
+      "url": "https://635320cd397eb.streamlock.net/live/calabriaunolive/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Canale 2",
+      "logo": "🌍",
+      "url": "https://59d7d6f47d7fc.streamlock.net/canale2/canale2/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Canale 8 Campania",
+      "logo": "🌍",
+      "url": "https://59d7d6f47d7fc.streamlock.net/canale8/canale8/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Canale Italia",
+      "logo": "🌍",
+      "url": "https://ovp-live.akamaized.net/ac115_live/canale1.smil/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Cittaceleste Tv",
+      "logo": "🌍",
+      "url": "https://sportitaliaamd.akamaized.net/live/Cittaceleste/hls/A990687F506536598442FC5CD12C97CB78873FBA/index.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Deluxe 139",
+      "logo": "🌍",
+      "url": "https://59d7d6f47d7fc.streamlock.net/pierstyle/pierstyle/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Di.Tv 80",
+      "logo": "🌍",
+      "url": "https://5f22d76e220e1.streamlock.net/ditv80/ditv80/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "E'live Brescia Tv",
+      "logo": "🌍",
+      "url": "https://59d7d6f47d7fc.streamlock.net/elivebresciatv/elivebresciatv/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Entella Tv",
+      "logo": "🌍",
+      "url": "https://5f22d76e220e1.streamlock.net:443/EntellaTV/EntellaTV/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Esperia Tv",
+      "logo": "🌍",
+      "url": "https://59d7d6f47d7fc.streamlock.net/esperiatv/esperiatv/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Euro Tv",
+      "logo": "🌍",
+      "url": "https://5f22d76e220e1.streamlock.net/eurotv/eurotv/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Fascino Tv",
+      "logo": "🌍",
+      "url": "https://64b16f23efbee.streamlock.net/canale157/canale157/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Gold Tv",
+      "logo": "🌍",
+      "url": "https://5f11919dca3bd.streamlock.net/goldtv/goldtv/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Icaro Tv Rimini",
+      "logo": "🌍",
+      "url": "https://59d7d6f47d7fc.streamlock.net/icarotv/icarotv/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Italia 2 Tv",
+      "logo": "🌍",
+      "url": "https://59d7d6f47d7fc.streamlock.net/italia2/italia2/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Italia 7",
+      "logo": "🌍",
+      "url": "https://5f11919dca3bd.streamlock.net/italia7/italia7/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Lazio Tv",
+      "logo": "🌍",
+      "url": "https://5f11919dca3bd.streamlock.net/laziotv/laziotv/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Love in Venice",
+      "logo": "🌍",
+      "url": "https://59d7d6f47d7fc.streamlock.net/loveinvenice/loveinvenice.stream/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Motori Tv",
+      "logo": "🌍",
+      "url": "https://64b16f23efbee.streamlock.net/servizio01/servizio01/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Onda Novara Tv",
+      "logo": "🌍",
+      "url": "https://585b674743bbb.streamlock.net/9006/9006/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Onda Tv Sicilia",
+      "logo": "🌍",
+      "url": "https://5926fc9c7c5b2.streamlock.net/9040/9040/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Prima Tv Napoli",
+      "logo": "🌍",
+      "url": "https://57068da1deb21.streamlock.net/primatvnapoli/primatvnapoli/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Radio 51 Tv",
+      "logo": "🎵",
+      "url": "https://59d7d6f47d7fc.streamlock.net/canale51/canale51/chunklist_w1193883900.m3u8",
+      "cat": "موسيقى"
+    },
+    {
+      "name": "Radio Iglesias Visual Radio",
+      "logo": "🎵",
+      "url": "https://59d7d6f47d7fc.streamlock.net/visualradio/visualradio/playlist.m3u8",
+      "cat": "موسيقى"
+    },
+    {
+      "name": "Radio Italia Cina Tv",
+      "logo": "🎵",
+      "url": "https://585b674743bbb.streamlock.net/9054/9054/playlist.m3u8",
+      "cat": "موسيقى"
+    },
+    {
+      "name": "Radio Juke Box TV",
+      "logo": "🎵",
+      "url": "https://5926fc9c7c5b2.streamlock.net/9108/9108/playlist.m3u8",
+      "cat": "موسيقى"
+    },
+    {
+      "name": "Radio Kiss Kiss Italia TV",
+      "logo": "🎵",
+      "url": "https://58f12ffd2447a.streamlock.net/KKTV01/livestream/playlist.m3u8",
+      "cat": "موسيقى"
+    },
+    {
+      "name": "Radio Monte Kronio Tv",
+      "logo": "🎵",
+      "url": "https://648026e87a75e.streamlock.net/rmktv/rmktv/playlist.m3u8",
+      "cat": "موسيقى"
+    },
+    {
+      "name": "Radio Number One TV",
+      "logo": "🎵",
+      "url": "https://56b50ada2d659.streamlock.net/RN1TV/livestream/playlist.m3u8",
+      "cat": "موسيقى"
+    },
+    {
+      "name": "Radio Padova TV",
+      "logo": "🎵",
+      "url": "https://58d921499d3d3.streamlock.net/RadioPadova/livestream/playlist.m3u8",
+      "cat": "موسيقى"
+    },
+    {
+      "name": "Radio Punto Zero TV",
+      "logo": "🎵",
+      "url": "https://58d921499d3d3.streamlock.net/RPZ/livestream/playlist.m3u8",
+      "cat": "موسيقى"
+    },
+    {
+      "name": "Rete 8 Sport",
+      "logo": "⚽",
+      "url": "https://64b16f23efbee.streamlock.net/rete8sport/rete8sport/playlist.m3u8",
+      "cat": "رياضية"
+    },
+    {
+      "name": "Rete Mia",
+      "logo": "🌍",
+      "url": "https://5db313b643fd8.streamlock.net/rete/rete/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Rete Oro Tv",
+      "logo": "🌍",
+      "url": "https://5926fc9c7c5b2.streamlock.net/9094/9094/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Rete Sole",
+      "logo": "🌍",
+      "url": "https://5926fc9c7c5b2.streamlock.net/9332/9332/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Super J Tv",
+      "logo": "🌍",
+      "url": "https://59d39900ebfb8.streamlock.net/SuperJtv/SuperJtv/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Super Six",
+      "logo": "🌍",
+      "url": "https://5db313b643fd8.streamlock.net/SUPERSIXLombardia/SUPERSIXLombardia/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "TRL Tele Radio Leo",
+      "logo": "🎵",
+      "url": "https://5db313b643fd8.streamlock.net/TRL/TRL/playlist.m3u8",
+      "cat": "موسيقى"
+    },
+    {
+      "name": "TRSP Tele Radio San Pietro",
+      "logo": "🎵",
+      "url": "https://5a1178b42cc03.streamlock.net/trsptv/trsptv/playlist.m3u8",
+      "cat": "موسيقى"
+    },
+    {
+      "name": "Tele Acras",
+      "logo": "🌍",
+      "url": "https://5db313b643fd8.streamlock.net/teleacras/teleacras/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Tele Foggia",
+      "logo": "🌍",
+      "url": "https://59d7d6f47d7fc.streamlock.net/telefoggia/telefoggia/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Tele Ischia",
+      "logo": "🌍",
+      "url": "https://57068da1deb21.streamlock.net/livetv/livetv/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Tele Laser",
+      "logo": "🌍",
+      "url": "https://585b674743bbb.streamlock.net/9022/9022/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Tele Liguria Sud",
+      "logo": "🌍",
+      "url": "https://64b16f23efbee.streamlock.net/teleliguriasud/teleliguriasud/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Tele Mantova",
+      "logo": "🌍",
+      "url": "https://5ce9406b73c33.streamlock.net/TeleMantova/livestream/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Tele Nord Genova",
+      "logo": "🌍",
+      "url": "https://64b16f23efbee.streamlock.net/telenord/telenord/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Tele One",
+      "logo": "🌍",
+      "url": "https://648026e87a75e.streamlock.net/teleone/teleone/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Tele Pace Trento",
+      "logo": "🌍",
+      "url": "https://5a1178b42cc03.streamlock.net/telepacetrento/telepacetrento/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Tele Tricolore",
+      "logo": "🌍",
+      "url": "https://59d7d6f47d7fc.streamlock.net/rs2/rs2/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Tele8 Tv",
+      "logo": "🌍",
+      "url": "https://57068da1deb21.streamlock.net/teletv8/teletv8/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Telecity Lombardia",
+      "logo": "🌍",
+      "url": "https://64b16f23efbee.streamlock.net/telecitylombardia/telecitylombardia/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Telecity Piemonte",
+      "logo": "🌍",
+      "url": "https://64b16f23efbee.streamlock.net/telecitypiemonte/telecitypiemonte/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Telecity Valle D'Aosta",
+      "logo": "🌍",
+      "url": "https://64b16f23efbee.streamlock.net/telecityvda/telecityvda/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Telegenova",
+      "logo": "🌍",
+      "url": "https://64b16f23efbee.streamlock.net/telegenova/telegenova/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "TeleMajg",
+      "logo": "🌍",
+      "url": "https://59d7d6f47d7fc.streamlock.net/telemajg/telemajg/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Telerama",
+      "logo": "🌍",
+      "url": "https://58d921499d3d3.streamlock.net/TeleRama/livestream/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "TeleRomaDue",
+      "logo": "🌍",
+      "url": "https://57068da1deb21.streamlock.net/teletibur/teletibur/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Tv 12",
+      "logo": "🌍",
+      "url": "https://59d7d6f47d7fc.streamlock.net/tv12/tv12/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Tv Qui Modena",
+      "logo": "🌍",
+      "url": "https://59d7d6f47d7fc.streamlock.net/tvqui/tvqui/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Tvm Palermo",
+      "logo": "🌍",
+      "url": "https://5db313b643fd8.streamlock.net/tvmpa/tvmpa/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "WLTV",
+      "logo": "🌍",
+      "url": "https://5db313b643fd8.streamlock.net/WLTV/WLTV/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "México Travel TV",
+      "logo": "🌍",
+      "url": "https://5ca9af4645e15.streamlock.net/mexicotravel/videomexicotravel/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Omrop Fryslân",
+      "logo": "🌍",
+      "url": "https://d3pvma9xb2775h.cloudfront.net/live/omropfryslan/f8f68bd5/playlist.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Omroep Flevoland Ⓢ",
+      "logo": "🌍",
+      "url": "https://d5ms27yy6exnf.cloudfront.net/live/omroepflevoland/tv/index.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Omroep West",
+      "logo": "🌍",
+      "url": "https://d1axml5ozykh3g.cloudfront.net/live/omroepwest/tv/index.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Qatar Television",
+      "logo": "🌍",
+      "url": "https://qatartv.akamaized.net/hls/live/20000609/qtv1/master.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Qatar Television 2",
+      "logo": "🌍",
+      "url": "https://qatartv.akamaized.net/hls/live/20000611/qtv2/master.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Qatar Television The Holy Quran",
+      "logo": "🕌",
+      "url": "https://qatartv.akamaized.net/hls/live/20000612/qtvquran/master1080p.m3u8",
+      "cat": "دينية"
+    },
+    {
+      "name": "El País",
+      "logo": "🌍",
+      "url": "https://d2epgk1fomaa1g.cloudfront.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-9n8y4tw0bk3an/live/fast-channel-el-pais/fast-channel-el-pais.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Canal Sur Andalucía",
+      "logo": "🌍",
+      "url": "https://d4oe4cnrgi9c9.cloudfront.net/master.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "Canal Extremadura",
+      "logo": "🌍",
+      "url": "https://d2ymuyhevki1a1.cloudfront.net/wct-ddd2992e-86fc-4611-a491-7f392259e9ba/continuous/9be76611-d2cd-474d-bf19-ef702ba31b02/index.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "TRT 1",
+      "logo": "📰",
+      "url": "https://tv-trt1.medya.trt.com.tr/master.m3u8",
+      "cat": "إخبارية"
+    },
+    {
+      "name": "TRT Haber",
+      "logo": "📰",
+      "url": "https://tv-trthaber.medya.trt.com.tr/master.m3u8",
+      "cat": "إخبارية"
+    },
+    {
+      "name": "TRT Çocuk",
+      "logo": "📰",
+      "url": "https://tv-trtcocuk.medya.trt.com.tr/master.m3u8",
+      "cat": "إخبارية"
+    },
+    {
+      "name": "TRT Müzik",
+      "logo": "📰",
+      "url": "https://tv-trtmuzik.medya.trt.com.tr/master.m3u8",
+      "cat": "إخبارية"
+    },
+    {
+      "name": "TRT Avaz",
+      "logo": "📰",
+      "url": "https://tv-trtavaz.medya.trt.com.tr/master.m3u8",
+      "cat": "إخبارية"
+    },
+    {
+      "name": "TRT Kurdî",
+      "logo": "📰",
+      "url": "https://tv-trtkurdi.medya.trt.com.tr/master.m3u8",
+      "cat": "إخبارية"
+    },
+    {
+      "name": "TRT Türk",
+      "logo": "📰",
+      "url": "https://tv-trtturk.medya.trt.com.tr/master.m3u8",
+      "cat": "إخبارية"
+    },
+    {
+      "name": "TRT EBA Ilkokul",
+      "logo": "📰",
+      "url": "https://tv-e-okul00.medya.trt.com.tr/master.m3u8",
+      "cat": "إخبارية"
+    },
+    {
+      "name": "TRT EBA Ortaokul",
+      "logo": "📰",
+      "url": "https://tv-e-okul01.medya.trt.com.tr/master.m3u8",
+      "cat": "إخبارية"
+    },
+    {
+      "name": "TRT EBA Lise",
+      "logo": "📰",
+      "url": "https://tv-e-okul02.medya.trt.com.tr/master.m3u8",
+      "cat": "إخبارية"
+    },
+    {
+      "name": "QVC UK Ⓢ",
+      "logo": "🌍",
+      "url": "https://qvcuk-live.akamaized.net/hls/live/2097112/qvc/3/3.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "TJC",
+      "logo": "🌍",
+      "url": "https://cdn-shop-lc-01.akamaized.net/Content/HLS_HLS/Live/channel(TJCOTT)/index.m3u8",
+      "cat": "عالمية"
+    },
+    {
+      "name": "القناة السعودية الأولى HD (Al Saudiya)",
+      "logo": "🇸🇦",
+      "url": "https://shd-gcp-live.edgenextcdn.net/live/bitmovin-saudi-tv/2ad66056b51fd8c1b624854623112e43/index.m3u8",
+      "cat": "منوعات"
+    }
+  ]
+}
