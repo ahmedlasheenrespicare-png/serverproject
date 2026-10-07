@@ -79,6 +79,35 @@ const ALLOWED_ORIGINS = [
 
 ---
 
+## ⚠️ إن فشل بناء Cloudflare Workers (Workers Builds)
+
+فحص **Workers Builds: serverproject** كان **فاشلاً قبل هذه التعديلات أيضاً** (على `main` وليس على تغييرات
+جديدة فقط)، بينما ملف الوسيط نفسه سليم ومقبول للنشر: تم التحقق محلياً بـ
+
+```bash
+npx wrangler deploy --dry-run --outdir /tmp/wrangler-out
+# Total Upload: 9.78 KiB / gzip: 3.53 KiB — بلا أخطاء
+```
+
+أي أن المشكلة في **إعداد المشروع على Cloudflare** وليس في `worker.js`. الخطوات:
+
+1. **افتح سجل البناء** من الرابط في تعليق البوت على الـ PR (أو من)
+   `Cloudflare Dashboard → Workers & Pages → serverproject → Deployments → Builds → آخر بناء → Logs`.
+2. تحقّق من الإعدادات الشائعة:
+   - Build command: `npm run build` — إن كان مختلفاً أو فارغاً، اجعله كذلك (أو `exit 0` لو أردت نشر الوسيط فقط).
+   - Deploy command: `npx wrangler deploy`
+   - Node version: المشروع يحتاج Node 20.19+ (ثبّتنا `22` في `.node-version`).
+   - صلاحية التوكن/الحساب: إن ظهر `Authentication error` أو `account not found` أعد ربط حساب Cloudflare بالمستودع.
+3. **مسار بديل مضمون لا يعتمد على البناء التلقائي** (وهو الأسرع الآن):
+   ```bash
+   npx wrangler deploy        # من جهازك داخل مجلد المشروع
+   ```
+   أو انسخ محتوى `proxy/worker.js` والصقه في `Dashboard → Worker → Edit code → Deploy`.
+4. بعد النشر، افتح صفحة حالة الوسيط وتأكد من التعديل: يجب أن ترد القناة `http` عبر `/x/…`
+   ويرفض الطلبات القادمة بـ `Referer` من موقع آخر (`403`).
+
+---
+
 ## 🧪 اختبار يدوي (اختياري)
 
 جرّب هذه الروابط في المتصفح مباشرة:
