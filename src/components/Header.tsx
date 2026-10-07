@@ -73,7 +73,7 @@ export default function Header({
           </span>
           <p className="tracking-tight opacity-90 truncate">
             تغطية كأس العالم 2026 والدوريات الكبرى —{" "}
-            <span className="text-[#d8ff3e] font-bold">خصومات تصل إلى 50%</span> + تجربة مجانية
+            <span className="text-[#d8ff3e] font-bold">خصومات على جميع الباقات</span> + تجربة مجانية
           </p>
           <button
             onClick={onOpenTrial}

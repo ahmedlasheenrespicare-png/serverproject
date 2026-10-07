@@ -84,7 +84,17 @@ export default function App() {
   } else if (post) {
     page = <BlogPostPage post={post} />;
   } else if (plan) {
-    page = <PlanPage plan={plan} onOpenTrial={openTrial} onAddToCart={handleAddToCart} />;
+    /* العملة تُمرَّر من هنا (مصدر واحد) — وإلا أضاف المستخدم باقة بسعر عملة
+       صفحة الباقة بينما تُسجَّل في السلة بعملة أخرى (خطأ سعري حقيقي). */
+    page = (
+      <PlanPage
+        plan={plan}
+        currency={currency}
+        onCurrencyChange={setCurrency}
+        onOpenTrial={openTrial}
+        onAddToCart={handleAddToCart}
+      />
+    );
   } else {
     page = <NotFoundPage />;
   }

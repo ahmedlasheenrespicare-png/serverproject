@@ -64,13 +64,47 @@ const ALLOWED_ORIGINS = [
 ```
 
 - الطلبات القادمة من موقع آخر تُرفض بـ `403 ORIGIN_NOT_ALLOWED`.
-- الطلبات بلا `Origin` (تشغيل أصلي داخل `<video>`، أدوات سطر الأوامر، فحص `curl`) مسموحة.
 - `localhost` ونطاقات المعاينة `*.e2b.app` مسموحة للتطوير.
+- **حماية إضافية (جديدة):** عناصر `<video>` و`<audio>` العابرة للنطاق **لا ترسل رأس `Origin` إطلاقاً**
+  (وضع `no-cors`)، لذلك يُفحَص رأس `Referer` أيضاً: أي طلب بلا `Origin` وبـ `Referer` من موقع آخر
+  يُرفض بـ `403 REFERER_NOT_ALLOWED`. الطلبات بلا `Origin` وبلا `Referer` (مشغّل أصلي، `curl`، فحص يدوي)
+  تبقى مسموحة، ويُضبط حجم استخدامها بـ Rate Limiting من لوحة Cloudflare.
 
 > **عند نقل الموقع لنطاق مخصص** (مثل `example.com`) أضِفه إلى `ALLOWED_ORIGINS` ثم أعد نشر الوسيط،
 > وإلا سيتوقف البث عبر الوسيط بخطأ 403.
 
 **الحد من الاستهلاك:** فعّل Rate Limiting من لوحة Cloudflare (Workers → الإعدادات) للحد من أي إساءة استخدام.
+> الحماية بالكود لا تكفي وحدها: طلب واحد بلا `Origin` وبلا `Referer` يمرّ بطبيعته (لأن المتصفحات لا ترسل
+> أي منهما في بعض الحالات الشرعية)، فالقاعدة على Cloudflare هي خط الدفاع الثاني.
+
+---
+
+## ⚠️ إن فشل بناء Cloudflare Workers (Workers Builds)
+
+فحص **Workers Builds: serverproject** كان **فاشلاً قبل هذه التعديلات أيضاً** (على `main` وليس على تغييرات
+جديدة فقط)، بينما ملف الوسيط نفسه سليم ومقبول للنشر: تم التحقق محلياً بـ
+
+```bash
+npx wrangler deploy --dry-run --outdir /tmp/wrangler-out
+# Total Upload: 9.78 KiB / gzip: 3.53 KiB — بلا أخطاء
+```
+
+أي أن المشكلة في **إعداد المشروع على Cloudflare** وليس في `worker.js`. الخطوات:
+
+1. **افتح سجل البناء** من الرابط في تعليق البوت على الـ PR (أو من)
+   `Cloudflare Dashboard → Workers & Pages → serverproject → Deployments → Builds → آخر بناء → Logs`.
+2. تحقّق من الإعدادات الشائعة:
+   - Build command: `npm run build` — إن كان مختلفاً أو فارغاً، اجعله كذلك (أو `exit 0` لو أردت نشر الوسيط فقط).
+   - Deploy command: `npx wrangler deploy`
+   - Node version: المشروع يحتاج Node 20.19+ (ثبّتنا `22` في `.node-version`).
+   - صلاحية التوكن/الحساب: إن ظهر `Authentication error` أو `account not found` أعد ربط حساب Cloudflare بالمستودع.
+3. **مسار بديل مضمون لا يعتمد على البناء التلقائي** (وهو الأسرع الآن):
+   ```bash
+   npx wrangler deploy        # من جهازك داخل مجلد المشروع
+   ```
+   أو انسخ محتوى `proxy/worker.js` والصقه في `Dashboard → Worker → Edit code → Deploy`.
+4. بعد النشر، افتح صفحة حالة الوسيط وتأكد من التعديل: يجب أن ترد القناة `http` عبر `/x/…`
+   ويرفض الطلبات القادمة بـ `Referer` من موقع آخر (`403`).
 
 ---
 
@@ -85,8 +119,13 @@ const ALLOWED_ORIGINS = [
 | رابط كامل (المسار الذي يستخدمه مشغل الاشتراك) | `https://رابط-الوسيط/?u=<الرابط-مُرمَّزاً>` |
 | قناة العربية | `https://رابط-الوسيط/h/live.alarabiya.net/alarabiapublish/alarabiya.smil/playlist.m3u8` |
 | قناة MBC 1 | `https://رابط-الوسيط/live/bitmovin-mbc-1-na/eec141533c90dd34722c503a296dd0d8/index.m3u8` |
+| سيرفر بلا TLS (مهم) | `https://رابط-الوسيط/x/host:port/live/user/pass/1.m3u8` |
 
-لو فتح ملف قائمة تشغيل نص فيه روابط تبدأ بـ `/h/...` فالوسيط يعمل بشكل صحيح.
+لو فتح ملف قائمة تشغيل نص فيه روابط تبدأ بـ `/h/...` (أو `/x/...` لسيرفرات `http`) فالوسيط يعمل بشكل صحيح.
+
+**ملاحظة إصلاح مهمة:** إعادة كتابة قوائم m3u8 تحفظ الآن **بروتوكول الرابط الأصلي**:
+روابط `http://` تُحوَّل إلى `/x/` وروابط `https://` إلى `/h/`. قبل ذلك كانت كلها تُحوَّل إلى `/h/`
+(أي https إجبارياً) فيتوقف البث عند أول مقطع على السيرفرات التي لا تدعم TLS.
 
 ---
 
@@ -117,6 +156,7 @@ const ALLOWED_ORIGINS = [
 ## 🧪 اختبار محلي قبل النشر (اختياري)
 
 ```bash
-node proxy/test-server.mjs
-# ثم افتح http://localhost:8787/
+node proxy/test-server.mjs            # يستمع على 127.0.0.1 فقط (بلا فتح الشبكة المحلية)
+HOST=0.0.0.0 node proxy/test-server.mjs   # للتجربة من جوال على نفس الشبكة
+# ثم افتح http://127.0.0.1:8787/
 ```

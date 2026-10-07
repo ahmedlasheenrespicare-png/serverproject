@@ -1,5 +1,7 @@
-export const WHATSAPP_NUMBER = "201070330835"; // Configurable WhatsApp
-export const WHATSAPP_DISPLAY = "+20 107 033 0835";
+/* التواصل — مصدر واحد في src/config.ts
+   (كان الرقم مكرَّراً هنا بصيغة عرض مختلفة، فظهر رقم ناقص في JSON-LD المنشور) */
+import { WHATSAPP_NUMBER } from "./config";
+export { WHATSAPP_DISPLAY, WHATSAPP_NUMBER } from "./config";
 
 export function getWhatsAppUrl(message: string): string {
   return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
@@ -246,7 +248,7 @@ export const FAQS = [
   },
   {
     q: "هل يمكنني طلب تجربة مجانية قبل الاشتراك؟",
-    a: "نعم، بكل سرور! نوفر تجربة مجانية لمدة 6 إلى 12 ساعة لتفحص القنوات الرياضية والترفيهية وجودة السيرفر على جهازك قبل دفع أي مبلغ.",
+    a: "نعم، بكل سرور! نوفر تجربة مجانية لمدة 6 ساعات لتفحص القنوات الرياضية والترفيهية وجودة السيرفر على جهازك قبل دفع أي مبلغ.",
   },
   {
     q: "ما هي سرعة الإنترنت المطلوبة لتشغيل القنوات بدون تقطيع؟",

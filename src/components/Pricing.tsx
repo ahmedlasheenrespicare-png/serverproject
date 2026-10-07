@@ -28,11 +28,13 @@ export default function Pricing({
 
   const curr = CURRENCIES[currentCurrency] || CURRENCIES.SAR;
 
-  const durationLabels: Record<"3" | "6" | "12" | "24", { name: string; discount?: string }> = {
-    "3": { name: "3 شهور" },
-    "6": { name: "6 شهور", discount: "خصم 15%" },
-    "12": { name: "12 شهر (سنة)", discount: "الأكثر توفيراً 🔥" },
-    "24": { name: "24 شهر (سنتين)", discount: "خصم 50% VIP" },
+  /* نصوص المدة فقط — نسبة الخصم تُحسب فعلياً من oldSar أدناه،
+     وكان هنا حقل discount («خصم 50% VIP») لا يُعرض أبداً ويخالف النسبة الحقيقية */
+  const durationLabels: Record<"3" | "6" | "12" | "24", string> = {
+    "3": "3 شهور",
+    "6": "6 شهور",
+    "12": "12 شهر (سنة)",
+    "24": "24 شهر (سنتين)",
   };
 
   return (
@@ -67,7 +69,7 @@ export default function Pricing({
                       : "text-black/50 hover:text-black"
                   }`}
                 >
-                  {durationLabels[d].name}
+                  {durationLabels[d]}
                   {d === "12" && (
                     <span className="hidden sm:inline-block mr-1 text-[10px] bg-[#d8ff3e] text-black px-1.5 py-0.5 rounded font-black">
                       الأوفر
@@ -194,7 +196,7 @@ export default function Pricing({
                           dark ? "text-white/40" : "text-black/40"
                         }`}
                       >
-                        / {durationLabels[duration].name}
+                        / {durationLabels[duration]}
                       </span>
                     </div>
                     <div className="mt-2 flex items-center gap-2 flex-wrap">
@@ -262,7 +264,7 @@ export default function Pricing({
                 <div className="relative mt-7 pt-5 space-y-2.5">
                   <a
                     href={getWhatsAppUrl(
-                      `مرحبًا ستريم ماستر، أود الاشتراك في ${plan.serverName} لمدة ${durationLabels[duration].name} بسعر ${currentPrice} ${curr.symbol}`
+                      `مرحبًا ستريم ماستر، أود الاشتراك في ${plan.serverName} لمدة ${durationLabels[duration]} بسعر ${currentPrice} ${curr.symbol}`
                     )}
                     target="_blank"
                     rel="noopener noreferrer"

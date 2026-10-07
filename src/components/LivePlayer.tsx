@@ -1,8 +1,8 @@
-import { memo, useEffect, useMemo, useRef, useState } from "react";
+import { memo, useCallback, useEffect, useMemo, useRef, useState } from "react";
 import type Hls from "hls.js";
 import { canPlayNativeHls, loadHls } from "../hls";
 import { FEATURED_CHANNELS, type ChannelItem } from "../data";
-import { PROXY_BASE } from "../config";
+import { PROXY_BASE, to } from "../config";
 import {
   IconCheck,
   IconClock,
@@ -103,10 +103,15 @@ function LivePlayerInner({ onOpenTrial }: LivePlayerProps) {
 
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const hlsRef = useRef<Hls | null>(null);
+  const sectionRef = useRef<HTMLElement | null>(null);
 
-  // Load complete channels.json if available
-  useEffect(() => {
-    fetch("./channels.json")
+  /* تحميل قائمة القنوات الكاملة (~173KB) — عند الاقتراب من المشغّل فقط،
+     فلا يدفع ثمنها من لم يصل للقسم أصلاً. المسار من config.to (يتبع مسار النشر). */
+  const fullListRequested = useRef(false);
+  const loadFullChannels = useCallback(() => {
+    if (fullListRequested.current) return;
+    fullListRequested.current = true;
+    fetch(to("channels.json"))
       .then((res) => res.json())
       .then((data) => {
         if (!data || !Array.isArray(data.channels)) return;
@@ -125,6 +130,26 @@ function LivePlayerInner({ onOpenTrial }: LivePlayerProps) {
         // Fallback to FEATURED_CHANNELS
       });
   }, []);
+
+  useEffect(() => {
+    const el = sectionRef.current;
+    if (!el) return;
+    if (typeof IntersectionObserver === "undefined") {
+      loadFullChannels();
+      return;
+    }
+    const io = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((e) => e.isIntersecting)) {
+          loadFullChannels();
+          io.disconnect();
+        }
+      },
+      { rootMargin: "600px 0px" } /* نبدأ التحميل قبل ظهور القسم بقليل */
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, [loadFullChannels]);
 
   // Monitor playback buffer health in real-time
   useEffect(() => {
@@ -309,6 +334,7 @@ function LivePlayerInner({ onOpenTrial }: LivePlayerProps) {
 
   // Handle Play Overlay Click
   const handlePlayClick = () => {
+    loadFullChannels(); /* شبكة أمان لو لم يعمل IntersectionObserver */
     if (videoRef.current) {
       videoRef.current.muted = false;
       setIsMuted(false);
@@ -351,7 +377,11 @@ function LivePlayerInner({ onOpenTrial }: LivePlayerProps) {
   });
 
   return (
-    <section id="live-player" className="py-20 md:py-28 bg-white border-y border-black/10 relative overflow-hidden">
+    <section
+      id="live-player"
+      ref={sectionRef}
+      className="py-20 md:py-28 bg-white border-y border-black/10 relative overflow-hidden"
+    >
       <div className="max-w-[1400px] mx-auto px-5 relative">
         {/* الترويسة */}
         <Reveal variant="up" className="text-center max-w-[760px] mx-auto mb-12 md:mb-16">
@@ -534,7 +564,10 @@ function LivePlayerInner({ onOpenTrial }: LivePlayerProps) {
                   type="text"
                   placeholder="ابحث عن قناة (مثال: MBC Masr، دراما، 1)..."
                   value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
+                  onChange={(e) => {
+                    loadFullChannels(); /* البحث يحتاج القائمة الكاملة */
+                    setSearchQuery(e.target.value);
+                  }}
                   className="w-full rounded-full bg-white border border-black/10 ps-10 pe-3 py-2.5 text-[13px] font-medium placeholder:text-black/35 focus:border-[#2b4eff] focus:outline-none transition"
                 />
               </div>

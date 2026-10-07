@@ -18,6 +18,10 @@
       المحمية بـ token وتتوقف قوائم m3u8 المُعاد كتابتها في منتصف البث
    3) CORS مُقيَّد بنطاقات الموقع بدل "*" حتى لا يُستخدم الوسيط كوسيط مفتوح
    4) حجب أقوى للمضيفات الداخلية (IPv6 / صيغ IPv4 البديلة / أسماء بلا نقطة)
+   5) إعادة كتابة قوائم m3u8 تحفظ بروتوكول الرابط الأصلي: روابط http تُعاد
+      كتابتها إلى /x/ بدل /h/ — وإلا يتوقف البث عند أول مقطع على سيرفرات بلا TLS
+   6) فحص Referer عند غياب Origin — عناصر <video> العابرة للنطاق لا ترسل Origin
+      إطلاقاً، فكان أي موقع يستطيع تضمين البث من الوسيط
    ========================================================================== */
 
 const MBC_CDN = "https://shd-gcp-live.edgenextcdn.net";
@@ -30,17 +34,40 @@ const ALLOWED_ORIGINS = [
   "https://ahmedlasheenrespicare-png.github.io",
 ];
 
-/* طلبات بلا Origin (تشغيل أصلي داخل <video>، أو أدوات سطر أوامر) مسموحة،
-   أما الطلبات القادمة من مواقع أخرى فتُرفض لمنع سرقة النطاق الترددي. */
+/* نطاقات مسموحة إضافية بنمط (تطوير محلي + بيئة المعاينة + نطاق العامل نفسه) */
+const ALLOWED_ORIGIN_PATTERNS = [
+  /^https?:\/\/(localhost|127\.0\.0\.1)(:\d+)?$/i, /* التطوير المحلي */
+  /^https:\/\/[a-z0-9-]+\.e2b\.app$/i, /* بيئة المعاينة */
+  /^https:\/\/[a-z0-9-]+\.ahmedlasheenrespicare\.workers\.dev$/i,
+];
+
+function isAllowedOrigin(origin) {
+  if (!origin) return false;
+  if (ALLOWED_ORIGINS.includes(origin)) return true;
+  return ALLOWED_ORIGIN_PATTERNS.some((re) => re.test(origin));
+}
+
+/* استخراج الأصل (origin) من رأس Referer — تُرسله المتصفحات كأصل فقط
+   للموارد العابرة للنطاق (سياسة referrer الافتراضية) */
+function refererOrigin(request) {
+  const ref = request.headers.get("Referer") || request.headers.get("Referrer") || "";
+  if (!ref) return "";
+  try {
+    return new URL(ref).origin; /* قد يكون "null" لأصول مبهمة → غير مسموح */
+  } catch {
+    return "null";
+  }
+}
+
+/* طلبات بلا Origin (تشغيل أصلي داخل <video>/<audio>، أو أدوات سطر أوامر) مسموحة،
+   أما الطلبات القادمة من مواقع أخرى فتُرفض لمنع سرقة النطاق الترددي.
+   ملاحظة أمنية: عناصر <video> لا ترسل Origin إطلاقاً (no-cors) — لذلك نفحص
+   Referer أيضاً؛ وأي طلب بلا الاثنين يبقى مسموحاً (مشغلات أصلية/فحص يدوي)
+   ويُضبط إساءة استخدامه بـ Rate Limiting من لوحة Cloudflare. */
 function resolveCors(request) {
   const origin = request.headers.get("Origin") || "";
 
-  const allowed =
-    origin === "" ||
-    ALLOWED_ORIGINS.includes(origin) ||
-    /^https?:\/\/(localhost|127\.0\.0\.1)(:\d+)?$/i.test(origin) ||
-    /^https:\/\/[a-z0-9-]+\.e2b\.app$/i.test(origin) || /* بيئة المعاينة */
-    /^https:\/\/[a-z0-9-]+\.ahmedlasheenrespicare\.workers\.dev$/i.test(origin);
+  const allowed = origin === "" || isAllowedOrigin(origin);
 
   if (!allowed) return null;
 
@@ -67,6 +94,21 @@ export default {
     /* طلبات التحقق المسبق */
     if (request.method === "OPTIONS") {
       return new Response(null, { status: 204, headers: cors });
+    }
+
+    /* حماية إضافية للنطاق الترددي: لو جاء الطلب بلا Origin لكن مع Referer
+       لموقع آخر (تضمين فيديو مباشر من <video>/<audio>) → نرفضه */
+    if (!request.headers.get("Origin")) {
+      const refOrigin = refererOrigin(request);
+      if (refOrigin && !isAllowedOrigin(refOrigin)) {
+        return new Response(
+          JSON.stringify({
+            error: "REFERER_NOT_ALLOWED",
+            hint: "هذا الوسيط مخصص لموقع واحد فقط",
+          }),
+          { status: 403, headers: { "Content-Type": "application/json" } }
+        );
+      }
     }
 
     const url = new URL(request.url);
@@ -247,12 +289,16 @@ async function proxyTo(targetStr, request, cors) {
 
 /* ==========================================================================
    إعادة كتابة قوائم التشغيل m3u8
-   - الأسطر العادية (روابط)           → /h/<host>/<path>?<query>
-   - خصائص URI="..." (مفاتيح/صوت)     → /h/<host>/<path>?<query>
+   - الأسطر العادية (روابط)           → /x/<host>/<path>?<query> للسيرفرات http
+                                        و /h/<host>/<path>?<query> لغيرها
+   - خصائص URI="..." (مفاتيح/صوت)     → نفس القاعدة أعلاه
    - الروابط النسبية تُحلّ مقابل الرابط النهائي للسيرفر
+   - يُحفظ بروتوكول الرابط الأصلي: لو حوّلنا روابط سيرفر http إلى /h/ (https)
+     فإن أول مقطع بعد قائمة التشغيل يفشل عند سيرفرات بلا TLS ويتوقف البث
 ========================================================================== */
 function toProxyPath(u) {
-  return `/h/${u.host}${u.pathname}${u.search}`;
+  const rest = `${u.host}${u.pathname}${u.search}`;
+  return u.protocol === "http:" ? `/x/${rest}` : `/h/${rest}`;
 }
 
 function rewriteManifest(text, baseUrl) {
