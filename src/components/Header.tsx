@@ -11,6 +11,7 @@ import {
   IconZap,
 } from "./Icons";
 import { CURRENCIES, PRICING_PLANS, getWhatsAppUrl } from "../data";
+import { to } from "../config";
 
 interface HeaderProps {
   currentCurrency: string;
@@ -23,12 +24,17 @@ interface HeaderProps {
 /* =========================================================================
    شريط التنقل على طراز Salient: شريط إعلان علوي + كبسولة عائمة + قائمة ضخمة
 ========================================================================= */
+/* الروابط:
+
+   • أقسام الصفحة الرئيسية تُكتب كمرساة "#pricing" — والموجّه يعرف كيف يوصل
+     الزائر إليها من أي صفحة أخرى (ينتقل للرئيسية ثم يمرّر للقسم)
+   • الصفحات المستقلة (/channels و /blog) روابط حقيقية تُفهرس وتُشارَك */
 const NAV_LINKS = [
-  { name: "مشغل اشتراكك", href: "#xtream" },
   { name: "الباقات", href: "#pricing" },
+  { name: "القنوات", href: to("channels/") },
   { name: "البث المباشر", href: "#live-player" },
   { name: "مقارنة السيرفرات", href: "#servers-compare" },
-  { name: "الأسئلة الشائعة", href: "#faq" },
+  { name: "مقالات ودلائل", href: to("blog/") },
 ];
 
 /* ألوان مصغّرات السيرفرات داخل القائمة الضخمة */
@@ -136,7 +142,7 @@ export default function Header({
                         return (
                           <a
                             key={p.id}
-                            href="#pricing"
+                            href={to(`${p.serverCode}/`)}
                             onClick={() => setMega(false)}
                             className="group/m rounded-2xl overflow-hidden border border-black/10 hover:border-black transition"
                           >

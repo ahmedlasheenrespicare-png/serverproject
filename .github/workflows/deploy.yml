@@ -33,8 +33,11 @@ jobs:
       - name: Type check
         run: npm run typecheck
 
-      - name: Build site
+      - name: Build site (with prerender)
         run: npm run build
+        env:
+          VITE_BASE: /serverproject/
+          VITE_SITE_URL: https://ahmedlasheenrespicare-png.github.io/serverproject
 
       - name: Setup Pages
         uses: actions/configure-pages@v5

@@ -10,6 +10,7 @@ import {
   IconZap,
 } from "./Icons";
 import { getWhatsAppUrl, WHATSAPP_DISPLAY } from "../data";
+import { to } from "../config";
 import { LineReveal, Reveal } from "./motion";
 
 interface FooterProps {
@@ -123,16 +124,18 @@ export default function Footer({ onOpenTrial }: FooterProps) {
                     { t: "مساعد الاختيار", href: "#server-finder" },
                     { t: "مقارنة السيرفرات", href: "#servers-compare" },
                     { t: "مكتبة القنوات", href: "#channels" },
+                    { t: "كل القنوات (صفحة)", href: to("channels/") },
                     { t: "دليل التشغيل", href: "#setup" },
+                    { t: "مقالات ودلائل", href: to("blog/") },
                   ],
                 },
                 {
                   h: "السيرفرات",
                   l: [
-                    { t: "سيرفر نوفا (Nova) ⚽", href: "#pricing" },
-                    { t: "ماستر الترا VIP 👑", href: "#pricing" },
-                    { t: "سيرفر إيستار (iStar) 🎬", href: "#pricing" },
-                    { t: "سيرفر موكا (Moka) ⚡", href: "#pricing" },
+                    { t: "سيرفر نوفا (Nova) ⚽", href: to("nova/") },
+                    { t: "ماستر الترا VIP 👑", href: to("ultra/") },
+                    { t: "سيرفر إيستار (iStar) 🎬", href: to("istar/") },
+                    { t: "سيرفر موكا (Moka) ⚡", href: to("moka/") },
                     { t: "البث المباشر", href: "#live-player" },
                   ],
                 },
@@ -236,7 +239,7 @@ export default function Footer({ onOpenTrial }: FooterProps) {
 
           {/* الشريط السفلي */}
           <div className="flex flex-col md:flex-row items-center justify-between gap-4 pt-6 border-t border-white/10 text-[12.5px] font-medium text-white/40">
-            <p>
+            <p suppressHydrationWarning>
               © {new Date().getFullYear()} ستريم ماستر برو (Stream Master Pro) — جميع الحقوق
               محفوظة.
             </p>

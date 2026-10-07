@@ -1,6 +1,8 @@
 import { memo, useEffect, useMemo, useRef, useState } from "react";
 import type Hls from "hls.js";
 import { canPlayNativeHls, loadHls } from "../hls";
+import { FEATURED_CHANNELS, type ChannelItem } from "../data";
+import { PROXY_BASE } from "../config";
 import {
   IconCheck,
   IconClock,
@@ -12,169 +14,7 @@ import {
 } from "./Icons";
 import { Reveal } from "./motion";
 
-export interface ChannelItem {
-  name: string;
-  logo: string;
-  url: string;
-  cat: string;
-}
-
-// Built-in verified high-speed live channels including full MBC Network
-const DEFAULT_CHANNELS: ChannelItem[] = [
-  // --- باقة قنوات MBC المؤكدة والمفحوصة بنجاح 100% ---
-  {
-    name: "MBC 1 HD (العامة والمسلسلات)",
-    logo: "🟣",
-    url: "https://shd-gcp-live.edgenextcdn.net/live/bitmovin-mbc-1-na/eec141533c90dd34722c503a296dd0d8/index.m3u8",
-    cat: "قنوات MBC",
-  },
-  {
-    name: "MBC Masr 1 HD (إم بي سي مصر الأولى)",
-    logo: "🇪🇬",
-    url: "https://shd-gcp-live.edgenextcdn.net/live/bitmovin-mbc-masr/956eac069c78a35d47245db6cdbb1575/index.m3u8",
-    cat: "قنوات MBC",
-  },
-  {
-    name: "MBC Masr 2 HD (مصر 2 والرياضة)",
-    logo: "🇪🇬",
-    url: "https://shd-gcp-live.edgenextcdn.net/live/bitmovin-mbc-masr-2/754931856515075b0aabf0e583495c68/index.m3u8",
-    cat: "قنوات MBC",
-  },
-  {
-    name: "MBC Masr Drama HD (دراما مصر)",
-    logo: "🎭",
-    url: "https://shd-gcp-live.edgenextcdn.net/live/bitmovin-mbc-masr-drama/567b703c19ede6598222de81b0e4504b/index.m3u8",
-    cat: "قنوات MBC",
-  },
-  {
-    name: "MBC Drama HD (المسلسلات والدراما العربية)",
-    logo: "🎭",
-    url: "https://shd-gcp-live.edgenextcdn.net/live/bitmovin-mbc-drama/2c28a458e2f3253e678b07ac7d13fe71/index.m3u8",
-    cat: "قنوات MBC",
-  },
-  {
-    name: "MBC 4 HD (البرامج والمنوعات)",
-    logo: "📺",
-    url: "https://shd-gcp-live.edgenextcdn.net/live/bitmovin-mbc-4/24f134f1cd63db9346439e96b86ca6ed/index.m3u8",
-    cat: "قنوات MBC",
-  },
-  {
-    name: "MBC 5 HD (إم بي سي 5 المغرب)",
-    logo: "🇲🇦",
-    url: "https://shd-gcp-live.edgenextcdn.net/live/bitmovin-mbc-5/ee6b000cee0629411b666ab26cb13e9b/index.m3u8",
-    cat: "قنوات MBC",
-  },
-  {
-    name: "MBC Bollywood HD (هندي مدبلج ومترجم)",
-    logo: "💃",
-    url: "https://shd-gcp-live.edgenextcdn.net/live/bitmovin-mbc-bollywood/546eb407d7dcf9a209255dd2496903764/index.m3u8",
-    cat: "قنوات MBC",
-  },
-  {
-    name: "MBC Persia HD (أفلام أجنبية وسينما)",
-    logo: "🎬",
-    url: "https://shd-gcp-live.edgenextcdn.net/live/bitmovin-mbc-persia/818ee8e4b592dc497608f066d825bfb4/index.m3u8",
-    cat: "قنوات MBC",
-  },
-  {
-    name: "العربية الحدث HD (أخبار MBC)",
-    logo: "⚫",
-    url: "https://live.alarabiya.net/alarabiapublish/alhadath.smil/playlist.m3u8",
-    cat: "قنوات MBC",
-  },
-  {
-    name: "العربية الإخبارية HD",
-    logo: "🔴",
-    url: "https://live.alarabiya.net/alarabiapublish/alarabiya.smil/playlist.m3u8",
-    cat: "قنوات MBC",
-  },
-  {
-    name: "العربية أسواق 💹",
-    logo: "💹",
-    url: "https://live.alarabiya.net/alarabiapublish/aswaaq.smil/playlist.m3u8",
-    cat: "قنوات MBC",
-  },
-  {
-    name: "MBC Loud FM",
-    logo: "📻",
-    url: "https://radio-loud-fm.mbc.net/radio-loud-fm_1.m3u8",
-    cat: "قنوات MBC",
-  },
-
-  // --- القنوات الإخبارية والرياضية والعامة ---
-  {
-    name: "الجزيرة الإخبارية HD",
-    logo: "🟡",
-    url: "https://live-hls-web-aja.getaj.net/AJA/index.m3u8",
-    cat: "إخبارية",
-  },
-  {
-    name: "الجزيرة مباشر",
-    logo: "🔴",
-    url: "https://live-hls-web-ajm.getaj.net/AJM/index.m3u8",
-    cat: "إخبارية",
-  },
-  {
-    name: "العراقية سبورت HD",
-    logo: "⚽",
-    url: "https://imn-live.esite-lab.com/hls/iraqia-sports-1.m3u8",
-    cat: "رياضية",
-  },
-  {
-    name: "Oman Sport TV",
-    logo: "⚽",
-    url: "https://partneta.cdn.mgmlcdn.com/omsport/smil:omsport.stream.smil/chunklist.m3u8",
-    cat: "رياضية",
-  },
-  {
-    name: "France 24 عربي",
-    logo: "🔵",
-    url: "https://static.france24.com/live/F24_AR_HI_HLS/live_web.m3u8",
-    cat: "إخبارية",
-  },
-  {
-    name: "DW عربي HD",
-    logo: "🔷",
-    url: "https://dwamdstream102.akamaized.net/hls/live/2015525/dwstream102/index.m3u8",
-    cat: "إخبارية",
-  },
-  {
-    name: "Watan TV وطن مصرية",
-    logo: "🇪🇬",
-    url: "https://rp.tactivemedia.com/watantv_source/live/playlist.m3u8",
-    cat: "مصرية",
-  },
-  {
-    name: "Mekameleen مكملين",
-    logo: "📺",
-    url: "https://mn-nl.mncdn.com/mekameleen/smil:mekameleentv.smil/playlist.m3u8",
-    cat: "مصرية",
-  },
-  {
-    name: "Koogi TV أطفال",
-    logo: "🧒",
-    url: "https://5d658d7e9f562.streamlock.net/koogi.tv/koogi.smil/playlist.m3u8",
-    cat: "أطفال",
-  },
-  {
-    name: "Qatar Quran القرآن الكريم",
-    logo: "🕌",
-    url: "https://qatartv.akamaized.net/hls/live/20000612/qtvquran/master1080p.m3u8",
-    cat: "دينية",
-  },
-  {
-    name: "Asharq Discovery وثائقية",
-    logo: "🦁",
-    url: "https://svs.itworkscdn.net/asharqdiscoverylive/asharqd.smil/playlist_dvr.m3u8",
-    cat: "وثائقية",
-  },
-  {
-    name: "Big Buck Bunny 4K Cinema Demo",
-    logo: "🐰",
-    url: "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8",
-    cat: "أفلام",
-  },
-];
+export type { ChannelItem } from "../data";
 
 /* ترتيب التصنيفات المفضّل في الواجهة — أي تصنيف غير مذكور هنا يُلحق تلقائياً
    بالترتيب الأبجدي، فلا تختفي أي قناة من الأزرار مهما تغيّر ملف channels.json */
@@ -198,10 +38,7 @@ const PREFERRED_CATEGORY_ORDER = [
 // عند فشل الاتصال المباشر يتم التبديل تلقائياً لأول وسيط يعمل من القائمة.
 
 /* ⚙️⚙️⚙️ روابط الوسيط — تُجرّب بالترتيب عند فشل الاتصال المباشر ⚙️⚙️⚙️ */
-const PROXY_BASES: string[] = [
-  "https://serverproject.ahmedlasheenrespicare.workers.dev", // ✅ الوسيط الرسمي — Cloudflare Workers (مجاني، نطاق غير محدود، يُنشر تلقائياً مع كل push عبر wrangler.jsonc)
-  // "https://dry-elephant-8562.ahmedlasheenrespicare-png.deno.net", // وسيط Deno قديم (موقوف USAGE_EXCEEDED) — احتياطي معطّل
-];
+const PROXY_BASES: string[] = [PROXY_BASE]; // ✅ الوسيط الرسمي — Cloudflare Workers (يُعرَّف في src/config.ts)
 
 /* تجربة وسيط فوراً بدون تعديل الكود — أضف للرابط:  ?proxy=https://xxx.workers.dev
    (يُحفظ للجلسة الحالية فقط — مفيد للاختبار قبل التفعيل الدائم)
@@ -253,8 +90,8 @@ interface LivePlayerProps {
 }
 
 function LivePlayerInner({ onOpenTrial }: LivePlayerProps) {
-  const [channels, setChannels] = useState<ChannelItem[]>(DEFAULT_CHANNELS);
-  const [selectedChannel, setSelectedChannel] = useState<ChannelItem>(DEFAULT_CHANNELS[0]);
+  const [channels, setChannels] = useState<ChannelItem[]>(FEATURED_CHANNELS);
+  const [selectedChannel, setSelectedChannel] = useState<ChannelItem>(FEATURED_CHANNELS[0]);
   const [selectedCategory, setSelectedCategory] = useState<string>("قنوات MBC");
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -285,7 +122,7 @@ function LivePlayerInner({ onOpenTrial }: LivePlayerProps) {
         if (clean.length > 0) setChannels(clean);
       })
       .catch(() => {
-        // Fallback to DEFAULT_CHANNELS
+        // Fallback to FEATURED_CHANNELS
       });
   }, []);
 

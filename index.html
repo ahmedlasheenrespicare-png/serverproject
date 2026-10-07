@@ -72,90 +72,10 @@
       />
     </noscript>
 
-    <!-- Schema.org JSON-LD (Organization, Product, AggregateRating, FAQPage) -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@graph": [
-          {
-            "@type": "Organization",
-            "@id": "https://ahmedlasheenrespicare-png.github.io/serverproject/#organization",
-            "name": "ستريم ماستر برو — Stream Master Pro",
-            "url": "https://ahmedlasheenrespicare-png.github.io/serverproject/",
-            "logo": "https://ahmedlasheenrespicare-png.github.io/serverproject/icon-512.png",
-            "description": "افضل اشتراك وسيرفرات IPTV 2026 بدون تقطيع في السعودية والخليج ومصر",
-            "contactPoint": {
-              "@type": "ContactPoint",
-              "telephone": "+201070330835",
-              "contactType": "customer support",
-              "availableLanguage": ["Arabic", "English"]
-            }
-          },
-          {
-            "@type": "Product",
-            "@id": "https://ahmedlasheenrespicare-png.github.io/serverproject/#product",
-            "name": "اشتراك سيرفر نوفا الأصلي (Nova Server IPTV 2026)",
-            "image": "https://ahmedlasheenrespicare-png.github.io/serverproject/images/og-default.png",
-            "description": "اشتراك IPTV سنوي فائق الثبات بدون تقطيع مع قنوات beIN Sports 4K وSSC ومكتبة أفلام VOD ضخمة.",
-            "brand": {
-              "@type": "Brand",
-              "name": "Stream Master Pro"
-            },
-            "offers": {
-              "@type": "AggregateOffer",
-              "priceCurrency": "SAR",
-              "lowPrice": "65",
-              "highPrice": "610",
-              "offerCount": "16",
-              "availability": "https://schema.org/InStock",
-              "seller": {
-                "@id": "https://ahmedlasheenrespicare-png.github.io/serverproject/#organization"
-              }
-            },
-            "aggregateRating": {
-              "@type": "AggregateRating",
-              "ratingValue": "4.95",
-              "reviewCount": "4820",
-              "bestRating": "5",
-              "worstRating": "1"
-            }
-          },
-          {
-            "@type": "FAQPage",
-            "@id": "https://ahmedlasheenrespicare-png.github.io/serverproject/#faq",
-            "mainEntity": [
-              {
-                "@type": "Question",
-                "name": "هل السيرفر مستقر وبدون تقطيع أثناء المباريات الكبيرة؟",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "نعم، سيرفراتنا مزودة بتقنية الحماية من الضغط Anti-Freeze وشبكة خوادم CDN موزعة جغرافياً لضمان ثبات 99.9% في قمة المباريات."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "كيف أستلم بيانات الاشتراك بعد الشراء؟",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "التفعيل فوري وآلي بالكامل خلال 5 دقائق عبر واتساب مع شرح كامل لخطوات التشغيل."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "هل يمكنني طلب تجربة مجانية قبل الاشتراك؟",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "نعم، نوفر تجربة مجانية لمدة 6 ساعات لتفحص القنوات الرياضية والترفيهية قبل الدفع."
-                }
-              }
-            ]
-          }
-        ]
-      }
-    </script>
+    <!-- البيانات المنظّمة (JSON-LD) تُولَّد لكل صفحة أثناء البناء — انظر scripts/prerender.mjs -->
   </head>
   <body class="bg-[#faf9f6] text-[#0b0b0f] antialiased">
     <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+    <script type="module" src="/src/entry-client.tsx"></script>
   </body>
 </html>

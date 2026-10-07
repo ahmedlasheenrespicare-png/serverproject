@@ -1,6 +1,7 @@
 import { memo, useEffect, useMemo, useRef, useState } from "react";
 import type Hls from "hls.js";
 import { loadHls } from "../hls";
+import { PROXY_BASE } from "../config";
 import {
   IconArrowUp,
   IconArrowUpRight,
@@ -29,7 +30,6 @@ import { Reveal } from "./motion";
      — لا يحتاج CORS إطلاقاً ويعرض كل القنوات
 ========================================================================== */
 
-const PROXY_BASE = "https://serverproject.ahmedlasheenrespicare.workers.dev";
 const STORAGE_KEY = "smp-xtream-account";
 
 /* ========================================================================= */
