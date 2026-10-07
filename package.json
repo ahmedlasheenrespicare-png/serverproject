@@ -1,13 +1,16 @@
 {
-  "name": "mbclive",
+  "name": "stream-master-pro",
   "private": true,
   "version": "1.0.0",
   "description": "ستريم ماستر برو — أفضل اشتراك IPTV في 2026 بدون تقطيع | ثبات 99.9%",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
+    "build": "npm run build:client && npm run build:ssr && node scripts/prerender.mjs",
+    "build:client": "vite build",
+    "build:ssr": "vite build --ssr src/entry-server.tsx --outDir dist-ssr",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "clsx": "2.1.1",

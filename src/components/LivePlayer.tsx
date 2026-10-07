@@ -1,5 +1,8 @@
-import { useEffect, useRef, useState } from "react";
-import Hls from "hls.js";
+import { memo, useEffect, useMemo, useRef, useState } from "react";
+import type Hls from "hls.js";
+import { canPlayNativeHls, loadHls } from "../hls";
+import { FEATURED_CHANNELS, type ChannelItem } from "../data";
+import { PROXY_BASE } from "../config";
 import {
   IconCheck,
   IconClock,
@@ -11,168 +14,23 @@ import {
 } from "./Icons";
 import { Reveal } from "./motion";
 
-export interface ChannelItem {
-  name: string;
-  logo: string;
-  url: string;
-  cat: string;
-}
+export type { ChannelItem } from "../data";
 
-// Built-in verified high-speed live channels including full MBC Network
-const DEFAULT_CHANNELS: ChannelItem[] = [
-  // --- باقة قنوات MBC المؤكدة والمفحوصة بنجاح 100% ---
-  {
-    name: "MBC 1 HD (العامة والمسلسلات)",
-    logo: "🟣",
-    url: "https://shd-gcp-live.edgenextcdn.net/live/bitmovin-mbc-1-na/eec141533c90dd34722c503a296dd0d8/index.m3u8",
-    cat: "قنوات MBC",
-  },
-  {
-    name: "MBC Masr 1 HD (إم بي سي مصر الأولى)",
-    logo: "🇪🇬",
-    url: "https://shd-gcp-live.edgenextcdn.net/live/bitmovin-mbc-masr/956eac069c78a35d47245db6cdbb1575/index.m3u8",
-    cat: "قنوات MBC",
-  },
-  {
-    name: "MBC Masr 2 HD (مصر 2 والرياضة)",
-    logo: "🇪🇬",
-    url: "https://shd-gcp-live.edgenextcdn.net/live/bitmovin-mbc-masr-2/754931856515075b0aabf0e583495c68/index.m3u8",
-    cat: "قنوات MBC",
-  },
-  {
-    name: "MBC Masr Drama HD (دراما مصر)",
-    logo: "🎭",
-    url: "https://shd-gcp-live.edgenextcdn.net/live/bitmovin-mbc-masr-drama/567b703c19ede6598222de81b0e4504b/index.m3u8",
-    cat: "قنوات MBC",
-  },
-  {
-    name: "MBC Drama HD (المسلسلات والدراما العربية)",
-    logo: "🎭",
-    url: "https://shd-gcp-live.edgenextcdn.net/live/bitmovin-mbc-drama/2c28a458e2f3253e678b07ac7d13fe71/index.m3u8",
-    cat: "قنوات MBC",
-  },
-  {
-    name: "MBC 4 HD (البرامج والمنوعات)",
-    logo: "📺",
-    url: "https://shd-gcp-live.edgenextcdn.net/live/bitmovin-mbc-4/24f134f1cd63db9346439e96b86ca6ed/index.m3u8",
-    cat: "قنوات MBC",
-  },
-  {
-    name: "MBC 5 HD (إم بي سي 5 المغرب)",
-    logo: "🇲🇦",
-    url: "https://shd-gcp-live.edgenextcdn.net/live/bitmovin-mbc-5/ee6b000cee0629411b666ab26cb13e9b/index.m3u8",
-    cat: "قنوات MBC",
-  },
-  {
-    name: "MBC Bollywood HD (هندي مدبلج ومترجم)",
-    logo: "💃",
-    url: "https://shd-gcp-live.edgenextcdn.net/live/bitmovin-mbc-bollywood/546eb407d7dcf9a209255dd2496903764/index.m3u8",
-    cat: "قنوات MBC",
-  },
-  {
-    name: "MBC Persia HD (أفلام أجنبية وسينما)",
-    logo: "🎬",
-    url: "https://shd-gcp-live.edgenextcdn.net/live/bitmovin-mbc-persia/818ee8e4b592dc497608f066d825bfb4/index.m3u8",
-    cat: "قنوات MBC",
-  },
-  {
-    name: "العربية الحدث HD (أخبار MBC)",
-    logo: "⚫",
-    url: "https://live.alarabiya.net/alarabiapublish/alhadath.smil/playlist.m3u8",
-    cat: "قنوات MBC",
-  },
-  {
-    name: "العربية الإخبارية HD",
-    logo: "🔴",
-    url: "https://live.alarabiya.net/alarabiapublish/alarabiya.smil/playlist.m3u8",
-    cat: "قنوات MBC",
-  },
-  {
-    name: "العربية أسواق 💹",
-    logo: "💹",
-    url: "https://live.alarabiya.net/alarabiapublish/aswaaq.smil/playlist.m3u8",
-    cat: "قنوات MBC",
-  },
-  {
-    name: "MBC Loud FM",
-    logo: "📻",
-    url: "https://radio-loud-fm.mbc.net/radio-loud-fm_1.m3u8",
-    cat: "قنوات MBC",
-  },
-
-  // --- القنوات الإخبارية والرياضية والعامة ---
-  {
-    name: "الجزيرة الإخبارية HD",
-    logo: "🟡",
-    url: "https://live-hls-web-aja.getaj.net/AJA/index.m3u8",
-    cat: "إخبارية",
-  },
-  {
-    name: "الجزيرة مباشر",
-    logo: "🔴",
-    url: "https://live-hls-web-ajm.getaj.net/AJM/index.m3u8",
-    cat: "إخبارية",
-  },
-  {
-    name: "العراقية سبورت HD",
-    logo: "⚽",
-    url: "https://imn-live.esite-lab.com/hls/iraqia-sports-1.m3u8",
-    cat: "رياضية",
-  },
-  {
-    name: "Oman Sport TV",
-    logo: "⚽",
-    url: "https://partneta.cdn.mgmlcdn.com/omsport/smil:omsport.stream.smil/chunklist.m3u8",
-    cat: "رياضية",
-  },
-  {
-    name: "France 24 عربي",
-    logo: "🔵",
-    url: "https://static.france24.com/live/F24_AR_HI_HLS/live_web.m3u8",
-    cat: "إخبارية",
-  },
-  {
-    name: "DW عربي HD",
-    logo: "🔷",
-    url: "https://dwamdstream102.akamaized.net/hls/live/2015525/dwstream102/index.m3u8",
-    cat: "إخبارية",
-  },
-  {
-    name: "Watan TV وطن مصرية",
-    logo: "🇪🇬",
-    url: "https://rp.tactivemedia.com/watantv_source/live/playlist.m3u8",
-    cat: "مصرية",
-  },
-  {
-    name: "Mekameleen مكملين",
-    logo: "📺",
-    url: "https://mn-nl.mncdn.com/mekameleen/smil:mekameleentv.smil/playlist.m3u8",
-    cat: "مصرية",
-  },
-  {
-    name: "Koogi TV أطفال",
-    logo: "🧒",
-    url: "https://5d658d7e9f562.streamlock.net/koogi.tv/koogi.smil/playlist.m3u8",
-    cat: "أطفال",
-  },
-  {
-    name: "Qatar Quran القرآن الكريم",
-    logo: "🕌",
-    url: "https://qatartv.akamaized.net/hls/live/20000612/qtvquran/master1080p.m3u8",
-    cat: "دينية",
-  },
-  {
-    name: "Asharq Discovery وثائقية",
-    logo: "🦁",
-    url: "https://svs.itworkscdn.net/asharqdiscoverylive/asharqd.smil/playlist_dvr.m3u8",
-    cat: "وثائقية",
-  },
-  {
-    name: "Big Buck Bunny 4K Cinema Demo",
-    logo: "🐰",
-    url: "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8",
-    cat: "أفلام",
-  },
+/* ترتيب التصنيفات المفضّل في الواجهة — أي تصنيف غير مذكور هنا يُلحق تلقائياً
+   بالترتيب الأبجدي، فلا تختفي أي قناة من الأزرار مهما تغيّر ملف channels.json */
+const PREFERRED_CATEGORY_ORDER = [
+  "قنوات MBC",
+  "رياضية",
+  "إخبارية",
+  "عربية",
+  "مصرية",
+  "أفلام",
+  "منوعات",
+  "عالمية",
+  "وثائقية",
+  "دينية",
+  "أطفال",
+  "موسيقى",
 ];
 
 // ====== وسيط البث: مواجهة حجب بعض الشبكات لسيرفرات القنوات ======
@@ -180,22 +38,29 @@ const DEFAULT_CHANNELS: ChannelItem[] = [
 // عند فشل الاتصال المباشر يتم التبديل تلقائياً لأول وسيط يعمل من القائمة.
 
 /* ⚙️⚙️⚙️ روابط الوسيط — تُجرّب بالترتيب عند فشل الاتصال المباشر ⚙️⚙️⚙️ */
-const PROXY_BASES: string[] = [
-  "https://serverproject.ahmedlasheenrespicare.workers.dev", // ✅ الوسيط الرسمي — Cloudflare Workers (مجاني، نطاق غير محدود، يُنشر تلقائياً مع كل push عبر wrangler.jsonc)
-  // "https://dry-elephant-8562.ahmedlasheenrespicare-png.deno.net", // وسيط Deno قديم (موقوف USAGE_EXCEEDED) — احتياطي معطّل
-];
+const PROXY_BASES: string[] = [PROXY_BASE]; // ✅ الوسيط الرسمي — Cloudflare Workers (يُعرَّف في src/config.ts)
 
 /* تجربة وسيط فوراً بدون تعديل الكود — أضف للرابط:  ?proxy=https://xxx.workers.dev
-   (يُحفظ للجلسة الحالية فقط — مفيد للاختبار قبل التفعيل الدائم) */
+   (يُحفظ للجلسة الحالية فقط — مفيد للاختبار قبل التفعيل الدائم)
+   ⚠️ أمان: لا نقبل أي رابط وسيط من الرابط — فقط نطاقات حسابنا نفسه،
+   حتى لا يستطيع طرف خارجي تمرير فيديو الزائر عبر سيرفر يتحكم به. */
+const OWNED_PROXY_PATTERN =
+  /^https:\/\/[a-z0-9-]+\.(ahmedlasheenrespicare\.workers\.dev|ahmedlasheenrespicare-png\.deno\.net)$/i;
+
+function isTrustedProxy(value: string): boolean {
+  return OWNED_PROXY_PATTERN.test(value.trim().replace(/\/+$/, ""));
+}
+
 function resolveProxyBases(): string[] {
   try {
     const p = new URLSearchParams(window.location.search).get("proxy");
-    if (p && p.startsWith("https://")) {
-      sessionStorage.setItem("smp-proxy", p);
-      return [p, ...PROXY_BASES];
+    if (p && isTrustedProxy(p)) {
+      const clean = p.trim().replace(/\/+$/, "");
+      sessionStorage.setItem("smp-proxy", clean);
+      return [clean, ...PROXY_BASES];
     }
     const saved = sessionStorage.getItem("smp-proxy");
-    if (saved && saved.startsWith("https://")) return [saved, ...PROXY_BASES];
+    if (saved && isTrustedProxy(saved)) return [saved, ...PROXY_BASES];
   } catch {
     /* بيئة بدون sessionStorage — تجاهل */
   }
@@ -224,9 +89,9 @@ interface LivePlayerProps {
   onOpenTrial: () => void;
 }
 
-export default function LivePlayer({ onOpenTrial }: LivePlayerProps) {
-  const [channels, setChannels] = useState<ChannelItem[]>(DEFAULT_CHANNELS);
-  const [selectedChannel, setSelectedChannel] = useState<ChannelItem>(DEFAULT_CHANNELS[0]);
+function LivePlayerInner({ onOpenTrial }: LivePlayerProps) {
+  const [channels, setChannels] = useState<ChannelItem[]>(FEATURED_CHANNELS);
+  const [selectedChannel, setSelectedChannel] = useState<ChannelItem>(FEATURED_CHANNELS[0]);
   const [selectedCategory, setSelectedCategory] = useState<string>("قنوات MBC");
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -244,12 +109,20 @@ export default function LivePlayer({ onOpenTrial }: LivePlayerProps) {
     fetch("./channels.json")
       .then((res) => res.json())
       .then((data) => {
-        if (data && Array.isArray(data.channels) && data.channels.length > 0) {
-          setChannels(data.channels);
-        }
+        if (!data || !Array.isArray(data.channels)) return;
+        /* تنقية البيانات: أي عنصر ناقص يُتجاهل بدل أن يُسقط الواجهة */
+        const clean: ChannelItem[] = (data.channels as Record<string, unknown>[])
+          .map((c) => ({
+            name: String(c?.name ?? "").trim(),
+            logo: String(c?.logo ?? "📺"),
+            url: String(c?.url ?? "").trim(),
+            cat: String(c?.cat ?? "منوعات").trim() || "منوعات",
+          }))
+          .filter((c) => c.name !== "" && c.url !== "");
+        if (clean.length > 0) setChannels(clean);
       })
       .catch(() => {
-        // Fallback to DEFAULT_CHANNELS
+        // Fallback to FEATURED_CHANNELS
       });
   }, []);
 
@@ -314,77 +187,8 @@ export default function LivePlayer({ onOpenTrial }: LivePlayerProps) {
       }, 6000);
     }
 
-    if (Hls.isSupported()) {
-      const hls = new Hls({
-        enableWorker: true,
-        startFragPrefetch: true,
-        lowLatencyMode: true,
-        maxBufferLength: 30,
-        maxMaxBufferLength: 60,
-        backBufferLength: 30,
-        liveSyncDurationCount: 3,
-        liveMaxLatencyDurationCount: 6,
-        fragLoadingTimeOut: 15000,
-        manifestLoadingTimeOut: 10000,
-        levelLoadingTimeOut: 10000,
-        autoStartLoad: true,
-        capLevelToPlayerSize: false,
-      });
-
-      hls.loadSource(playbackUrl);
-      hls.attachMedia(video);
-
-      hls.on(Hls.Events.MANIFEST_PARSED, () => {
-        manifestParsed = true;
-        setIsLoading(false);
-        setStatusMsg("");
-
-        // Autoplay with muted fallback to bypass browser policy
-        video.muted = isMuted;
-        video
-          .play()
-          .then(() => {
-            setIsPlaying(true);
-          })
-          .catch(() => {
-            // If browser blocked unmuted autoplay, mute and play
-            video.muted = true;
-            setIsMuted(true);
-            video.play().then(() => setIsPlaying(true)).catch(() => setIsPlaying(false));
-          });
-      });
-
-      hls.on(Hls.Events.AUDIO_TRACKS_UPDATED, (_event, data) => {
-        if (data.audioTracks && data.audioTracks.length > 0 && hls.audioTrack === -1) {
-          hls.audioTrack = 0;
-        }
-      });
-
-      hls.on(Hls.Events.ERROR, (_event, data) => {
-        if (data.fatal) {
-          switch (data.type) {
-            case Hls.ErrorTypes.NETWORK_ERROR:
-              // الشبكة تحجب السيرفر المباشر؟ → بدّل للوسيط قبل محاولة إعادة الاتصال
-              if (switchToProxy()) break;
-              setStatusMsg("جاري الاتصال بالسيرفر الاحتياطي...");
-              hls.startLoad();
-              break;
-            case Hls.ErrorTypes.MEDIA_ERROR:
-              setStatusMsg("جاري تصحيح البث...");
-              hls.recoverMediaError();
-              break;
-            default:
-              setIsLoading(false);
-              setStatusMsg("تعذر تشغيل هذه القناة حالياً — جرب قناة أخرى");
-              hls.destroy();
-              break;
-          }
-        }
-      });
-
-      hlsRef.current = hls;
-    } else if (video.canPlayType("application/vnd.apple.mpegurl")) {
-      // Native Apple Safari HLS
+    /* تشغيل أصلي (سفاري/الجوال) لا يحتاج تحميل أي مكتبة */
+    const startNative = () => {
       video.src = playbackUrl;
       video.muted = isMuted;
       video.addEventListener("loadedmetadata", () => {
@@ -396,9 +200,103 @@ export default function LivePlayer({ onOpenTrial }: LivePlayerProps) {
       video.addEventListener("error", () => {
         switchToProxy();
       }, { once: true });
-    }
+    };
+
+    /* hls.js تُحمَّل عند الطلب — أول تشغيل فقط (توفير ~460KB على كل زيارة) */
+    let disposed = false;
+    loadHls()
+      .then((HlsLib) => {
+        if (disposed) return;
+
+        if (HlsLib.isSupported()) {
+          const hls = new HlsLib({
+            enableWorker: true,
+            startFragPrefetch: true,
+            lowLatencyMode: true,
+            maxBufferLength: 30,
+            maxMaxBufferLength: 60,
+            backBufferLength: 30,
+            liveSyncDurationCount: 3,
+            liveMaxLatencyDurationCount: 6,
+            fragLoadingTimeOut: 15000,
+            manifestLoadingTimeOut: 10000,
+            levelLoadingTimeOut: 10000,
+            autoStartLoad: true,
+            capLevelToPlayerSize: false,
+          });
+
+          hls.loadSource(playbackUrl);
+          hls.attachMedia(video);
+
+          hls.on(HlsLib.Events.MANIFEST_PARSED, () => {
+            manifestParsed = true;
+            setIsLoading(false);
+            setStatusMsg("");
+
+            // Autoplay with muted fallback to bypass browser policy
+            video.muted = isMuted;
+            video
+              .play()
+              .then(() => {
+                setIsPlaying(true);
+              })
+              .catch(() => {
+                // If browser blocked unmuted autoplay, mute and play
+                video.muted = true;
+                setIsMuted(true);
+                video.play().then(() => setIsPlaying(true)).catch(() => setIsPlaying(false));
+              });
+          });
+
+          hls.on(HlsLib.Events.AUDIO_TRACKS_UPDATED, (_event, data) => {
+            if (data.audioTracks && data.audioTracks.length > 0 && hls.audioTrack === -1) {
+              hls.audioTrack = 0;
+            }
+          });
+
+          hls.on(HlsLib.Events.ERROR, (_event, data) => {
+            if (data.fatal) {
+              switch (data.type) {
+                case HlsLib.ErrorTypes.NETWORK_ERROR:
+                  // الشبكة تحجب السيرفر المباشر؟ → بدّل للوسيط قبل محاولة إعادة الاتصال
+                  if (switchToProxy()) break;
+                  setStatusMsg("جاري الاتصال بالسيرفر الاحتياطي...");
+                  hls.startLoad();
+                  break;
+                case HlsLib.ErrorTypes.MEDIA_ERROR:
+                  setStatusMsg("جاري تصحيح البث...");
+                  hls.recoverMediaError();
+                  break;
+                default:
+                  setIsLoading(false);
+                  setStatusMsg("تعذر تشغيل هذه القناة حالياً — جرب قناة أخرى");
+                  hls.destroy();
+                  break;
+              }
+            }
+          });
+
+          hlsRef.current = hls;
+        } else if (canPlayNativeHls(video)) {
+          // Native Apple Safari HLS
+          startNative();
+        } else {
+          setIsLoading(false);
+          setStatusMsg("متصفحك لا يدعم تشغيل هذه القناة — جرّب Chrome أو Safari أو متصفح الجوال.");
+        }
+      })
+      .catch(() => {
+        /* فشل تحميل المكتبة (شبكة/حجب) → نجرّب التشغيل الأصلي كحل أخير */
+        if (disposed) return;
+        if (canPlayNativeHls(video)) startNative();
+        else {
+          setIsLoading(false);
+          setStatusMsg("تعذر تحميل مشغل البث — تحقق من اتصالك ثم أعد المحاولة");
+        }
+      });
 
     return () => {
+      disposed = true;
       if (switchTimer !== undefined) {
         window.clearTimeout(switchTimer);
       }
@@ -427,24 +325,28 @@ export default function LivePlayer({ onOpenTrial }: LivePlayerProps) {
     }
   };
 
-  // Categories list
-  const categories = [
-    "قنوات MBC",
-    "الكل",
-    "رياضية",
-    "إخبارية",
-    "مصرية",
-    "أفلام",
-    "دينية",
-    "وثائقية",
-    "أطفال",
-    "منوعات",
-  ];
+  // Categories list — تُبنى من البيانات نفسها حتى لا تختفي أي قناة من الواجهة
+  const categories = useMemo(() => {
+    const found = new Set(channels.map((c) => c.cat));
+    const preferred = PREFERRED_CATEGORY_ORDER.filter((c) => found.has(c));
+    const extra = [...found]
+      .filter((c) => !PREFERRED_CATEGORY_ORDER.includes(c))
+      .sort((a, b) => a.localeCompare(b, "ar"));
+    const list = [...preferred, ...extra];
+    /* «الكل» في الموضع الثاني بجانب التصنيف الافتراضي */
+    return list.length > 0 ? [list[0], "الكل", ...list.slice(1)] : ["الكل"];
+  }, [channels]);
+
+  /* لو اختفى التصنيف المختار بعد تحميل بيانات جديدة نرجع إلى «الكل» */
+  useEffect(() => {
+    if (!categories.includes(selectedCategory)) setSelectedCategory("الكل");
+  }, [categories, selectedCategory]);
 
   // Filtered channels
   const filteredChannels = channels.filter((c) => {
     const matchesCat = selectedCategory === "الكل" || c.cat === selectedCategory;
-    const matchesSearch = searchQuery === "" || c.name.toLowerCase().includes(searchQuery.toLowerCase());
+    const q = searchQuery.trim().toLowerCase();
+    const matchesSearch = q === "" || c.name.toLowerCase().includes(q);
     return matchesCat && matchesSearch;
   });
 
@@ -718,3 +620,8 @@ export default function LivePlayer({ onOpenTrial }: LivePlayerProps) {
     </section>
   );
 }
+
+/* onOpenTrial مرجع ثابت (useCallback في App) → memo يمنع إعادة رسم المشغل
+   وإعادة تحميل البث عند أي تغيير حالة غير متعلق بالمشغل. */
+const LivePlayer = memo(LivePlayerInner);
+export default LivePlayer;

@@ -51,6 +51,29 @@ https://ahmedlasheenrespicare-png.github.io/serverproject/?proxy=https://stream-
 
 ---
 
+## 🔐 تقييد الوسيط (مهم — تغيير في النسخة الحالية)
+
+الوسيط الآن **لا يخدم إلا نطاق موقعك** لمنع استخدامه كوسيط مفتوح (سرقة النطاق الترددي):
+
+- قائمة النطاقات المسموحة في أعلى `worker.js`:
+
+```js
+const ALLOWED_ORIGINS = [
+  "https://ahmedlasheenrespicare-png.github.io",
+];
+```
+
+- الطلبات القادمة من موقع آخر تُرفض بـ `403 ORIGIN_NOT_ALLOWED`.
+- الطلبات بلا `Origin` (تشغيل أصلي داخل `<video>`، أدوات سطر الأوامر، فحص `curl`) مسموحة.
+- `localhost` ونطاقات المعاينة `*.e2b.app` مسموحة للتطوير.
+
+> **عند نقل الموقع لنطاق مخصص** (مثل `example.com`) أضِفه إلى `ALLOWED_ORIGINS` ثم أعد نشر الوسيط،
+> وإلا سيتوقف البث عبر الوسيط بخطأ 403.
+
+**الحد من الاستهلاك:** فعّل Rate Limiting من لوحة Cloudflare (Workers → الإعدادات) للحد من أي إساءة استخدام.
+
+---
+
 ## 🧪 اختبار يدوي (اختياري)
 
 جرّب هذه الروابط في المتصفح مباشرة:
@@ -58,6 +81,8 @@ https://ahmedlasheenrespicare-png.github.io/serverproject/?proxy=https://stream-
 | الغرض | الرابط |
 |---|---|
 | صفحة الحالة | `https://رابط-الوسيط/` |
+| فحص سريع | `https://رابط-الوسيط/health` |
+| رابط كامل (المسار الذي يستخدمه مشغل الاشتراك) | `https://رابط-الوسيط/?u=<الرابط-مُرمَّزاً>` |
 | قناة العربية | `https://رابط-الوسيط/h/live.alarabiya.net/alarabiapublish/alarabiya.smil/playlist.m3u8` |
 | قناة MBC 1 | `https://رابط-الوسيط/live/bitmovin-mbc-1-na/eec141533c90dd34722c503a296dd0d8/index.m3u8` |
 

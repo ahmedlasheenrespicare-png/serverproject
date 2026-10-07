@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { IconChat, IconClose, IconZap } from "./Icons";
 import { getWhatsAppUrl } from "../data";
 
@@ -12,6 +12,21 @@ export default function TrialModal({ isOpen, onClose }: TrialModalProps) {
   const [server, setServer] = useState("سيرفر نوفا (Nova)");
   const [phone, setPhone] = useState("");
 
+  /* إتاحة: إغلاق بزر Escape + منع تمرير الخلفية أثناء فتح النافذة */
+  useEffect(() => {
+    if (!isOpen) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") onClose();
+    };
+    document.addEventListener("keydown", onKey);
+    const prevOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.removeEventListener("keydown", onKey);
+      document.body.style.overflow = prevOverflow;
+    };
+  }, [isOpen, onClose]);
+
   if (!isOpen) return null;
 
   const handleSendRequest = (e: React.FormEvent) => {
@@ -23,6 +38,9 @@ export default function TrialModal({ isOpen, onClose }: TrialModalProps) {
 
   return (
     <div
+      role="dialog"
+      aria-modal="true"
+      aria-label="طلب تجربة مجانية"
       className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#0b0b0f]/70 backdrop-blur-md animate-fade-in"
       onClick={onClose}
     >
@@ -33,8 +51,8 @@ export default function TrialModal({ isOpen, onClose }: TrialModalProps) {
         {/* زر الإغلاق */}
         <button
           onClick={onClose}
-          className="absolute top-5 start-5 text-black/40 hover:text-black p-1.5 rounded-full bg-[#f4f3ef] hover:bg-[#d8ff3e] transition"
-          aria-label="إغلاق"
+          className="absolute top-5 start-5 text-black/40 hover:text-black p-1.5 rounded-full bg-[#f4f3ef] hover:bg-[#d8ff3e] transition cursor-pointer"
+          aria-label="إغلاق نافذة التجربة"
         >
           <IconClose className="w-4.5 h-4.5" />
         </button>

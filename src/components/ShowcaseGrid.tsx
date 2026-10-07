@@ -7,6 +7,11 @@ import { Reveal } from "./motion";
    حبوب فلترة + شبكة بطاقات صور بتكبير عند المرور وشريط معلومات
 ========================================================================== */
 
+/* نسخة AVIF من نفس الصورة — الملفات موجودة بنفس الأسماء مع امتداد .avif */
+function toAvif(path: string): string {
+  return path.replace(/\.webp$/i, ".avif");
+}
+
 interface ShowcaseItem {
   title: string;
   category: "رياضة" | "سينما" | "أجهزة" | "سيرفرات";
@@ -99,6 +104,9 @@ const ITEMS: ShowcaseItem[] = [
     category: "سيرفرات",
     desc: "نوفا × الترا × إيستار × موكا",
     img: "images/articles/comparison.webp",
+    img480: "images/articles/comparison-480w.webp",
+    img768: "images/articles/comparison-768w.webp",
+    img1280: "images/articles/comparison-1280w.webp",
     href: "#servers-compare",
   },
   {
@@ -106,6 +114,9 @@ const ITEMS: ShowcaseItem[] = [
     category: "سيرفرات",
     desc: "تقنية Anti-Freeze وشبكة CDN موزعة",
     img: "images/articles/security.webp",
+    img480: "images/articles/security-480w.webp",
+    img768: "images/articles/security-768w.webp",
+    img1280: "images/articles/security-1280w.webp",
     href: "#servers-compare",
   },
   {
@@ -113,6 +124,9 @@ const ITEMS: ShowcaseItem[] = [
     category: "سيرفرات",
     desc: "متوسط الرد أقل من 3 دقائق عبر واتساب",
     img: "images/articles/support.webp",
+    img480: "images/articles/support-480w.webp",
+    img768: "images/articles/support-768w.webp",
+    img1280: "images/articles/support-1280w.webp",
     href: "#faq",
   },
 ];
@@ -184,18 +198,29 @@ export default function ShowcaseGrid() {
               className="animate-fade-up group relative rounded-[22px] overflow-hidden bg-white border border-black/10 hover:border-black/30 hover:shadow-[0_30px_60px_-20px_rgba(0,0,0,0.3)] transition-all duration-500"
             >
               <div className="relative aspect-[4/3] overflow-hidden bg-[#efeee9]">
-                <img
-                  src={item.img}
-                  srcSet={
-                    item.img480 && item.img768 && item.img1280
-                      ? `${item.img480} 480w, ${item.img768} 768w, ${item.img1280} 1280w`
-                      : undefined
-                  }
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  alt={item.title}
-                  loading="lazy"
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-[1.2s] ease-out"
-                />
+                <picture className="block w-full h-full">
+                  {/* AVIF أولاً (أصغر حجماً بفارق كبير) ثم WebP كبديل */}
+                  {item.img480 && item.img768 && item.img1280 && (
+                    <source
+                      type="image/avif"
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      srcSet={`${toAvif(item.img480)} 480w, ${toAvif(item.img768)} 768w, ${toAvif(item.img1280)} 1280w`}
+                    />
+                  )}
+                  <img
+                    src={item.img}
+                    srcSet={
+                      item.img480 && item.img768 && item.img1280
+                        ? `${item.img480} 480w, ${item.img768} 768w, ${item.img1280} 1280w`
+                        : undefined
+                    }
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    alt={item.title}
+                    loading="lazy"
+                    decoding="async"
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-[1.2s] ease-out"
+                  />
+                </picture>
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/0 to-black/0 opacity-60 group-hover:opacity-100 transition-opacity duration-500" />
                 {item.badge && (
                   <span

@@ -21,6 +21,10 @@
     <meta name="format-detection" content="telephone=yes" />
     <link rel="canonical" href="https://ahmedlasheenrespicare-png.github.io/serverproject/" />
 
+    <!-- PWA manifest + Anycast icons (تثبيت الموقع كتطبيق على الجوال) -->
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="apple-touch-icon" href="icon-192.png" />
+
     <!-- Favicon (Inline SVG for zero latency) -->
     <link
       rel="icon"
@@ -38,7 +42,7 @@
       property="og:description"
       content="أقوى سيرفرات IPTV للمباريات والأفلام في 2026 بثبات 99.9%. جرب السيرفر مجاناً قبل الشراء مع تفعيل فوري خلال دقائق."
     />
-    <meta property="og:image" content="https://images.pexels.com/photos/47730/the-ball-stadion-football-the-pitch-47730.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1200&h=630" />
+    <meta property="og:image" content="https://ahmedlasheenrespicare-png.github.io/serverproject/images/og-default.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
 
@@ -50,7 +54,7 @@
       name="twitter:description"
       content="سيرفرات نوفا وإيستار وموكا مع بث 4K بدون تقطيع لكأس العالم والدوريات الكبرى."
     />
-    <meta name="twitter:image" content="https://images.pexels.com/photos/47730/the-ball-stadion-football-the-pitch-47730.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1200&h=630" />
+    <meta name="twitter:image" content="https://ahmedlasheenrespicare-png.github.io/serverproject/images/og-default.png" />
 
     <!-- Google Fonts: Cairo & Tajawal (عربي) + Amiri (لمحة سيريف) + Space Grotesk (لاتيني/أرقام) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -58,92 +62,20 @@
     <link
       href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=Tajawal:wght@400;500;700;800;900&family=Amiri:ital,wght@0,400;0,700;1,400&family=Space+Grotesk:wght@400;500;600;700&display=swap"
       rel="stylesheet"
+      media="print"
+      onload="this.media='all'"
     />
+    <noscript>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=Tajawal:wght@400;500;700;800;900&family=Amiri:ital,wght@0,400;0,700;1,400&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+      />
+    </noscript>
 
-    <!-- Schema.org JSON-LD (Organization, Product, AggregateRating, FAQPage) -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@graph": [
-          {
-            "@type": "Organization",
-            "@id": "https://ahmedlasheenrespicare-png.github.io/serverproject/#organization",
-            "name": "ستريم ماستر برو — Stream Master Pro",
-            "url": "https://ahmedlasheenrespicare-png.github.io/serverproject/",
-            "logo": "https://ahmedlasheenrespicare-png.github.io/serverproject/icon-512.png",
-            "description": "افضل اشتراك وسيرفرات IPTV 2026 بدون تقطيع في السعودية والخليج ومصر",
-            "contactPoint": {
-              "@type": "ContactPoint",
-              "telephone": "+201070330835",
-              "contactType": "customer support",
-              "availableLanguage": ["Arabic", "English"]
-            }
-          },
-          {
-            "@type": "Product",
-            "@id": "https://ahmedlasheenrespicare-png.github.io/serverproject/#product",
-            "name": "اشتراك سيرفر نوفا الأصلي (Nova Server IPTV 2026)",
-            "image": "https://images.pexels.com/photos/47730/the-ball-stadion-football-the-pitch-47730.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1200&h=630",
-            "description": "اشتراك IPTV سنوي فائق الثبات بدون تقطيع مع قنوات beIN Sports 4K وSSC ومكتبة أفلام VOD ضخمة.",
-            "brand": {
-              "@type": "Brand",
-              "name": "Stream Master Pro"
-            },
-            "offers": {
-              "@type": "AggregateOffer",
-              "priceCurrency": "SAR",
-              "lowPrice": "65",
-              "highPrice": "610",
-              "offerCount": "16",
-              "availability": "https://schema.org/InStock",
-              "seller": {
-                "@id": "https://ahmedlasheenrespicare-png.github.io/serverproject/#organization"
-              }
-            },
-            "aggregateRating": {
-              "@type": "AggregateRating",
-              "ratingValue": "4.95",
-              "reviewCount": "4820",
-              "bestRating": "5",
-              "worstRating": "1"
-            }
-          },
-          {
-            "@type": "FAQPage",
-            "@id": "https://ahmedlasheenrespicare-png.github.io/serverproject/#faq",
-            "mainEntity": [
-              {
-                "@type": "Question",
-                "name": "هل السيرفر مستقر وبدون تقطيع أثناء المباريات الكبيرة؟",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "نعم، سيرفراتنا مزودة بتقنية الحماية من الضغط Anti-Freeze وشبكة خوادم CDN موزعة جغرافياً لضمان ثبات 99.9% في قمة المباريات."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "كيف أستلم بيانات الاشتراك بعد الشراء؟",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "التفعيل فوري وآلي بالكامل خلال 5 دقائق عبر واتساب مع شرح كامل لخطوات التشغيل."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "هل يمكنني طلب تجربة مجانية قبل الاشتراك؟",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "نعم، نوفر تجربة مجانية لمدة 6 ساعات لتفحص القنوات الرياضية والترفيهية قبل الدفع."
-                }
-              }
-            ]
-          }
-        ]
-      }
-    </script>
+    <!-- البيانات المنظّمة (JSON-LD) تُولَّد لكل صفحة أثناء البناء — انظر scripts/prerender.mjs -->
   </head>
   <body class="bg-[#faf9f6] text-[#0b0b0f] antialiased">
     <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+    <script type="module" src="/src/entry-client.tsx"></script>
   </body>
 </html>
