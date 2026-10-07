@@ -8,9 +8,15 @@
 set -e
 
 echo ""
-echo "📣 (1 من 5) ضبط هوية Git (مرة واحدة فقط)..."
-git config --global user.name "ahmedlasheenrespicare-png"
-git config --global user.email "ahmedlasheenrespicare@gmail.com"
+echo "📣 (1 من 5) التحقق من هوية Git..."
+# لا نعدّل إعدادات Git العامة على جهازك — نضبط الهوية لهذا المستودع فقط لو كانت ناقصة
+if ! git config user.email >/dev/null 2>&1; then
+    git config user.name "ahmedlasheenrespicare-png"
+    git config user.email "ahmedlasheenrespicare@gmail.com"
+    echo "   ✅ ضُبطت الهوية لهذا المستودع محلياً (بلا --global)"
+else
+    echo "   ✅ هوية Git موجودة مسبقاً: $(git config user.email)"
+fi
 
 echo "📣 (2 من 5) التأكد أننا داخل مجلد المشروع الصحيح..."
 if [ ! -f "package.json" ]; then

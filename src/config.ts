@@ -9,7 +9,9 @@ export const BRAND_EN = "Stream Master Pro";
 
 /* التواصل */
 export const WHATSAPP_NUMBER = "201070330835";
-export const WHATSAPP_DISPLAY = "+20 107 033 835";
+/* صيغة العرض كانت ناقصة رقماً هنا (+20 107 033 835) بينما Footer يعرض الصحيح،
+   وseo.ts يبني منها رقم JSON-LD → رقم غير صالح في البيانات المنظّمة */
+export const WHATSAPP_DISPLAY = "+20 107 033 0835";
 
 /* وسيط البث (Cloudflare Worker) */
 export const PROXY_BASE = "https://serverproject.ahmedlasheenrespicare.workers.dev";

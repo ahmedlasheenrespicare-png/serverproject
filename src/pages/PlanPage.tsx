@@ -13,14 +13,23 @@ import { Reveal } from "../components/motion";
 
 interface PlanPageProps {
   plan: PricingPlan;
+  /** عملة الموقع (مصدر واحد في App) — لا نحتفظ بحالة محلية حتى لا يُضاف العنصر
+      للسلة بسعر عملة مختلفة عن العملة المسجَّلة معه */
+  currency: string;
+  onCurrencyChange: (code: string) => void;
   onOpenTrial: () => void;
   onAddToCart: (plan: PricingPlan, months: "3" | "6" | "12" | "24", price: number) => void;
 }
 
 const DURATIONS: ("3" | "6" | "12" | "24")[] = ["3", "6", "12", "24"];
 
-export default function PlanPage({ plan, onOpenTrial, onAddToCart }: PlanPageProps) {
-  const [currency, setCurrency] = useState("SAR");
+export default function PlanPage({
+  plan,
+  currency,
+  onCurrencyChange,
+  onOpenTrial,
+  onAddToCart,
+}: PlanPageProps) {
   const [duration, setDuration] = useState<"3" | "6" | "12" | "24">("12");
   const curr = CURRENCIES[currency] || CURRENCIES.SAR;
   const priceObj = plan.prices[duration];
@@ -161,7 +170,7 @@ export default function PlanPage({ plan, onOpenTrial, onAddToCart }: PlanPagePro
                 <select
                   aria-label="اختر العملة"
                   value={currency}
-                  onChange={(e) => setCurrency(e.target.value)}
+                  onChange={(e) => onCurrencyChange(e.target.value)}
                   className="mt-4 w-full rounded-full bg-white/[0.07] border border-white/15 px-4 py-2.5 text-[12.5px] font-black text-white focus:outline-none cursor-pointer"
                 >
                   {Object.values(CURRENCIES).map((c) => (

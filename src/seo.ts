@@ -54,7 +54,7 @@ export function getSeo(path: string): SeoMeta {
     description:
       "اشتراكات وسيرفرات IPTV بثبات 99.9% في السعودية والخليج ومصر — قنوات رياضية وإخبارية ومكتبة أفلام، تفعيل فوري وتجربة مجانية.",
     canonical: absolute(""),
-    robots: "index, follow, max-image-preview:large, max-snippet:-1",
+    robots: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
     ogType: "website",
     jsonLd: [organizationLd],
   };

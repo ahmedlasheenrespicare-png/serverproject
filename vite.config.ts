@@ -32,6 +32,9 @@ export default defineConfig(({ command }) => ({
   },
   build: {
     /* فصل مكتبات الطرف الثالث في chunk مستقل قابل للتخزين المؤقت.
+       ملاحظة مهمة: الصيغة النصية manualChunks: { vendor: ["react","react-dom"] }
+       تطابق معرّف الوحدة الحرفي فقط، فبقيت react-dom (~180KB) داخل حزمة التطبيق
+       ويتوقف تخزينها المؤقت مع كل تعديل. الدالة أدناه تفصلها فعلياً (بالمسار).
        hls.js ليست هنا عن قصد: تُستورد ديناميكياً فتُخرج في chunk منفصل
        لا يُحمَّل إلا عند أول تشغيل فعلي لأي مشغل.
        ملاحظة: لا تُطبَّق manualChunks على بناء الـ SSR (React خارجي هناك). */
@@ -39,8 +42,10 @@ export default defineConfig(({ command }) => ({
       ? {}
       : {
           output: {
-            manualChunks: {
-              vendor: ["react", "react-dom"],
+            manualChunks(id) {
+              if (!id.includes("node_modules")) return;
+              if (id.includes("/react-dom/")) return "vendor-react-dom";
+              if (id.includes("/react/") || id.includes("/scheduler/")) return "vendor-react";
             },
           },
         },

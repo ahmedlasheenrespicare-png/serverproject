@@ -1,5 +1,6 @@
-import { useEffect, useState } from "react";
+import { useRef, useState } from "react";
 import { IconChat, IconClose, IconZap } from "./Icons";
+import { useDialogA11y } from "./useDialogA11y";
 import { getWhatsAppUrl } from "../data";
 
 interface TrialModalProps {
@@ -12,20 +13,9 @@ export default function TrialModal({ isOpen, onClose }: TrialModalProps) {
   const [server, setServer] = useState("سيرفر نوفا (Nova)");
   const [phone, setPhone] = useState("");
 
-  /* إتاحة: إغلاق بزر Escape + منع تمرير الخلفية أثناء فتح النافذة */
-  useEffect(() => {
-    if (!isOpen) return;
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") onClose();
-    };
-    document.addEventListener("keydown", onKey);
-    const prevOverflow = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
-    return () => {
-      document.removeEventListener("keydown", onKey);
-      document.body.style.overflow = prevOverflow;
-    };
-  }, [isOpen, onClose]);
+  /* إتاحة: Escape + حبس التركيز داخل النافذة + قفل تمرير الخلفية + إعادة التركيز */
+  const panelRef = useRef<HTMLDivElement | null>(null);
+  useDialogA11y(isOpen, onClose, panelRef);
 
   if (!isOpen) return null;
 
@@ -45,12 +35,14 @@ export default function TrialModal({ isOpen, onClose }: TrialModalProps) {
       onClick={onClose}
     >
       <div
+        ref={panelRef}
         className="relative w-full max-w-[500px] rounded-[28px] bg-white border border-black/10 p-6 sm:p-8 shadow-2xl text-right animate-scale-in"
         onClick={(e) => e.stopPropagation()}
       >
         {/* زر الإغلاق */}
         <button
           onClick={onClose}
+          data-autofocus
           className="absolute top-5 start-5 text-black/40 hover:text-black p-1.5 rounded-full bg-[#f4f3ef] hover:bg-[#d8ff3e] transition cursor-pointer"
           aria-label="إغلاق نافذة التجربة"
         >

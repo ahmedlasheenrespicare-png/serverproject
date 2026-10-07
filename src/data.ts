@@ -1,5 +1,7 @@
-export const WHATSAPP_NUMBER = "201070330835"; // Configurable WhatsApp
-export const WHATSAPP_DISPLAY = "+20 107 033 0835";
+/* التواصل — مصدر واحد في src/config.ts
+   (كان الرقم مكرَّراً هنا بصيغة عرض مختلفة، فظهر رقم ناقص في JSON-LD المنشور) */
+import { WHATSAPP_NUMBER } from "./config";
+export { WHATSAPP_DISPLAY, WHATSAPP_NUMBER } from "./config";
 
 export function getWhatsAppUrl(message: string): string {
   return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;

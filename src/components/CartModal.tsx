@@ -1,5 +1,6 @@
-import { useEffect } from "react";
+import { useRef } from "react";
 import { IconCart, IconChat, IconClose } from "./Icons";
+import { useDialogA11y } from "./useDialogA11y";
 import { CURRENCIES, getWhatsAppUrl, PricingPlan } from "../data";
 
 export interface CartItem {
@@ -29,20 +30,9 @@ export default function CartModal({
   onClearCart,
   currentCurrency,
 }: CartModalProps) {
-  /* إتاحة: إغلاق بزر Escape + منع تمرير الخلفية أثناء فتح السلة */
-  useEffect(() => {
-    if (!isOpen) return;
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") onClose();
-    };
-    document.addEventListener("keydown", onKey);
-    const prevOverflow = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
-    return () => {
-      document.removeEventListener("keydown", onKey);
-      document.body.style.overflow = prevOverflow;
-    };
-  }, [isOpen, onClose]);
+  /* إتاحة: Escape + حبس التركيز داخل السلة + قفل تمرير الخلفية + إعادة التركيز */
+  const panelRef = useRef<HTMLDivElement | null>(null);
+  useDialogA11y(isOpen, onClose, panelRef);
 
   if (!isOpen) return null;
 
@@ -90,6 +80,7 @@ export default function CartModal({
       onClick={onClose}
     >
       <div
+        ref={panelRef}
         className="relative h-full w-full max-w-[440px] bg-[#faf9f6] border-s border-black/10 p-6 shadow-2xl flex flex-col justify-between text-right overflow-y-auto animate-scale-in"
         onClick={(e) => e.stopPropagation()}
       >
@@ -105,7 +96,7 @@ export default function CartModal({
             </div>
             <button
               onClick={onClose}
-              autoFocus
+              data-autofocus
               className="text-black/40 hover:text-black p-1.5 rounded-lg bg-black/[0.05] hover:bg-[#d8ff3e] transition cursor-pointer"
               aria-label="إغلاق السلة"
             >
