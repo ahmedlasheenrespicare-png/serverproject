@@ -1,5 +1,5 @@
 {
-  "name": "mbclive",
+  "name": "stream-master-pro",
   "private": true,
   "version": "1.0.0",
   "description": "ستريم ماستر برو — أفضل اشتراك IPTV في 2026 بدون تقطيع | ثبات 99.9%",
@@ -7,6 +7,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "typecheck": "tsc --noEmit",
     "preview": "vite preview"
   },
   "dependencies": {

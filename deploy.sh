@@ -33,7 +33,7 @@ git commit -m "Redesign: Salient-style light theme (cream + ink + lime)" || echo
 
 echo "📣 (5 من 5) الرفع إلى GitHub..."
 echo "   ⚠️ ممكن تظهر لك نافذة تسجيل دخول المتصفح — سجّل بحساب GitHub الخاص بك"
-git push -u origin main --force
+git push -u origin main
 
 echo ""
 echo "============================================================"

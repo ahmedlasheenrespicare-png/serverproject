@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import ContentTicker from "./components/ContentTicker";
@@ -27,12 +27,21 @@ export default function App() {
   const [isTrialOpen, setIsTrialOpen] = useState(false);
   const [highlightedPlanId, setHighlightedPlanId] = useState<string | undefined>(undefined);
 
+  /* مرجع ثابت للدالة — يمنع إعادة رسم الأقسام الثقيلة (المشغلات) عند كل تغيير حالة،
+     مثل تبديل العملة أو فتح/إغلاق السلة. تغيير العملة كان يُعيد رسم المشغلين
+     بالكامل (أكثر من 2000 سطر) بلا داعٍ. */
+  const openTrial = useCallback(() => setIsTrialOpen(true), []);
+  const closeTrial = useCallback(() => setIsTrialOpen(false), []);
+  const openCart = useCallback(() => setIsCartOpen(true), []);
+  const closeCart = useCallback(() => setIsCartOpen(false), []);
+
   const handleAddToCart = (plan: PricingPlan, months: "3" | "6" | "12" | "24", price: number) => {
     const newItem: CartItem = {
       id: `${plan.id}-${months}-${Date.now()}`,
       plan,
       months,
       price,
+      currency,
     };
     setCartItems((prev) => [...prev, newItem]);
     setIsCartOpen(true);
@@ -65,14 +74,14 @@ export default function App() {
         currentCurrency={currency}
         onCurrencyChange={setCurrency}
         cartCount={cartItems.length}
-        onOpenCart={() => setIsCartOpen(true)}
-        onOpenTrial={() => setIsTrialOpen(true)}
+        onOpenCart={openCart}
+        onOpenTrial={openTrial}
       />
 
       {/* Main Content */}
       <main className="flex-1">
         {/* Hero Section */}
-        <Hero onOpenTrial={() => setIsTrialOpen(true)} />
+        <Hero onOpenTrial={openTrial} />
 
         {/* Content Brands Ticker */}
         <ContentTicker />
@@ -81,7 +90,7 @@ export default function App() {
         <WordBand />
 
         {/* Live TV Channels Player (Native HLS.js streaming) */}
-        <LivePlayer onOpenTrial={() => setIsTrialOpen(true)} />
+        <LivePlayer onOpenTrial={openTrial} />
 
         {/* Personal Subscription Player (Xtream Codes) */}
         <XtreamPlayer />
@@ -97,7 +106,7 @@ export default function App() {
         {/* Smart Server Finder */}
         <ServerFinder
           onSelectPlan={handleSelectPlanFromFinder}
-          onOpenTrial={() => setIsTrialOpen(true)}
+          onOpenTrial={openTrial}
         />
 
         {/* Side-by-Side Servers Comparison */}
@@ -120,21 +129,21 @@ export default function App() {
       </main>
 
       {/* Footer */}
-      <Footer onOpenTrial={() => setIsTrialOpen(true)} />
+      <Footer onOpenTrial={openTrial} />
 
       {/* Floating Action Buttons */}
-      <FloatingActions onOpenTrial={() => setIsTrialOpen(true)} />
+      <FloatingActions onOpenTrial={openTrial} />
 
       {/* Free Trial Popup Modal */}
       <TrialModal
         isOpen={isTrialOpen}
-        onClose={() => setIsTrialOpen(false)}
+        onClose={closeTrial}
       />
 
       {/* Slide-over Cart Modal */}
       <CartModal
         isOpen={isCartOpen}
-        onClose={() => setIsCartOpen(false)}
+        onClose={closeCart}
         items={cartItems}
         onRemoveItem={handleRemoveCartItem}
         onClearCart={handleClearCart}

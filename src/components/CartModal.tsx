@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { IconCart, IconChat, IconClose } from "./Icons";
 import { CURRENCIES, getWhatsAppUrl, PricingPlan } from "../data";
 
@@ -5,7 +6,10 @@ export interface CartItem {
   id: string;
   plan: PricingPlan;
   months: "3" | "6" | "12" | "24";
+  /** السعر كما ظهر في بطاقة الباقة — بعملة لحظة الإضافة (currency) */
   price: number;
+  /** كود العملة التي أُضيف بها العنصر — يمنع عرض الرقم بعملة مختلفة */
+  currency: string;
 }
 
 interface CartModalProps {
@@ -25,10 +29,31 @@ export default function CartModal({
   onClearCart,
   currentCurrency,
 }: CartModalProps) {
+  /* إتاحة: إغلاق بزر Escape + منع تمرير الخلفية أثناء فتح السلة */
+  useEffect(() => {
+    if (!isOpen) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") onClose();
+    };
+    document.addEventListener("keydown", onKey);
+    const prevOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.removeEventListener("keydown", onKey);
+      document.body.style.overflow = prevOverflow;
+    };
+  }, [isOpen, onClose]);
+
   if (!isOpen) return null;
 
   const curr = CURRENCIES[currentCurrency] || CURRENCIES.SAR;
-  const totalPrice = items.reduce((acc, item) => acc + item.price, 0);
+
+  /* السعر محفوظ بعملة لحظة الإضافة → نحوّل الكل إلى الريال ثم إلى العملة الحالية،
+     فلا تظهر أرقام برمز عملة خاطئ عند تغيير العملة بعد الإضافة */
+  const rateOf = (code: string) => CURRENCIES[code]?.rateToSar || 1;
+  const totalInSar = items.reduce((acc, item) => acc + item.price / rateOf(item.currency), 0);
+  const totalPrice = Math.round(totalInSar * curr.rateToSar);
+  const needsConversion = items.some((item) => item.currency !== currentCurrency);
 
   const durationLabels: Record<"3" | "6" | "12" | "24", string> = {
     "3": "3 شهور",
@@ -39,10 +64,14 @@ export default function CartModal({
 
   const handleCheckout = () => {
     const itemsListText = items
-      .map(
-        (item, i) =>
-          `${i + 1}. ${item.plan.serverName} — المدة: ${durationLabels[item.months]} — السعر: ${item.price} ${curr.symbol}`
-      )
+      .map((item, i) => {
+        const sym = CURRENCIES[item.currency]?.symbol || curr.symbol;
+        const converted =
+          item.currency !== currentCurrency
+            ? ` (≈ ${Math.round((item.price / rateOf(item.currency)) * curr.rateToSar)} ${curr.symbol})`
+            : "";
+        return `${i + 1}. ${item.plan.serverName} — المدة: ${durationLabels[item.months]} — السعر: ${item.price} ${sym}${converted}`;
+      })
       .join("\n");
 
     const message = `مرحبًا ستريم ماستر، أود إتمام طلب الاشتراكات التالية:\n\n${itemsListText}\n\nالإجمالي المطلوب: ${totalPrice} ${curr.symbol}\nأرجو تزويدي ببيانات الدفع والتفعيل الفوري.`;
@@ -54,6 +83,9 @@ export default function CartModal({
 
   return (
     <div
+      role="dialog"
+      aria-modal="true"
+      aria-label="سلة المشتريات"
       className="fixed inset-0 z-50 flex items-center justify-end bg-[#0b0b0f]/60 backdrop-blur-sm animate-fade-in"
       onClick={onClose}
     >
@@ -73,8 +105,9 @@ export default function CartModal({
             </div>
             <button
               onClick={onClose}
+              autoFocus
               className="text-black/40 hover:text-black p-1.5 rounded-lg bg-black/[0.05] hover:bg-[#d8ff3e] transition cursor-pointer"
-              aria-label="إغلاق"
+              aria-label="إغلاق السلة"
             >
               <IconClose className="w-4.5 h-4.5" />
             </button>
@@ -102,8 +135,14 @@ export default function CartModal({
                       المدة: {durationLabels[item.months]}
                     </span>
                     <span className="text-[16px] font-black text-[#2b4eff] mt-1 block font-display">
-                      {item.price} {curr.symbol}
+                      {item.price} {CURRENCIES[item.currency]?.symbol || curr.symbol}
                     </span>
+                    {item.currency !== currentCurrency && (
+                      <span className="text-[11px] text-black/40 block mt-0.5 font-bold">
+                        ({Math.round((item.price / rateOf(item.currency)) * curr.rateToSar)}{" "}
+                        {curr.symbol} بسعر اليوم)
+                      </span>
+                    )}
                   </div>
                   <button
                     onClick={() => onRemoveItem(item.id)}
@@ -126,6 +165,12 @@ export default function CartModal({
                 {totalPrice} {curr.symbol}
               </span>
             </div>
+            {needsConversion && (
+              <p className="text-[11.5px] text-black/45 font-bold leading-relaxed -mt-1">
+                الأسعار محفوظة بعملة لحظة الإضافة وحُوِّلت إلى {curr.name} حسب سعر الصرف — قد
+                يختلف المبلغ قليلاً عند الدفع.
+              </p>
+            )}
 
             <button
               onClick={handleCheckout}

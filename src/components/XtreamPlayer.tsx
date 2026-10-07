@@ -1,5 +1,6 @@
-import { useEffect, useMemo, useRef, useState } from "react";
-import Hls from "hls.js";
+import { memo, useEffect, useMemo, useRef, useState } from "react";
+import type Hls from "hls.js";
+import { loadHls } from "../hls";
 import {
   IconArrowUp,
   IconArrowUpRight,
@@ -337,7 +338,7 @@ function DiagBox({
 /*  المكوّن الرئيسي                                                            */
 /* ========================================================================= */
 
-export default function XtreamPlayer() {
+function XtreamPlayerInner() {
   /* حالة الدخول */
   const [phase, setPhase] = useState<Phase>("form");
   const [account, setAccount] = useState<XtreamAccount | null>(null);
@@ -655,6 +656,9 @@ export default function XtreamPlayer() {
     let cancelled = false;
     let watchdog: number | undefined;
     let nativeHandler: (() => void) | null = null;
+    /* hls.js تُحمَّل عند أول تشغيل فقط (توفير ~460KB على كل زيارة) */
+    let HlsLib: typeof Hls | null = null;
+    let hlsLoadFailed = false;
 
     const clearWatchdog = () => {
       if (watchdog !== undefined) {
@@ -678,11 +682,36 @@ export default function XtreamPlayer() {
         setPlayError("تعذر تشغيل القناة عبر كل المسارات — جرّب قناة أخرى أو أعد المحاولة بعد لحظات.");
         return;
       }
-      const cand = candidates[attempt++];
+      const cand = candidates[attempt];
       const isHlsUrl = /\.m3u8($|\?)/i.test(cand.url);
+      const wantsHls = !cand.native && isHlsUrl && !hlsLoadFailed;
 
-      if (!cand.native && isHlsUrl && Hls.isSupported()) {
-        const hls = new Hls({
+      /* أول تشغيل: نحمّل المكتبة ثم نعيد المحاولة بنفس المرشّح بدون استهلاكه */
+      if (wantsHls && !HlsLib) {
+        loadHls()
+          .then((lib) => {
+            if (cancelled) return;
+            HlsLib = lib;
+            tryNext();
+          })
+          .catch(() => {
+            if (cancelled) return;
+            hlsLoadFailed = true; /* فشل تحميل المكتبة → نكمل بالتشغيل الأصلي */
+            tryNext();
+          });
+        /* لو تعطّل تحميل المكتبة نفسه، لا نترك الزائر ينتظر بلا نهاية */
+        watchdog = window.setTimeout(() => {
+          if (cancelled || HlsLib || hlsLoadFailed) return;
+          hlsLoadFailed = true;
+          tryNext();
+        }, 10000);
+        return;
+      }
+
+      attempt++; /* استهلكنا هذا المرشّح */
+
+      if (wantsHls && HlsLib?.isSupported()) {
+        const hls = new HlsLib({
           enableWorker: true,
           manifestLoadingTimeOut: 12000,
           fragLoadingTimeOut: 20000,
@@ -690,14 +719,14 @@ export default function XtreamPlayer() {
         hlsRef.current = hls;
         hls.loadSource(cand.url);
         hls.attachMedia(video);
-        hls.on(Hls.Events.MANIFEST_PARSED, () => {
+        hls.on(HlsLib.Events.MANIFEST_PARSED, () => {
           clearWatchdog();
           video.muted = true;
           video.play().catch(() => {
             /* سيضغط المستخدم زر التشغيل */
           });
         });
-        hls.on(Hls.Events.ERROR, (_e, data) => {
+        hls.on(HlsLib.Events.ERROR, (_e, data) => {
           if (data.fatal) {
             hls.destroy();
             if (hlsRef.current === hls) hlsRef.current = null;
@@ -1223,3 +1252,8 @@ export default function XtreamPlayer() {
     </section>
   );
 }
+
+/* المكوّن لا يستقبل أي props — نلفّه بـ memo حتى لا يُعاد رسمه
+   (وقطع البث) عند أي تغيير في حالة الصفحة مثل تبديل العملة أو فتح السلة. */
+const XtreamPlayer = memo(XtreamPlayerInner);
+export default XtreamPlayer;

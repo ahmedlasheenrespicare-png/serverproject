@@ -258,11 +258,26 @@ export function ScrollProgress() {
    - لا يعترض التمرير داخل العناصر القابلة للتمرير (السلة، قائمة القنوات)
    - ينقّر روابط # لتمريرها بنعاسية بدل القفز
 ========================================================================== */
+/* التمرير الناعم معطّل افتراضياً:
+   اعتراض عجلة الفأرة يخالف توقعات المستخدم (وخاصة إن كان يستخدم لوحة مفاتيح أو
+   جهازاً بمؤشر دقيق)، ويسبب جِدْلاً مع تمرير اللمس. لتفعيله أضف ?smooth=1 للرابط
+   أو نفّذ: localStorage.setItem("smp-smooth", "1") — ويبقى محترماً لتفضيل تقليل الحركة. */
 export function SmoothScroll() {
   useEffect(() => {
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const coarse = window.matchMedia("(pointer: coarse)").matches;
     if (reduced || coarse || window.innerWidth < 768) return;
+
+    let enabled = false;
+    try {
+      const q = new URLSearchParams(window.location.search).get("smooth");
+      if (q === "1") localStorage.setItem("smp-smooth", "1");
+      if (q === "0") localStorage.removeItem("smp-smooth");
+      enabled = localStorage.getItem("smp-smooth") === "1";
+    } catch {
+      enabled = false;
+    }
+    if (!enabled) return;
 
     let target = window.scrollY;
     let current = target;
