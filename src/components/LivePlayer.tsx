@@ -92,6 +92,48 @@ interface LivePlayerProps {
 function LivePlayerInner({ onOpenTrial }: LivePlayerProps) {
   const [channels, setChannels] = useState<ChannelItem[]>(FEATURED_CHANNELS);
   const [selectedChannel, setSelectedChannel] = useState<ChannelItem>(FEATURED_CHANNELS[0]);
+
+  // --- تحميل قنوات Kora المباشرة تلقائياً من kora-live.m3u8 (يتحدث كل 15 دقيقة) ---
+  useEffect(() => {
+    const loadKora = async () => {
+      try {
+        const res = await fetch(to("kora-live.m3u8"), {cache: "no-store"});
+        if (!res.ok) return;
+        const text = await res.text();
+        if (!text.includes("#EXTM3U")) return;
+        // نفس منطق xs الموجود في الملف - نستخرج القنوات
+        const lines = text.split(/\r?\n/);
+        const koraChannels: ChannelItem[] = [];
+        let pending: {name:string, logo:string, cat:string} | null = null;
+        for (const raw of lines) {
+          const line = raw.trim();
+          if (!line) continue;
+          if (line.startsWith("#EXTINF:")) {
+            const name = line.slice(line.lastIndexOf(",")+1).trim() || "مباراة مباشرة";
+            const logo = /tvg-logo="([^"]*)"/.exec(line)?.[1] ?? "⚽";
+            const cat = /group-title="([^"]*)"/.exec(line)?.[1]?.trim() || "مباريات مباشرة";
+            pending = {name, logo, cat};
+          } else if (pending && !line.startsWith("#")) {
+            koraChannels.push({name: pending.name, logo: pending.logo, cat: pending.cat, url: line});
+            pending = null;
+          }
+        }
+        if (koraChannels.length > 0) {
+          setChannels(prev => {
+            // ضع قنوات Kora في المقدمة وتجنب التكرار
+            const existingUrls = new Set(prev.map(c=>c.url));
+            const newOnes = koraChannels.filter(c=>!existingUrls.has(c.url));
+            return [...newOnes, ...prev];
+          });
+          // اختر أول قناة Kora تلقائياً إذا كانت متوفرة
+          // setSelectedChannel(koraChannels[0]);
+        }
+      } catch {}
+    };
+    loadKora();
+    const id = setInterval(loadKora, 5*60*1000); // حدّث كل 5 دقائق
+    return ()=> clearInterval(id);
+  }, []);
   const [selectedCategory, setSelectedCategory] = useState<string>("قنوات MBC");
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [isLoading, setIsLoading] = useState<boolean>(false);
