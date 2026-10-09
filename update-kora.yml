@@ -53,16 +53,16 @@ jobs:
               return url
           b4=fetch("b4")
           tv6=fetch("tv6")
-          with open("kora-live.m3u8","w") as f:
+          with open("kora-live.m3u8","w",encoding="utf-8") as f:
               f.write("#EXTM3U\n")
-              f.write('#EXTINF:-1 tvg-name="beIN Sport 4" tvg-logo="https://a11.kora-plus.li/favicon.ico" group-title="Live",beIN Sport 4\n')
+              f.write('#EXTINF:-1 tvg-name="beIN Sport 4" tvg-logo="https://a11.kora-plus.li/favicon.ico" group-title="مباريات مباشرة",beIN Sport 4\n')
               f.write(b4+"\n")
-              f.write('#EXTINF:-1 tvg-name="Sport TV 6" tvg-logo="https://a11.kora-plus.li/favicon.ico" group-title="Live",Sport TV 6\n')
+              f.write('#EXTINF:-1 tvg-name="Sport TV 6" tvg-logo="https://a11.kora-plus.li/favicon.ico" group-title="مباريات مباشرة",Sport TV 6\n')
               f.write(tv6+"\n")
           # also update a version inside serverproject folder if exists
           import os
           if os.path.exists("public"):
-              open("public/kora-live.m3u8","w").write(open("kora-live.m3u8").read())
+              open("public/kora-live.m3u8","w",encoding="utf-8").write(open("kora-live.m3u8",encoding="utf-8").read())
           print("Done")
           PY
           cat kora-live.m3u8
