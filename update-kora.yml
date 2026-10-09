@@ -1,0 +1,82 @@
+name: Update Kora M3U
+
+on:
+  schedule:
+    - cron: '*/15 * * * *'  # كل 15 دقيقة
+  workflow_dispatch:  # تشغيل يدوي من تبويب Actions
+  push:
+    paths:
+      - '.github/workflows/update-kora.yml'
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install deps
+        run: pip install requests
+
+      - name: Fetch fresh m3u8
+        run: |
+          python3 << 'PY'
+          import requests, re, base64, uuid, time
+          def fetch(ch):
+              token=str(uuid.uuid4())
+              kt=str(int(time.time()))
+              src=f"https://a11.kora-plus.li/frame.php?ch={ch}&p=12&token={token}&kt={kt}"
+              headers={
+                  "Referer":"https://robotiva.online/",
+                  "Origin":"https://robotiva.online",
+                  "User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+                  "Sec-Fetch-Dest":"iframe",
+                  "Sec-Fetch-Mode":"navigate",
+                  "Sec-Fetch-Site":"cross-site",
+                  "Accept":"text/html,application/xhtml+xml"
+              }
+              r=requests.get(src, headers=headers, timeout=15)
+              m=re.search(r'aHR0[^"]+', r.text)
+              if not m:
+                  raise Exception(f"no token for {ch}")
+              b64=m.group(0).replace('-','+').replace('_','/')
+              b64+='='*(-len(b64)%4)
+              url=base64.b64decode(b64).decode()
+              print(f"{ch} -> {url}")
+              return url
+          b4=fetch("b4")
+          tv6=fetch("tv6")
+          with open("kora-live.m3u8","w") as f:
+              f.write("#EXTM3U\n")
+              f.write('#EXTINF:-1 tvg-name="beIN Sport 4" tvg-logo="https://a11.kora-plus.li/favicon.ico" group-title="Live",beIN Sport 4\n')
+              f.write(b4+"\n")
+              f.write('#EXTINF:-1 tvg-name="Sport TV 6" tvg-logo="https://a11.kora-plus.li/favicon.ico" group-title="Live",Sport TV 6\n')
+              f.write(tv6+"\n")
+          # also update a version inside serverproject folder if exists
+          import os
+          if os.path.exists("public"):
+              open("public/kora-live.m3u8","w").write(open("kora-live.m3u8").read())
+          print("Done")
+          PY
+          cat kora-live.m3u8
+
+      - name: Commit and push
+        run: |
+          git config user.name "kora-bot"
+          git config user.email "bot@github.com"
+          git add kora-live.m3u8
+          # also try to add if in docs folder
+          git add -A || true
+          if git diff --staged --quiet; then
+            echo "No changes"
+          else
+            git commit -m "update kora $(date -u +'%Y-%m-%d %H:%M UTC')"
+            git push
+          fi
