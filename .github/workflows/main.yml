@@ -27,14 +27,14 @@ jobs:
               return base64.b64decode(b64).decode()
           b4=fetch("b4"); tv6=fetch("tv6")
           content=f'''#EXTM3U
-          #EXTINF:-1 tvg-name="beIN Sport 4" tvg-logo="https://a11.kora-plus.li/favicon.ico" group-title="Live",beIN Sport 4
+          #EXTINF:-1 tvg-name="beIN Sport 4" tvg-logo="https://a11.kora-plus.li/favicon.ico" group-title="مباريات مباشرة",beIN Sport 4
           {b4}
-          #EXTINF:-1 tvg-name="Sport TV 6" tvg-logo="https://a11.kora-plus.li/favicon.ico" group-title="Live",Sport TV 6
+          #EXTINF:-1 tvg-name="Sport TV 6" tvg-logo="https://a11.kora-plus.li/favicon.ico" group-title="مباريات مباشرة",Sport TV 6
           {tv6}
           '''
-          open("kora-live.m3u8","w").write(content)
+          open("kora-live.m3u8","w",encoding="utf-8").write(content)
           os.makedirs("public", exist_ok=True)
-          open("public/kora-live.m3u8","w").write(content)
+          open("public/kora-live.m3u8","w",encoding="utf-8").write(content)
           print(content)
           PY
       - run: |
