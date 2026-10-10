@@ -92,22 +92,16 @@ interface LivePlayerProps {
 function LivePlayerInner({ onOpenTrial }: LivePlayerProps) {
   const [channels, setChannels] = useState<ChannelItem[]>(FEATURED_CHANNELS);
   const [selectedChannel, setSelectedChannel] = useState<ChannelItem>(FEATURED_CHANNELS[0]);
+  const isKora = selectedChannel.url.includes('kora-plus') || selectedChannel.url.includes('a11.') || selectedChannel.cat === 'مباريات مباشرة';
 
   // --- تحميل قنوات Kora المباشرة تلقائياً من kora-live.m3u8 (يتحدث كل 15 دقيقة) ---
   useEffect(() => {
     const loadKora = async () => {
       try {
-        let text = "";
-        // جرّب أولاً من الموقع نفسه (public/kora-live.m3u8) ثم من raw.githubusercontent كخطة بديلة
-        for (const url of [to("kora-live.m3u8"), "https://raw.githubusercontent.com/ahmedlasheenrespicare-png/serverproject/main/kora-live.m3u8"]) {
-          try {
-            const res = await fetch(url, {cache: "no-store"});
-            if (!res.ok) continue;
-            const t = await res.text();
-            if (t.includes("#EXTM3U")) { text = t; break; }
-          } catch {}
-        }
-        if (!text || !text.includes("#EXTM3U")) return;
+        const res = await fetch(to("kora-live.m3u8"), {cache: "no-store"});
+        if (!res.ok) return;
+        const text = await res.text();
+        if (!text.includes("#EXTM3U")) return;
         // نفس منطق xs الموجود في الملف - نستخرج القنوات
         const lines = text.split(/\r?\n/);
         const koraChannels: ChannelItem[] = [];
@@ -117,8 +111,13 @@ function LivePlayerInner({ onOpenTrial }: LivePlayerProps) {
           if (!line) continue;
           if (line.startsWith("#EXTINF:")) {
             const name = line.slice(line.lastIndexOf(",")+1).trim() || "مباراة مباشرة";
-            const logo = /tvg-logo="([^"]*)"/.exec(line)?.[1] ?? "⚽";
-            const cat = /group-title="([^"]*)"/.exec(line)?.[1]?.trim() || "مباريات مباشرة";
+            // tvg-logo في ملف Kora رابط favicon طويل وليس رمزاً — لا يصلح كأيقونة داخل البطاقة
+            // الصغيرة فنستبدله دائماً بإيموجي كرة حتى لا ينكسر شكل القائمة
+            const logo = "⚽";
+            const rawCat = /group-title="([^"]*)"/.exec(line)?.[1]?.trim();
+            // "Live" القادمة من مولّد الملف تُعرض كما هي (إنجليزية) داخل زر التصنيف
+            // فنوحّدها دائماً إلى "مباريات مباشرة" لتطابق الاسم الذي يراه الزائر
+            const cat = !rawCat || /^live$/i.test(rawCat) ? "مباريات مباشرة" : rawCat;
             pending = {name, logo, cat};
           } else if (pending && !line.startsWith("#")) {
             koraChannels.push({name: pending.name, logo: pending.logo, cat: pending.cat, url: line});
@@ -149,7 +148,6 @@ function LivePlayerInner({ onOpenTrial }: LivePlayerProps) {
   const [statusMsg, setStatusMsg] = useState<string>("");
   const [bufferSec, setBufferSec] = useState<number>(0);
   const [proxyIdx, setProxyIdx] = useState<number>(needsProxySession ?? 0);
-
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const hlsRef = useRef<Hls | null>(null);
   const sectionRef = useRef<HTMLElement | null>(null);
@@ -472,9 +470,9 @@ function LivePlayerInner({ onOpenTrial }: LivePlayerProps) {
 
               {/* منطقة الفيديو */}
               <div className="relative aspect-video w-full bg-black group">
-                {selectedChannel.url.includes('kora-plus') || selectedChannel.url.includes('a11.') ? (
+                {isKora ? (
                   <iframe
-                    src={`https://a11.kora-plus.li/frame.php?ch=${selectedChannel.url.includes('b4')?'b4':'tv6'}&p=12&token=${Date.now()}`}
+                                        src={`https://robotiva.online/kora.html?m=211&lang=ar&d=robotiva.online`}
                     className="w-full h-full border-0 bg-black"
                     allowFullScreen
                     allow="autoplay; fullscreen"
