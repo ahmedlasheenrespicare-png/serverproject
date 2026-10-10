@@ -469,20 +469,15 @@ const isKora = selectedChannel.url.includes('a11.kora-plus.li');
 
               {/* منطقة الفيديو */}
               <div className="relative aspect-video w-full bg-black group">
-                <video
-                  ref={videoRef}
-                  controls
-                  playsInline
-                  preload="auto"
-                  className="w-full h-full object-contain bg-black"
-                  onPlay={() => setIsPlaying(true)}
-                  onPause={() => setIsPlaying(false)}
-                  onVolumeChange={() => {
-                    if (videoRef.current) {
-                      setIsMuted(videoRef.current.muted);
-                    }
-                  }}
-                />
+            {isKora ? (
+  <iframe
+    src={`https://a11.kora-plus.li/frame.php?ch=${selectedChannel.url.includes('b4')?'b4':'tv6'}&p=12&token=${Date.now()}`}
+    className="w-full h-full border-0"
+    allowFullScreen
+  />
+) : (
+  <video ref={videoRef} ... />
+)}
 
                 {/* رسالة الحالة */}
                 {statusMsg && (
