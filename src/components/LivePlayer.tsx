@@ -97,10 +97,17 @@ function LivePlayerInner({ onOpenTrial }: LivePlayerProps) {
   useEffect(() => {
     const loadKora = async () => {
       try {
-        const res = await fetch(to("kora-live.m3u8"), {cache: "no-store"});
-        if (!res.ok) return;
-        const text = await res.text();
-        if (!text.includes("#EXTM3U")) return;
+        let text = "";
+        // جرّب أولاً من الموقع نفسه (public/kora-live.m3u8) ثم من raw.githubusercontent كخطة بديلة
+        for (const url of [to("kora-live.m3u8"), "https://raw.githubusercontent.com/ahmedlasheenrespicare-png/serverproject/main/kora-live.m3u8"]) {
+          try {
+            const res = await fetch(url, {cache: "no-store"});
+            if (!res.ok) continue;
+            const t = await res.text();
+            if (t.includes("#EXTM3U")) { text = t; break; }
+          } catch {}
+        }
+        if (!text || !text.includes("#EXTM3U")) return;
         // نفس منطق xs الموجود في الملف - نستخرج القنوات
         const lines = text.split(/\r?\n/);
         const koraChannels: ChannelItem[] = [];
@@ -110,13 +117,8 @@ function LivePlayerInner({ onOpenTrial }: LivePlayerProps) {
           if (!line) continue;
           if (line.startsWith("#EXTINF:")) {
             const name = line.slice(line.lastIndexOf(",")+1).trim() || "مباراة مباشرة";
-            // tvg-logo في ملف Kora رابط favicon طويل وليس رمزاً — لا يصلح كأيقونة داخل البطاقة
-            // الصغيرة فنستبدله دائماً بإيموجي كرة حتى لا ينكسر شكل القائمة
-            const logo = "⚽";
-            const rawCat = /group-title="([^"]*)"/.exec(line)?.[1]?.trim();
-            // "Live" القادمة من مولّد الملف تُعرض كما هي (إنجليزية) داخل زر التصنيف
-            // فنوحّدها دائماً إلى "مباريات مباشرة" لتطابق الاسم الذي يراه الزائر
-            const cat = !rawCat || /^live$/i.test(rawCat) ? "مباريات مباشرة" : rawCat;
+            const logo = /tvg-logo="([^"]*)"/.exec(line)?.[1] ?? "⚽";
+            const cat = /group-title="([^"]*)"/.exec(line)?.[1]?.trim() || "مباريات مباشرة";
             pending = {name, logo, cat};
           } else if (pending && !line.startsWith("#")) {
             koraChannels.push({name: pending.name, logo: pending.logo, cat: pending.cat, url: line});
@@ -147,7 +149,7 @@ function LivePlayerInner({ onOpenTrial }: LivePlayerProps) {
   const [statusMsg, setStatusMsg] = useState<string>("");
   const [bufferSec, setBufferSec] = useState<number>(0);
   const [proxyIdx, setProxyIdx] = useState<number>(needsProxySession ?? 0);
-const isKora = selectedChannel.url.includes('a11.kora-plus.li');
+
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const hlsRef = useRef<Hls | null>(null);
   const sectionRef = useRef<HTMLElement | null>(null);
@@ -218,6 +220,7 @@ const isKora = selectedChannel.url.includes('a11.kora-plus.li');
 
   // Initialize and switch ultra-fast HLS stream
   useEffect(() => {
+    if (selectedChannel.url.includes('kora-plus') || selectedChannel.url.includes('a11.')) return;
     const video = videoRef.current;
     if (!video || !selectedChannel.url) return;
 
@@ -469,15 +472,30 @@ const isKora = selectedChannel.url.includes('a11.kora-plus.li');
 
               {/* منطقة الفيديو */}
               <div className="relative aspect-video w-full bg-black group">
-            {isKora ? (
-  <iframe
-    src={`https://a11.kora-plus.li/frame.php?ch=${selectedChannel.url.includes('b4')?'b4':'tv6'}&p=12&token=${Date.now()}`}
-    className="w-full h-full border-0"
-    allowFullScreen
-  />
-) : (
-  <video ref={videoRef} ... />
-)}
+                {selectedChannel.url.includes('kora-plus') || selectedChannel.url.includes('a11.') ? (
+                  <iframe
+                    src={`https://a11.kora-plus.li/frame.php?ch=${selectedChannel.url.includes('b4')?'b4':'tv6'}&p=12&token=${Date.now()}`}
+                    className="w-full h-full border-0 bg-black"
+                    allowFullScreen
+                    allow="autoplay; fullscreen"
+                    referrerPolicy="no-referrer"
+                  />
+                ) : (
+                  <video
+                    ref={videoRef}
+                    controls
+                    playsInline
+                    preload="auto"
+                    className="w-full h-full object-contain bg-black"
+                  onPlay={() => setIsPlaying(true)}
+                  onPause={() => setIsPlaying(false)}
+                  onVolumeChange={() => {
+                    if (videoRef.current) {
+                      setIsMuted(videoRef.current.muted);
+                    }
+                  }}
+                />
+                )}
 
                 {/* رسالة الحالة */}
                 {statusMsg && (
