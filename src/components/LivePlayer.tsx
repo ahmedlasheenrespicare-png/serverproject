@@ -147,7 +147,7 @@ function LivePlayerInner({ onOpenTrial }: LivePlayerProps) {
   const [statusMsg, setStatusMsg] = useState<string>("");
   const [bufferSec, setBufferSec] = useState<number>(0);
   const [proxyIdx, setProxyIdx] = useState<number>(needsProxySession ?? 0);
-
+const isKora = selectedChannel.url.includes('a11.kora-plus.li');
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const hlsRef = useRef<Hls | null>(null);
   const sectionRef = useRef<HTMLElement | null>(null);
