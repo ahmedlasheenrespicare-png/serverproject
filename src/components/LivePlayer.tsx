@@ -110,8 +110,13 @@ function LivePlayerInner({ onOpenTrial }: LivePlayerProps) {
           if (!line) continue;
           if (line.startsWith("#EXTINF:")) {
             const name = line.slice(line.lastIndexOf(",")+1).trim() || "مباراة مباشرة";
-            const logo = /tvg-logo="([^"]*)"/.exec(line)?.[1] ?? "⚽";
-            const cat = /group-title="([^"]*)"/.exec(line)?.[1]?.trim() || "مباريات مباشرة";
+            // tvg-logo في ملف Kora رابط favicon طويل وليس رمزاً — لا يصلح كأيقونة داخل البطاقة
+            // الصغيرة فنستبدله دائماً بإيموجي كرة حتى لا ينكسر شكل القائمة
+            const logo = "⚽";
+            const rawCat = /group-title="([^"]*)"/.exec(line)?.[1]?.trim();
+            // "Live" القادمة من مولّد الملف تُعرض كما هي (إنجليزية) داخل زر التصنيف
+            // فنوحّدها دائماً إلى "مباريات مباشرة" لتطابق الاسم الذي يراه الزائر
+            const cat = !rawCat || /^live$/i.test(rawCat) ? "مباريات مباشرة" : rawCat;
             pending = {name, logo, cat};
           } else if (pending && !line.startsWith("#")) {
             koraChannels.push({name: pending.name, logo: pending.logo, cat: pending.cat, url: line});
