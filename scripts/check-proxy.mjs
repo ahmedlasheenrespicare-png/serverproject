@@ -18,6 +18,8 @@
    خروج: 0 = كل شيء سليم (أو النفق غير متاح فقط) | 1 = الوسيط المنشور قديم/مكسور
 ========================================================================== */
 
+import { appendFileSync } from "node:fs";
+
 const PROXY = process.env.PROXY_BASE || "https://serverproject.ahmedlasheenrespicare.workers.dev";
 const SITE = "https://ahmedlasheenrespicare-png.github.io";
 const NGROK_HOST = process.env.RESTREAM_HOST || "passive-rotunda-deduct.ngrok-free.dev";
@@ -176,6 +178,49 @@ console.log(
   `② تخطي تحذير ngrok     : ${bypass.ok ? "✅" : "❌"}${bypass.warning ? ` (تحذير: ${bypass.warning})` : ""}`
 );
 console.log(`③ النفق/إعادة البث     : ${tunnel === "up" ? "✅ متاح" : `⚠️ ${tunnel}`}`);
+
+/* --------------------------------------------------------------------------
+   نتيجة مقروءة آلياً: سطر JSON ثابت + ملخص في تبويب Actions + تنبيه (annotation)
+   (سجلّ الـ workflow ليس متاحاً دائماً للقراءة من خارج GitHub — التنبيه يُقرأ
+   من الـ API: /repos/{owner}/{repo}/check-runs/{id}/annotations)
+-------------------------------------------------------------------------- */
+const report = {
+  health: healthOk,
+  bypass: bypass.ok,
+  bypassReason: bypass.reason ?? null,
+  bypassWarning: bypass.warning ?? null,
+  tunnel,
+};
+
+console.log(`RESTREAM_CHECK ${JSON.stringify(report)}`);
+
+const label =
+  `① ${healthOk ? "OK" : "FAIL"} · ② ${bypass.ok ? "OK" : "FAIL"}` +
+  `${bypass.warning ? ` (${bypass.warning})` : ""} · ③ ${tunnel}`;
+
+if (process.env.GITHUB_ACTIONS === "true") {
+  console.log(`::notice title=Restream check result::${label}`);
+  if (process.env.GITHUB_STEP_SUMMARY) {
+    try {
+      appendFileSync(
+        process.env.GITHUB_STEP_SUMMARY,
+        [
+          "## فحص البث المعاد (قناة 786431)",
+          `- ① الوسيط المنشور يستجيب: ${healthOk ? "✅" : "❌"}`,
+          `- ② تخطي تحذير ngrok (يرد HLS لا HTML): ${bypass.ok ? "✅" : "❌"}${
+            bypass.warning ? ` — تحذير: ${bypass.warning}` : ""
+          }`,
+          `- ③ النفق/أداة إعادة البث: ${tunnel === "up" ? "✅ متاح" : `⚠️ ${tunnel}`}`,
+          "",
+          `\`RESTREAM_CHECK ${JSON.stringify(report)}\``,
+          "",
+        ].join("\n")
+      );
+    } catch {
+      /* بيئة بلا ملف ملخص — لا مشكلة */
+    }
+  }
+}
 
 if (!healthOk || !bypass.ok) {
   console.log("\n❌ النتيجة: الوسيط المنشور لا يمرّر البث بشكل صحيح.");
