@@ -13,6 +13,10 @@
      /                          → صفحة التحقق من أن الوسيط يعمل
 
    ملاحظات الإصلاح (مقارنة بالنسخة السابقة):
+   0) نفق ngrok (البث المعاد من جهاز صاحب الموقع): نفق ngrok يرد صفحة تحذير HTML
+      بدل ملف البث لأي طلب يبدو قادماً من متصفح، فيفشل المشغل بلا رسالة واضحة.
+      الحل: نرسل ترويسة ngrok-skip-browser-warning عند التوجيه إلى مضيفات ngrok،
+      ولو وصلت صفحة التحذير رغم ذلك نُعيد خطأ JSON واضحاً بدل تمرير HTML إلى hls.js
    1) مسار /?u=<full-url> أصبح مُنفَّذاً فعلياً (كان موثّقاً لكنه يُرجع صفحة الحالة)
    2) سلسلة الاستعلام url.search تُمرَّر الآن في كل المسارات — بدونها تفشل القنوات
       المحمية بـ token وتتوقف قوائم m3u8 المُعاد كتابتها في منتصف البث
@@ -25,6 +29,30 @@
    ========================================================================== */
 
 const MBC_CDN = "https://shd-gcp-live.edgenextcdn.net";
+
+/* ==========================================================================
+   نفق ngrok (البث المعاد — restream من جهاز صاحب الموقع)
+   --------------------------------------------------------------------------
+   نفق ngrok المجاني يعرض صفحة تحذير HTML ("You are about to visit ...")
+   لأي طلب يبدو قادماً من متصفح، بدل تمرير المحتوى الحقيقي — فيستلم hls.js
+   صفحة HTML ويظهر «تعذر تشغيل القناة» بلا سبب واضح.
+   الحل الرسمي: ترويسة ngrok-skip-browser-warning (قيمتها لا تهم) — نضيفها
+   فقط عند التوجيه إلى مضيفات ngrok، فلا نُرسل ترويسة غريبة لبقية السيرفرات.
+========================================================================== */
+const NGROK_HOST_RE = /(^|\.)ngrok(-free)?\.(dev|app|io|com)$/i;
+
+const NGROK_SKIP_BROWSER_WARNING = "ngrok-skip-browser-warning";
+
+/* كاشف صفحة التحذير — نميّزها عن صفحة «النفق غير متاح» (ERR_NGROK_3200)
+   حتى نُظهر لكل حالة رسالة مختلفة تشرح السبب الحقيقي */
+function isNgrokWarningPage(body) {
+  const text = String(body || "");
+  return (
+    text.includes(NGROK_SKIP_BROWSER_WARNING) ||
+    /you are about to visit/i.test(text) ||
+    /ngrok-free\.[a-z]+/i.test(text)
+  );
+}
 
 /* ==========================================================================
    النطاقات المسموح لها باستخدام الوسيط من المتصفح
@@ -231,6 +259,12 @@ async function proxyTo(targetStr, request, cors) {
     if (v) fwd.set(k, v);
   }
 
+  /* نفق ngrok: بدون هذه الترويسة يرد النفق صفحة تحذير HTML بدل البث
+     (نضيفها لمضيفات ngrok فقط — بقية السيرفرات لا تحتاجها ولا يجب أن تستلمها) */
+  if (NGROK_HOST_RE.test(target.hostname)) {
+    fwd.set(NGROK_SKIP_BROWSER_WARNING, "true");
+  }
+
   const isHead = request.method === "HEAD";
   const isSegment = /\.(ts|m4s|aac|mp4|ac3|vtt)(\?|$)/i.test(target.pathname);
 
@@ -252,6 +286,43 @@ async function proxyTo(targetStr, request, cors) {
     });
   } catch (e) {
     return jsonError("UPSTREAM_FAILED: " + (e && e.message ? e.message : "network"), 502, cors);
+  }
+
+  /* ==========================================================================
+     حماية نفق ngrok: لو وصلت صفحة التحذير رغم الترويسة (نسخة أقدم من الوسيط
+     على الطرف الآخر / إعداد مختلف) نُعيد خطأ JSON صريحاً للمشغل بدل تمرير HTML.
+     مهم: الفحص قبل إعادة كتابة القوائم — لأن صفحة التحذير تصل أحياناً بنفس مسار
+     ملف m3u8 فيُعيد الوسيط كتابتها كأنها قائمة تشغيل ويفشل المشغل بلا سبب واضح.
+  ========================================================================== */
+  if (NGROK_HOST_RE.test(target.hostname) && !isHead) {
+    const ngrokCt = (resp.headers.get("content-type") || "").toLowerCase();
+    if (ngrokCt.includes("text/html") && resp.body) {
+      let html = "";
+      try {
+        html = await resp.text();
+      } catch {
+        html = "";
+      }
+
+      if (isNgrokWarningPage(html)) {
+        return new Response(
+          JSON.stringify({
+            error: "NGROK_WARNING_PAGE",
+            hint:
+              "نفق ngrok رد صفحة تحذير بدل البث — المطلوب نشر proxy/worker.js الجديد (يضيف ترويسة ngrok-skip-browser-warning)",
+          }),
+          { status: 502, headers: { "Content-Type": "application/json", ...cors } }
+        );
+      }
+
+      /* صفحة HTML أخرى من ngrok (مثل «النفق غير متصل» ERR_NGROK_3200) —
+         نُمرّرها كما هي: السبب في جهاز البث هو لا في الوسيط */
+      const out = new Headers(resp.headers);
+      out.delete("content-encoding");
+      out.delete("content-length");
+      for (const [k, v] of Object.entries(cors)) out.set(k, v);
+      return new Response(html, { status: resp.status, headers: out });
+    }
   }
 
   /* إعادة كتابة قوائم m3u8 بحيث تمر كل الروابط الداخلية عبر الوسيط */
