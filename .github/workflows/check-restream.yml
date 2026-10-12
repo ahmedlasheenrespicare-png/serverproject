@@ -1,0 +1,38 @@
+name: Check restream
+
+# مراقبة البث المعاد (قناة 786431): نفق ngrok يحتاج المرور عبر الوسيط،
+# وإصلاح الوسيط في proxy/worker.js لا يعمل على الموقع قبل نشره على Cloudflare.
+# هذا الفحص يكشف فوراً إن كان الوسيط المنشور قديماً (يرد صفحة تحذير ngrok بدل HLS).
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "proxy/**"
+      - "scripts/check-proxy.mjs"
+      - "kora-live.m3u8"
+      - ".github/workflows/check-restream.yml"
+  schedule:
+    - cron: "0 */6 * * *" # كل 6 ساعات — جهاز البث مغلق لا يُسقِط الفحص (سلوك متوقع)
+
+permissions:
+  contents: read
+
+jobs:
+  check-restream:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Run unit tests (playlist + proxy/ngrok behaviour)
+        run: npm test
+
+      - name: Check deployed proxy bypasses the ngrok warning page
+        run: node scripts/check-proxy.mjs
