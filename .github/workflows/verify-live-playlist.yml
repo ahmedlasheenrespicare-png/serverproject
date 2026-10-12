@@ -1,6 +1,13 @@
-name: Verify live Kora playlist (manual, temporary)
+name: Verify live Kora playlist
 
 on:
+  # يفحص الملف المنشور فعلياً على GitHub Pages بعد كل تغيير في قائمة Kora
+  push:
+    branches: [main]
+    paths:
+      - 'kora-live.m3u8'
+      - 'public/kora-live.m3u8'
+      - '.github/workflows/verify-live-playlist.yml'
   workflow_dispatch:
 
 jobs:
@@ -21,10 +28,3 @@ jobs:
           if ! printf '%s\n' "$body" | grep -q "786431";  then echo "FAIL: channel 786431 is missing";       exit 1; fi
           echo "PASS: no beIN Sport 4, no Sport TV 6; channel 786431 present"
           echo "EXTINF entries: $(printf '%s\n' "$body" | grep -c '#EXTINF')"
-
-      - name: Also check the repo version served at the raw file path
-        run: |
-          set -euo pipefail
-          URL="https://ahmedlasheenrespicare-png.github.io/serverproject/"
-          echo "== site root HTTP status"
-          curl -s -o /dev/null -w "root=%{http_code}\n" --retry 3 "$URL"
