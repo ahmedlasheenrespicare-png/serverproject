@@ -26,6 +26,17 @@ const NGROK_HOST = process.env.RESTREAM_HOST || "passive-rotunda-deduct.ngrok-fr
 const RESTREAM_PATH = "/my_restream.m3u8";
 const SKIP_HEADER = "ngrok-skip-browser-warning";
 
+/* رؤوس الطلب التي يُرسلها متصفح حقيقي (hls.js) — ضرورية لصحة الفحص:
+   صفحة تحذير ngrok تُعرض لطلبات المتصفحات تحديداً، وأي User-Agent غير متصفح
+   (مثل "node" الافتراضي في Node) يتخطاها تلقائياً — فينجح الفحص كذباً حتى مع
+   وسيط قديم لا يرسل الترويسة. لذلك نُقلّد المتصفح صراحةً. */
+const BROWSER_HEADERS = {
+  "User-Agent":
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",
+  Accept: "*/*",
+  "Accept-Language": "ar,en;q=0.9",
+};
+
 const ATTEMPTS = Number(process.env.CHECK_ATTEMPTS || 6); /* نشر Cloudflare يستغرق دقيقة تقريباً */
 const RETRY_DELAY_MS = Number(process.env.CHECK_RETRY_DELAY_MS || 15000);
 const TIMEOUT_MS = 20000;
@@ -92,7 +103,7 @@ async function checkNgrokBypass() {
   for (let attempt = 1; attempt <= ATTEMPTS; attempt++) {
     let res;
     try {
-      res = await get(url, { Origin: SITE });
+      res = await get(url, { Origin: SITE, ...BROWSER_HEADERS });
     } catch (e) {
       last = { kind: "network", detail: e.message };
       console.log(`   ⏳ محاولة ${attempt}/${ATTEMPTS}: تعذّر الاتصال (${e.message})`);
@@ -143,7 +154,10 @@ async function checkNgrokBypass() {
 async function checkTunnelAlive() {
   console.log(`③ (معلومة) هل نفق ngrok متصل الآن؟ — GET https://${NGROK_HOST}${RESTREAM_PATH}`);
   try {
-    const res = await get(`https://${NGROK_HOST}${RESTREAM_PATH}`, { [SKIP_HEADER]: "true" });
+    const res = await get(`https://${NGROK_HOST}${RESTREAM_PATH}`, {
+      ...BROWSER_HEADERS,
+      [SKIP_HEADER]: "true",
+    });
     if (isHls(res)) {
       console.log("   ✅ النفق يعمل ويرد ملف HLS — البث المعاد متاح الآن");
       return "up";
