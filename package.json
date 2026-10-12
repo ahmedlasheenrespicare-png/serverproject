@@ -10,7 +10,9 @@
     "build:client": "vite build",
     "build:ssr": "vite build --ssr src/entry-server.tsx --outDir dist-ssr",
     "preview": "vite preview",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "test": "node --test scripts/test-playlist.mjs scripts/test-worker.mjs",
+    "check:proxy": "node scripts/check-proxy.mjs"
   },
   "dependencies": {
     "hls.js": "^1.7.3",
