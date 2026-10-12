@@ -22,48 +22,23 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Install deps
-        run: pip install requests
-
-      - name: Fetch fresh m3u8
+      # ملاحظة: هذا الملف نسخة قديمة غير مُفعَّلة (الـ workflow الفعلي في .github/workflows/main.yml)
+      # تم تحديثه أيضاً حتى لا يعيد إضافة beIN Sport 4 و Sport TV 6
+      - name: Write kora-live.m3u8 (channel 786431 only)
         run: |
           python3 << 'PY'
-          import requests, re, base64, uuid, time
-          def fetch(ch):
-              token=str(uuid.uuid4())
-              kt=str(int(time.time()))
-              src=f"https://a11.kora-plus.li/frame.php?ch={ch}&p=12&token={token}&kt={kt}"
-              headers={
-                  "Referer":"https://robotiva.online/",
-                  "Origin":"https://robotiva.online",
-                  "User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
-                  "Sec-Fetch-Dest":"iframe",
-                  "Sec-Fetch-Mode":"navigate",
-                  "Sec-Fetch-Site":"cross-site",
-                  "Accept":"text/html,application/xhtml+xml"
-              }
-              r=requests.get(src, headers=headers, timeout=15)
-              m=re.search(r'aHR0[^"]+', r.text)
-              if not m:
-                  raise Exception(f"no token for {ch}")
-              b64=m.group(0).replace('-','+').replace('_','/')
-              b64+='='*(-len(b64)%4)
-              url=base64.b64decode(b64).decode()
-              print(f"{ch} -> {url}")
-              return url
-          b4=fetch("b4")
-          tv6=fetch("tv6")
-          with open("kora-live.m3u8","w",encoding="utf-8") as f:
-              f.write("#EXTM3U\n")
-              f.write('#EXTINF:-1 tvg-name="beIN Sport 4" tvg-logo="https://a11.kora-plus.li/favicon.ico" group-title="مباريات مباشرة",beIN Sport 4\n')
-              f.write(b4+"\n")
-              f.write('#EXTINF:-1 tvg-name="Sport TV 6" tvg-logo="https://a11.kora-plus.li/favicon.ico" group-title="مباريات مباشرة",Sport TV 6\n')
-              f.write(tv6+"\n")
-          # also update a version inside serverproject folder if exists
           import os
-          if os.path.exists("public"):
-              open("public/kora-live.m3u8","w",encoding="utf-8").write(open("kora-live.m3u8",encoding="utf-8").read())
-          print("Done")
+          content = (
+              '#EXTM3U\n'
+              '#EXTINF:-1 tvg-name="786431" group-title="مباريات مباشرة" tvg-logo="⚽",786431\n'
+              'https://passive-rotunda-deduct.ngrok-free.dev/my_restream.m3u8\n'
+          )
+          with open("kora-live.m3u8", "w", encoding="utf-8") as f:
+              f.write(content)
+          os.makedirs("public", exist_ok=True)
+          with open("public/kora-live.m3u8", "w", encoding="utf-8") as f:
+              f.write(content)
+          print(content)
           PY
           cat kora-live.m3u8
 
@@ -71,9 +46,7 @@ jobs:
         run: |
           git config user.name "kora-bot"
           git config user.email "bot@github.com"
-          git add kora-live.m3u8
-          # also try to add if in docs folder
-          git add -A || true
+          git add kora-live.m3u8 public/kora-live.m3u8
           if git diff --staged --quiet; then
             echo "No changes"
           else
