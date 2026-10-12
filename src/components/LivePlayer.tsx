@@ -89,22 +89,42 @@ interface LivePlayerProps {
   onOpenTrial: () => void;
 }
 
-function LivePlayerInner({ onOpenTrial }: LivePlayerProps) {
-  const [channels, setChannels] = useState<ChannelItem[]>(FEATURED_CHANNELS);
-  const [selectedChannel, setSelectedChannel] = useState<ChannelItem>(FEATURED_CHANNELS[0]);
-  const isKora = selectedChannel.url.includes('kora-plus') || selectedChannel.url.includes('a11.') || selectedChannel.cat === 'مباريات مباشرة';
+/* دمج قائمتين بلا تكرار للرابط — قنوات M3U أولاً ثم قنوات channels.json */
+function mergeChannels(first: ChannelItem[], second: ChannelItem[]): ChannelItem[] {
+  const seen = new Set<string>();
+  const out: ChannelItem[] = [];
+  for (const c of [...first, ...second]) {
+    if (seen.has(c.url)) continue;
+    seen.add(c.url);
+    out.push(c);
+  }
+  return out;
+}
 
-  // --- تحميل قنوات Kora المباشرة تلقائياً من kora-live.m3u8 (يتحدث كل 15 دقيقة) ---
+function LivePlayerInner({ onOpenTrial }: LivePlayerProps) {
+  /* مصدران منفصلان للقنوات:
+     • m3uChannels  — قنوات ملف kora-live.m3u8 (مثل 786431) — لا تُستبدل أبداً بتحميل channels.json
+     • baseChannels — قنوات channels.json (أو القنوات المميّزة قبل تحميلها)
+     القائمة المعروضة = دمج المصدرين، فتبقى قنوات M3U ظاهرة بعد تحميل channels.json */
+  const [m3uChannels, setM3uChannels] = useState<ChannelItem[]>([]);
+  const [baseChannels, setBaseChannels] = useState<ChannelItem[]>(FEATURED_CHANNELS);
+  const channels = useMemo(
+    () => mergeChannels(m3uChannels, baseChannels),
+    [m3uChannels, baseChannels]
+  );
+  const [selectedChannel, setSelectedChannel] = useState<ChannelItem>(FEATURED_CHANNELS[0]);
+
+  // --- تحميل قنوات M3U المباشرة من kora-live.m3u8 (يتحدث كل 15 دقيقة) ---
   useEffect(() => {
-    const loadKora = async () => {
+    const loadM3u = async () => {
       try {
         const res = await fetch(to("kora-live.m3u8"), {cache: "no-store"});
         if (!res.ok) return;
         const text = await res.text();
         if (!text.includes("#EXTM3U")) return;
-        // نفس منطق xs الموجود في الملف - نستخرج القنوات
+        // نستخرج القنوات: سطر #EXTINF يليه رابط البث
         const lines = text.split(/\r?\n/);
-        const koraChannels: ChannelItem[] = [];
+        const parsed: ChannelItem[] = [];
         let pending: {name:string, logo:string, cat:string} | null = null;
         for (const raw of lines) {
           const line = raw.trim();
@@ -119,25 +139,20 @@ function LivePlayerInner({ onOpenTrial }: LivePlayerProps) {
             // فنوحّدها دائماً إلى "مباريات مباشرة" لتطابق الاسم الذي يراه الزائر
             const cat = !rawCat || /^live$/i.test(rawCat) ? "مباريات مباشرة" : rawCat;
             pending = {name, logo, cat};
-          } else if (pending && !line.startsWith("#")) {
-            koraChannels.push({name: pending.name, logo: pending.logo, cat: pending.cat, url: line});
+          } else if (pending && /^https?:\/\//i.test(line)) {
+            parsed.push({name: pending.name, logo: pending.logo, cat: pending.cat, url: line});
             pending = null;
           }
         }
-        if (koraChannels.length > 0) {
-          setChannels(prev => {
-            // ضع قنوات Kora في المقدمة وتجنب التكرار
-            const existingUrls = new Set(prev.map(c=>c.url));
-            const newOnes = koraChannels.filter(c=>!existingUrls.has(c.url));
-            return [...newOnes, ...prev];
-          });
-          // اختر أول قناة Kora تلقائياً إذا كانت متوفرة
-          // setSelectedChannel(koraChannels[0]);
-        }
-      } catch {}
+        /* نستبدل قائمة M3U كاملة بأحدث نسخة (التوكنات تتجدد)، ونحتفظ بها مستقلة
+           عن channels.json — فلا تختفي القنوات عند تحميل القائمة الكاملة لاحقاً */
+        if (parsed.length > 0) setM3uChannels(parsed);
+      } catch {
+        /* فشل الشبكة: نُبقي آخر قائمة ناجحة */
+      }
     };
-    loadKora();
-    const id = setInterval(loadKora, 5*60*1000); // حدّث كل 5 دقائق
+    loadM3u();
+    const id = setInterval(loadM3u, 5*60*1000); // حدّث كل 5 دقائق
     return ()=> clearInterval(id);
   }, []);
   const [selectedCategory, setSelectedCategory] = useState<string>("قنوات MBC");
@@ -171,7 +186,8 @@ function LivePlayerInner({ onOpenTrial }: LivePlayerProps) {
             cat: String(c?.cat ?? "منوعات").trim() || "منوعات",
           }))
           .filter((c) => c.name !== "" && c.url !== "");
-        if (clean.length > 0) setChannels(clean);
+        /* يحدّث قائمة channels.json فقط — قنوات M3U محفوظة في m3uChannels ولا تُمسح */
+        if (clean.length > 0) setBaseChannels(clean);
       })
       .catch(() => {
         // Fallback to FEATURED_CHANNELS
@@ -218,7 +234,7 @@ function LivePlayerInner({ onOpenTrial }: LivePlayerProps) {
 
   // Initialize and switch ultra-fast HLS stream
   useEffect(() => {
-    if (selectedChannel.url.includes('kora-plus') || selectedChannel.url.includes('a11.')) return;
+    /* كل القنوات (بما فيها قنوات M3U مثل 786431) تُشغَّل من رابطها مباشرة عبر <video> + hls.js */
     const video = videoRef.current;
     if (!video || !selectedChannel.url) return;
 
@@ -470,21 +486,12 @@ function LivePlayerInner({ onOpenTrial }: LivePlayerProps) {
 
               {/* منطقة الفيديو */}
               <div className="relative aspect-video w-full bg-black group">
-                {isKora ? (
-                  <iframe
-                                        src={`https://robotiva.online/kora.html?m=211&lang=ar&d=robotiva.online`}
-                    className="w-full h-full border-0 bg-black"
-                    allowFullScreen
-                    allow="autoplay; fullscreen"
-                    referrerPolicy="no-referrer"
-                  />
-                ) : (
-                  <video
-                    ref={videoRef}
-                    controls
-                    playsInline
-                    preload="auto"
-                    className="w-full h-full object-contain bg-black"
+                <video
+                  ref={videoRef}
+                  controls
+                  playsInline
+                  preload="auto"
+                  className="w-full h-full object-contain bg-black"
                   onPlay={() => setIsPlaying(true)}
                   onPause={() => setIsPlaying(false)}
                   onVolumeChange={() => {
@@ -493,7 +500,6 @@ function LivePlayerInner({ onOpenTrial }: LivePlayerProps) {
                     }
                   }}
                 />
-                )}
 
                 {/* رسالة الحالة */}
                 {statusMsg && (
