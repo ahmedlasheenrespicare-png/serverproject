@@ -31,6 +31,8 @@ jobs:
           {b4}
           #EXTINF:-1 tvg-name="Sport TV 6" tvg-logo="https://a11.kora-plus.li/favicon.ico" group-title="مباريات مباشرة",Sport TV 6
           {tv6}
+          #EXTINF:-1 tvg-name="786431" group-title="مباريات مباشرة" tvg-logo="⚽",786431
+          https://passive-rotunda-deduct.ngrok-free.dev/my_restream.m3u8
           '''
           open("kora-live.m3u8","w",encoding="utf-8").write(content)
           os.makedirs("public", exist_ok=True)
