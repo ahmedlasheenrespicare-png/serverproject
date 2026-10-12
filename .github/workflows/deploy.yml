@@ -33,6 +33,9 @@ jobs:
       - name: Type check
         run: npm run typecheck
 
+      - name: Unit tests (playlist + proxy/ngrok behaviour)
+        run: npm test
+
       - name: Build site (with prerender)
         run: npm run build
         env:

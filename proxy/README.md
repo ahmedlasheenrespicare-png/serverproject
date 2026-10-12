@@ -79,6 +79,32 @@ const ALLOWED_ORIGINS = [
 
 ---
 
+## 🌐 نفق ngrok (البث المعاد — قناة 786431)
+
+البث المعاد يبثّ من جهاز صاحب الموقع عبر نفق ngrok، ونفق ngrok المجاني يعرض
+**صفحة تحذير HTML** («You are about to visit …») لأي طلب يبدو قادماً من متصفح
+بدل تمرير ملف البث — فيستلم `hls.js` صفحة HTML ويظهر «تعذر تشغيل القناة» بلا سبب واضح.
+
+العلاج المطبَّق في `worker.js`:
+
+- ترويسة `ngrok-skip-browser-warning: true` تُضاف **عند التوجيه إلى مضيفات ngrok فقط**
+  (بقية السيرفرات لا تستلمها).
+- لو وصلت صفحة التحذير رغم ذلك، يعيد الوسيط خطأ JSON صريحاً للمشغل
+  `{"error":"NGROK_WARNING_PAGE"}` بحالة `502` بدل تمرير HTML إلى المشغل.
+- صفحة «النفق غير متصل» (`ERR_NGROK_3200`) تُمرَّر كما هي — السبب في جهاز البث لا في الوسيط.
+
+> ⚠️ **هذا الإصلاح لا يعمل على الموقع قبل نشر الوسيط.** بعد أي تعديل على `worker.js`
+> إما أن ينشره Cloudflare Workers Builds تلقائياً بعد الدفع إلى `main`، أو يدوياً:
+> ```bash
+> npx wrangler deploy
+> ```
+> وللتأكد أن الوسيط **المنشور** يتخطى صفحة التحذير فعلاً:
+> ```bash
+> npm run check:proxy        # أو: node scripts/check-proxy.mjs
+> ```
+
+---
+
 ## ⚠️ إن فشل بناء Cloudflare Workers (Workers Builds)
 
 فحص **Workers Builds: serverproject** كان **فاشلاً قبل هذه التعديلات أيضاً** (على `main` وليس على تغييرات
@@ -120,6 +146,8 @@ npx wrangler deploy --dry-run --outdir /tmp/wrangler-out
 | قناة العربية | `https://رابط-الوسيط/h/live.alarabiya.net/alarabiapublish/alarabiya.smil/playlist.m3u8` |
 | قناة MBC 1 | `https://رابط-الوسيط/live/bitmovin-mbc-1-na/eec141533c90dd34722c503a296dd0d8/index.m3u8` |
 | سيرفر بلا TLS (مهم) | `https://رابط-الوسيط/x/host:port/live/user/pass/1.m3u8` |
+| البث المعاد (ngrok) | `https://رابط-الوسيط/h/passive-rotunda-deduct.ngrok-free.dev/my_restream.m3u8` |
+| فحص آلي للمسار كاملاً | `npm run check:proxy` |
 
 لو فتح ملف قائمة تشغيل نص فيه روابط تبدأ بـ `/h/...` (أو `/x/...` لسيرفرات `http`) فالوسيط يعمل بشكل صحيح.
 

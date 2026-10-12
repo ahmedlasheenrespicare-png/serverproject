@@ -3,6 +3,8 @@ import type Hls from "hls.js";
 import { canPlayNativeHls, loadHls } from "../hls";
 import { FEATURED_CHANNELS, type ChannelItem } from "../data";
 import { PROXY_BASE, to } from "../config";
+/* قارئ قائمة kora-live.m3u8 — في ملف JS مستقل لأن اختباراته في scripts/test-playlist.mjs */
+import { parseKoraPlaylist } from "../lib/koraPlaylist.mjs";
 import {
   IconCheck,
   IconClock,
@@ -20,6 +22,9 @@ export type { ChannelItem } from "../data";
    بالترتيب الأبجدي، فلا تختفي أي قناة من الأزرار مهما تغيّر ملف channels.json */
 const PREFERRED_CATEGORY_ORDER = [
   "قنوات MBC",
+  /* تصنيف البث المعاد (قناة 786431 من kora-live.m3u8) — يوضع في المقدمة
+     حتى يظهر زرّه بجانب التصنيف الافتراضي لا في آخر القائمة */
+  "مباريات مباشرة",
   "رياضية",
   "إخبارية",
   "عربية",
@@ -85,6 +90,19 @@ function getProxyUrl(base: string, url: string): string {
 // ذاكرة الجلسة: رقم الوسيط الناجح لشبكة هذا الزائر (0 = مباشر) — يُحفظ حتى التنقل بين القنوات
 let needsProxySession: number | null = null;
 
+/* نفق ngrok (البث المعاد من جهاز صاحب الموقع): أي طلب مباشر من متصفح يستلم
+   صفحة تحذير HTML بدل البث، فالوصول المباشر لا ينجح أبداً — الوسيط وحده يتخطاها
+   بإرسال ترويسة ngrok-skip-browser-warning (انظر proxy/worker.js) */
+const NGROK_HOST_RE = /(^|\.)ngrok(-free)?\.(dev|app|io|com)$/i;
+
+function isNgrokUrl(url: string): boolean {
+  try {
+    return NGROK_HOST_RE.test(new URL(url).hostname);
+  } catch {
+    return false;
+  }
+}
+
 interface LivePlayerProps {
   onOpenTrial: () => void;
 }
@@ -108,6 +126,8 @@ function LivePlayerInner({ onOpenTrial }: LivePlayerProps) {
      القائمة المعروضة = دمج المصدرين، فتبقى قنوات M3U ظاهرة بعد تحميل channels.json */
   const [m3uChannels, setM3uChannels] = useState<ChannelItem[]>([]);
   const [baseChannels, setBaseChannels] = useState<ChannelItem[]>(FEATURED_CHANNELS);
+  /* هل اختار الزائر قناة أو تصنيفاً بنفسه؟ لو نعم لا نُغيّر اختياره تلقائياً */
+  const userPickedRef = useRef(false);
   const channels = useMemo(
     () => mergeChannels(m3uChannels, baseChannels),
     [m3uChannels, baseChannels]
@@ -121,32 +141,23 @@ function LivePlayerInner({ onOpenTrial }: LivePlayerProps) {
         const res = await fetch(to("kora-live.m3u8"), {cache: "no-store"});
         if (!res.ok) return;
         const text = await res.text();
-        if (!text.includes("#EXTM3U")) return;
-        // نستخرج القنوات: سطر #EXTINF يليه رابط البث
-        const lines = text.split(/\r?\n/);
-        const parsed: ChannelItem[] = [];
-        let pending: {name:string, logo:string, cat:string} | null = null;
-        for (const raw of lines) {
-          const line = raw.trim();
-          if (!line) continue;
-          if (line.startsWith("#EXTINF:")) {
-            const name = line.slice(line.lastIndexOf(",")+1).trim() || "مباراة مباشرة";
-            // tvg-logo في ملف Kora رابط favicon طويل وليس رمزاً — لا يصلح كأيقونة داخل البطاقة
-            // الصغيرة فنستبدله دائماً بإيموجي كرة حتى لا ينكسر شكل القائمة
-            const logo = "⚽";
-            const rawCat = /group-title="([^"]*)"/.exec(line)?.[1]?.trim();
-            // "Live" القادمة من مولّد الملف تُعرض كما هي (إنجليزية) داخل زر التصنيف
-            // فنوحّدها دائماً إلى "مباريات مباشرة" لتطابق الاسم الذي يراه الزائر
-            const cat = !rawCat || /^live$/i.test(rawCat) ? "مباريات مباشرة" : rawCat;
-            pending = {name, logo, cat};
-          } else if (pending && /^https?:\/\//i.test(line)) {
-            parsed.push({name: pending.name, logo: pending.logo, cat: pending.cat, url: line});
-            pending = null;
-          }
-        }
+
+        /* استخراج القنوات: نفس القارئ المختبَر في scripts/test-playlist.mjs */
+        const parsed = parseKoraPlaylist(text);
+
         /* نستبدل قائمة M3U كاملة بأحدث نسخة (التوكنات تتجدد)، ونحتفظ بها مستقلة
            عن channels.json — فلا تختفي القنوات عند تحميل القائمة الكاملة لاحقاً */
-        if (parsed.length > 0) setM3uChannels(parsed);
+        if (parsed.length > 0) {
+          setM3uChannels(parsed);
+          /* كان التصنيف المختار «قنوات MBC» بينما قناة البث المعاد (786431) في
+             تصنيف «مباريات مباشرة» → القناة موجودة في البيانات لكنها لا تظهر في
+             القائمة حتى يبحث عنها الزائر بنفسه. الآن ننتقل تلقائياً إلى تصنيف
+             القناة ونختارها — إلا لو كان الزائر قد اختار قناة/تصنيفاً بالفعل */
+          if (!userPickedRef.current) {
+            setSelectedCategory(parsed[0].cat);
+            setSelectedChannel(parsed[0]);
+          }
+        }
       } catch {
         /* فشل الشبكة: نُبقي آخر قائمة ناجحة */
       }
@@ -240,14 +251,20 @@ function LivePlayerInner({ onOpenTrial }: LivePlayerProps) {
 
     // هل هذه القناة من النوع القابل للتمرير عبر الوسيط؟
     const canProxy = ACTIVE_PROXY_BASES.length > 0 && getProxyUrl(ACTIVE_PROXY_BASES[0], selectedChannel.url) !== selectedChannel.url;
-    const playbackUrl = proxyIdx > 0 && canProxy
-      ? getProxyUrl(ACTIVE_PROXY_BASES[proxyIdx - 1], selectedChannel.url)
+
+    /* رابط ngrok مباشر = صفحة تحذير HTML دائماً (انظر proxy/worker.js)، فلا معنى
+       لتجربة الاتصال المباشر وانتظار مهلة الفشل — نبدأ من الوسيط فوراً */
+    const mustUseProxy = canProxy && isNgrokUrl(selectedChannel.url);
+    const activeProxyIdx = mustUseProxy ? Math.max(1, proxyIdx) : proxyIdx;
+
+    const playbackUrl = activeProxyIdx > 0 && canProxy
+      ? getProxyUrl(ACTIVE_PROXY_BASES[activeProxyIdx - 1], selectedChannel.url)
       : selectedChannel.url;
 
     setIsLoading(true);
     setStatusMsg(
-      proxyIdx > 0 && canProxy
-        ? `🔄 جاري الاتصال عبر الوسيط ${proxyIdx}/${ACTIVE_PROXY_BASES.length}...`
+      activeProxyIdx > 0 && canProxy
+        ? `🔄 جاري الاتصال عبر الوسيط ${activeProxyIdx}/${ACTIVE_PROXY_BASES.length}...`
         : "⚡ جاري الاتصال فائق السرعة بسيرفر القناة..."
     );
 
@@ -261,16 +278,16 @@ function LivePlayerInner({ onOpenTrial }: LivePlayerProps) {
 
     // التبديل التلقائي للوسيط التالي (يُستدعى عند اكتشاف حجب الشبكة أو وسيط متوقف)
     const switchToProxy = (): boolean => {
-      if (canProxy && proxyIdx < ACTIVE_PROXY_BASES.length) {
-        needsProxySession = proxyIdx + 1;
-        setProxyIdx(proxyIdx + 1);
+      if (canProxy && activeProxyIdx < ACTIVE_PROXY_BASES.length) {
+        needsProxySession = activeProxyIdx + 1;
+        setProxyIdx(activeProxyIdx + 1);
         return true;
       }
       return false;
     };
 
     // مؤقت أمان: لو الرابط المباشر لم يستجب خلال 6 ثوانٍ (شبكة تحجب السيرفر) → بدّل للوسيط
-    if (canProxy && proxyIdx === 0) {
+    if (canProxy && activeProxyIdx === 0) {
       switchTimer = window.setTimeout(() => {
         if (!manifestParsed) switchToProxy();
       }, 6000);
@@ -641,7 +658,10 @@ function LivePlayerInner({ onOpenTrial }: LivePlayerProps) {
                 {categories.map((cat) => (
                   <button
                     key={cat}
-                    onClick={() => setSelectedCategory(cat)}
+                    onClick={() => {
+                      userPickedRef.current = true;
+                      setSelectedCategory(cat);
+                    }}
                     className={`px-3 py-1.5 rounded-full whitespace-nowrap transition-all cursor-pointer ${
                       selectedCategory === cat
                         ? "bg-[#0b0b0f] text-white font-black"
@@ -667,6 +687,7 @@ function LivePlayerInner({ onOpenTrial }: LivePlayerProps) {
                     <button
                       key={idx}
                       onClick={() => {
+                        userPickedRef.current = true;
                         setSelectedChannel(ch);
                         setIsPlaying(false);
                       }}
