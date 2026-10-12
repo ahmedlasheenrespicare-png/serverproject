@@ -1,0 +1,30 @@
+name: Verify live Kora playlist (manual, temporary)
+
+on:
+  workflow_dispatch:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fetch deployed playlist from GitHub Pages and assert contents
+        run: |
+          set -euo pipefail
+          URL="https://ahmedlasheenrespicare-png.github.io/serverproject/kora-live.m3u8"
+          echo "== fetching $URL"
+          body=$(curl -fsSL --retry 5 --retry-delay 5 --retry-all-errors "$URL")
+          echo "---- deployed file (start) ----"
+          printf '%s\n' "$body"
+          echo "---- deployed file (end) ----"
+          if printf '%s\n' "$body" | grep -q "beIN Sport 4"; then echo "FAIL: beIN Sport 4 is still deployed"; exit 1; fi
+          if printf '%s\n' "$body" | grep -q "Sport TV 6";  then echo "FAIL: Sport TV 6 is still deployed";  exit 1; fi
+          if ! printf '%s\n' "$body" | grep -q "786431";  then echo "FAIL: channel 786431 is missing";       exit 1; fi
+          echo "PASS: no beIN Sport 4, no Sport TV 6; channel 786431 present"
+          echo "EXTINF entries: $(printf '%s\n' "$body" | grep -c '#EXTINF')"
+
+      - name: Also check the repo version served at the raw file path
+        run: |
+          set -euo pipefail
+          URL="https://ahmedlasheenrespicare-png.github.io/serverproject/"
+          echo "== site root HTTP status"
+          curl -s -o /dev/null -w "root=%{http_code}\n" --retry 3 "$URL"
