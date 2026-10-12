@@ -1,30 +1,52 @@
 name: Verify live Kora playlist
 
 on:
-  # يفحص الملف المنشور فعلياً على GitHub Pages بعد كل تغيير في قائمة Kora
-  push:
-    branches: [main]
-    paths:
-      - 'kora-live.m3u8'
-      - 'public/kora-live.m3u8'
-      - '.github/workflows/verify-live-playlist.yml'
+  # يعمل تلقائياً بعد كل عملية نشر ناجحة على GitHub Pages (ويمكن تشغيله يدوياً)
+  workflow_run:
+    workflows: ["Deploy to GitHub Pages"]
+    types: [completed]
   workflow_dispatch:
 
 jobs:
   verify:
+    if: github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
     steps:
-      - name: Fetch deployed playlist from GitHub Pages and assert contents
+      - name: Compare deployed playlist with the version in main
         run: |
-          set -euo pipefail
-          URL="https://ahmedlasheenrespicare-png.github.io/serverproject/kora-live.m3u8"
-          echo "== fetching $URL"
-          body=$(curl -fsSL --retry 5 --retry-delay 5 --retry-all-errors "$URL")
-          echo "---- deployed file (start) ----"
-          printf '%s\n' "$body"
-          echo "---- deployed file (end) ----"
-          if printf '%s\n' "$body" | grep -q "beIN Sport 4"; then echo "FAIL: beIN Sport 4 is still deployed"; exit 1; fi
-          if printf '%s\n' "$body" | grep -q "Sport TV 6";  then echo "FAIL: Sport TV 6 is still deployed";  exit 1; fi
-          if ! printf '%s\n' "$body" | grep -q "786431";  then echo "FAIL: channel 786431 is missing";       exit 1; fi
-          echo "PASS: no beIN Sport 4, no Sport TV 6; channel 786431 present"
-          echo "EXTINF entries: $(printf '%s\n' "$body" | grep -c '#EXTINF')"
+          set -uo pipefail
+          LIVE="https://ahmedlasheenrespicare-png.github.io/serverproject/kora-live.m3u8"
+          REPO="https://raw.githubusercontent.com/${{ github.repository }}/main/kora-live.m3u8"
+
+          echo "== repo  : $REPO"
+          echo "== live  : $LIVE"
+          curl -fsSL --retry 5 --retry-delay 3 --retry-all-errors "$REPO" -o repo.m3u8
+          echo "---- version in main ----"
+          cat repo.m3u8
+          echo "-------------------------"
+          echo "repo EXTINF entries: $(grep -c '#EXTINF' repo.m3u8)"
+
+          match=no
+          for i in $(seq 1 12); do
+            if curl -fsSL --retry 2 --retry-delay 3 --retry-all-errors "$LIVE" -o live.m3u8 && cmp -s repo.m3u8 live.m3u8; then
+              match=yes
+              echo "deployed file matches main on attempt $i"
+              break
+            fi
+            echo "attempt $i: deployed copy not up to date yet, retrying in 15s..."
+            sleep 15
+          done
+
+          echo "---- deployed file (as served now) ----"
+          cat live.m3u8 || echo "(could not fetch)"
+          echo "---------------------------------------"
+
+          fail=0
+          [ "$match" = yes ] || { echo "FAIL: the deployed kora-live.m3u8 does not match the version in main"; fail=1; }
+          if grep -q "beIN Sport 4" live.m3u8 2>/dev/null; then echo "FAIL: beIN Sport 4 is still deployed"; fail=1; fi
+          if grep -q "Sport TV 6"  live.m3u8 2>/dev/null; then echo "FAIL: Sport TV 6 is still deployed";  fail=1; fi
+          if ! grep -q "786431"   live.m3u8 2>/dev/null; then echo "FAIL: channel 786431 is missing";       fail=1; fi
+          [ "$fail" = 0 ] || exit 1
+
+          echo "PASS: deployed kora-live.m3u8 == main | no beIN Sport 4 | no Sport TV 6 | channel 786431 present"
+          echo "deployed EXTINF entries: $(grep -c '#EXTINF' live.m3u8)"
